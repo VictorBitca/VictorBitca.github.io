@@ -6,12 +6,9 @@
     <description>Recent content on Hello there...</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
+    <lastBuildDate>Sat, 13 Apr 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://VictorBitca.github.io/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-  </channel>
-</rss>="self" type="application/rss+xml" />
     
     
     <item>
@@ -20,7 +17,7 @@
       <pubDate>Sat, 13 Apr 2019 00:00:00 +0000</pubDate>
       
       <guid>https://VictorBitca.github.io/posts/2019/04/creating-an-op-z-plugin/</guid>
-      <description>Intro So let this be a cautionary tale why its a good/bad ideea to build a synth/sampler/whatever musical machine on raspberry pi.
+      <description>Intro So let this be a cautionary tale why it is a good/bad idea to build a synth/sampler/whatever musical machine on a Raspberry Pi.
 It all began almost a year ago, when I’ve been playing with my PO-20 “Arcade” and wondered what if it was hackable, maybe if it was there would also be a community around pocket operators like there is one for Canon “Magic Lantern” firmware. Well, there was no such thing.</description>
     </item>
     

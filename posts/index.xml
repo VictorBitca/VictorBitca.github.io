@@ -15,38 +15,38 @@
             <pubDate>Sat, 13 Apr 2019 00:00:00 +0000</pubDate>
             
             <guid>https://VictorBitca.github.io/posts/2019/04/creating-an-op-z-plugin/</guid>
-            <description>Intro So let this be a cautionary tale why its a good/bad ideea to build a synth/sampler/whatever musical machine on raspberry pi.
+            <description>Intro So let this be a cautionary tale why it is a good/bad idea to build a synth/sampler/whatever musical machine on a Raspberry Pi.
 It all began almost a year ago, when I’ve been playing with my PO-20 “Arcade” and wondered what if it was hackable, maybe if it was there would also be a community around pocket operators like there is one for Canon “Magic Lantern” firmware. Well, there was no such thing.</description>
             <content type="html"><![CDATA[
 
 <h2 id="intro">Intro</h2>
 
-<p>So let this be a cautionary tale why its a good/bad ideea to build a synth/sampler/whatever musical machine on raspberry pi.</p>
+<p>So let this be a cautionary tale why it is a good/bad idea to build a synth/sampler/whatever musical machine on a Raspberry Pi.</p>
 
 <p>It all began almost a year ago, when I’ve been playing with my <a href="https://www.teenageengineering.com/store#po-20" target="_blank">PO-20 “Arcade”</a> and wondered what if it was hackable,
 maybe if it was there would also be a community around pocket operators like there is one for <a href="https://magiclantern.fm/" target="_blank">Canon “Magic Lantern”</a> firmware.
-Well, there was no such thing. But there is <a href="https://github.com/topisani/OTTO" target="_blank">OTTO</a>, an open source project initialy inspired by OP-1 but clearly going in their own direction at the moment, consider contributing if youre interested.</p>
+Well, there was no such thing. But there is <a href="https://github.com/topisani/OTTO" target="_blank">OTTO</a>, an open source project initially inspired by OP-1 but clearly going in their own direction at the moment, consider contributing if you&rsquo;re interested.</p>
 
-<p>I was thinking about joinging them but ultimatelly decided against that, my main concerns were the power hungry hardware (raspberry pi 3+) I wanted something smaller with a long battey life.
-The tools also raised some conern, everything was built from scratch in C++ and Faust, it would take years, and years it took to reach a V1.0 (still unreleased at the moment of editing this) but no doubt the end result could be someting beautiful.</p>
+<p>I was thinking about joining them but ultimately decided against that, my main concerns were the power-hungry hardware (raspberry pi 3+) I wanted something smaller with long battery life.
+The tools also raised some concern, everything was built from scratch in C++ and Faust, it would take years, and years it took to reach a V1.0 (still unreleased at the moment of editing this) but no doubt the end result could be something beautiful.</p>
 
 <p>Starting from scratch I was thinking to go the way of <a href="https://www.critterandguitari.com/organelle" target="_blank">Critter and Guitari Organelle</a> with <a href="https://puredata.info/" target="_blank">Pure Data</a>
-In a few days of toying around I realized that visual programing will not cut it, I needed a proper programing language.</p>
+In a few days of toying around, I realized that visual programming will not cut it, I needed a proper programing language.</p>
 
 <h2 id="first-prototypes">First prototypes</h2>
 
-<p>After a few days of comparing comunities, language features and github stars of a <a href="https://en.wikipedia.org/wiki/Comparison_of_audio_synthesis_environments" target="_blank">few</a> enviroments&hellip; <a href="https://supercollider.github.io/" target="_blank">SuperCollider</a> was looking like a winner.
-With an active open source community it was like a silver bullet for all my problems,
+<p>After a few days of comparing communities, language features and GitHub stars of a <a href="https://en.wikipedia.org/wiki/Comparison_of_audio_synthesis_environments" target="_blank">few</a> environments&hellip; <a href="https://supercollider.github.io/" target="_blank">SuperCollider</a> was looking like a winner.
+With an active open source community, it was like a silver bullet for all my problems,
 SuperCollider can easily be set up to run on a <a href="https://supercollider.github.io/development/building-raspberrypi" target="_blank">Raspberry Pi</a>.</p>
 
 <p>So the choice of hardware at that moment was clear, a Raspberry Pi Zero and a dedicated audio board (<a href="https://fe-pi.com/" target="_blank">Fe-Pi</a> or <a href="https://www.pjrc.com/store/teensy3_audio.html" target="_blank">Teensy audio adaptor</a> it&rsquo;s based on the same chip) would do the trick.
 Combined with a ~2000 mAh battery it should run for ~5 hours, still not as much as I would like but it will do for the moment.</p>
 
 <p><img src="/images/3d+proto.jpg" alt="proto-v1" />
-Kinda looks like an amateur pocker operator, doesnt it?</p>
+Kinda looks like an amateur pocket operator, doesn&rsquo;t it?</p>
 
 <p>The first prototype was quickly made in Fusion and the plastic parts printed.
-It of course has a few drawbacks:</p>
+It, of course, has a few drawbacks:</p>
 
 <ol>
 <li>The buttons, I did not like the feel of the tall silicone buttons.</li>
@@ -55,7 +55,7 @@ It of course has a few drawbacks:</p>
 
 <p><img src="/images/sequencer_render.jpg" alt="proto-v2" />
 The second prototype used mechanical keyboard buttons, and it had a lot more of them.
-Initially I cloned Volca Sample functional plus some extra stuff.
+Initially, I cloned Volca Sample functional plus some extra stuff.
 Then I started looking into how OP-Z handles the sequencing and started to recreate it in Supercollider.
 After some time took the plunge and bought an OP-Z from I think the first or second publically available batches.</p>
 
@@ -63,7 +63,7 @@ After some time took the plunge and bought an OP-Z from I think the first or sec
 
 <p><img src="/images/opz_raspberry.jpg" alt="op-z" /></p>
 
-<p>After playing for a while with the OP-Z I though there is no point to try to recreate the sequencer style, it would take too much time so I decided to reuse the raspbery pi and audio IO board and slapped them on the back of my OP-Z, it seemed the most reasonable way to get the most out of it in the shortest time possible, OP_Z already had the sequencer that I wanted but it didnt have any sampling capabilities so it should be a beatiful fusion.</p>
+<p>After playing for a while with the OP-Z I thought there is no point to try to recreate the sequencer style, it would take too much time so I decided to reuse the Raspberry Pi and audio IO board and slapped them on the back of my OP-Z, it seemed the most reasonable way to get the most out of it in the shortest time possible, OP_Z already had the sequencer that I wanted but it didn&rsquo;t have any sampling capabilities so it should be a beautiful fusion.</p>
 
 <h4 id="the-end-result-is-this">The end result is this:</h4>
 
@@ -78,7 +78,7 @@ After some time took the plunge and bought an OP-Z from I think the first or sec
 <p>Part list:</p>
 
 <ol>
-<li>Dedicated <a href="https://fe-pi.com/" target="_blank">audio board</a> with Line In and Line Out, Raspbian <a href="https://github.com/raspberrypi/linux/pull/1867" target="_blank">suports</a> it out of the box.</li>
+<li>Dedicated <a href="https://fe-pi.com/" target="_blank">audio board</a> with Line-In and Line-Out, Raspbian <a href="https://github.com/raspberrypi/linux/pull/1867" target="_blank">suports</a> it out of the box.</li>
 <li>Raspberry Pi of your choice.</li>
 <li>A 5V power supply.</li>
 </ol>
@@ -91,10 +91,10 @@ After some time took the plunge and bought an OP-Z from I think the first or sec
 <li><a href="https://github.com/VictorBitca/opz-sc-extensions" target="_blank">Clone/download</a> my repo.</li>
 </ol>
 
-<p>It has two folders, <code>opz-sc-extensions</code> contains SuperCollider extension, for more details on how to use <a href="http://doc.sccode.org/Guides/UsingExtensions.html" target="_blank">extensions</a> with SuperCollider, the <code>opz-plugin</code> folder contains some files that launches the extensions and a <code>golang-opz</code> folder with some code needed to further process the SuperCollider sample output because the OP-Z wont accept a simple <code>.aif</code> file.</p>
+<p>It has two folders, <code>opz-sc-extensions</code> contains SuperCollider extension, for more details on how to use <a href="http://doc.sccode.org/Guides/UsingExtensions.html" target="_blank">extensions</a> with SuperCollider, the <code>opz-plugin</code> folder contains some files that launches the extensions and a <code>golang-opz</code> folder with some code needed to further process the SuperCollider sample output because the OP-Z won&rsquo;t accept a simple <code>.aif</code> file.</p>
 
-<p>It needs a custom &ldquo;header&rdquo;, this is needed only for sampler.
-There was no particular reason for <code>go</code>, I just needed a tool that I could use to search and modify some bytes in the output file, there&rsquo;s no such low level API in <code>sclang</code>.</p>
+<p>It needs a custom &ldquo;header&rdquo;, this is needed only for the sampler.
+There was no particular reason for <code>go</code>, I just needed a tool that I could use to search and modify some bytes in the output file, there&rsquo;s no such low-level API in <code>sclang</code>.</p>
 
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json"> 
 <span style="color:#960050;background-color:#1e0010">//</span> <span style="color:#960050;background-color:#1e0010">Custom</span> <span style="color:#960050;background-color:#1e0010">teenage</span> <span style="color:#960050;background-color:#1e0010">enginnering</span> <span style="color:#960050;background-color:#1e0010">.aif</span> <span style="color:#960050;background-color:#1e0010">header</span> <span style="color:#960050;background-color:#1e0010">for</span> <span style="color:#960050;background-color:#1e0010">sample</span> <span style="color:#960050;background-color:#1e0010">files</span>
@@ -114,7 +114,7 @@ There was no particular reason for <code>go</code>, I just needed a tool that I 
     <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;sampler&#34;</span>
 }</code></pre></div>
 
-<p>The custom header wich is utf8 encoded and replaced the original &ldquo;header&rdquo; from SuperCollider output, thanks to <a href="http://gerotakke.de/" target="_blank">Gero Takke</a> for figuring things out.</p>
+<p>The custom header which is utf8 encoded and replaced the original &ldquo;header&rdquo; from SuperCollider output, thanks to <a href="http://gerotakke.de/" target="_blank">Gero Takke</a> for figuring things out.</p>
 
 <p>To run the plugin on a device you&rsquo;ll need to install <a href="https://golang.org/doc/install" target="_blank"><code>golang</code></a>
 then in the <code>golang-opz</code> directory run only once:</p>
@@ -161,8 +161,8 @@ then in the <code>golang-opz</code> directory run only once:</p>
 
 <ol>
 <li>SuperCollider.</li>
-<li>An enourmous library of UGens (units that process or generate sound) for SuperCollider.</li>
-<li>A comunity behind SuperCollider, usually you can find the answer to common questions but still documentaion is king.</li>
+<li>An enormous library of UGens (units that process or generate sound) for SuperCollider.</li>
+<li>A community behind SuperCollider, usually you can find the answer to common questions but still, documentation is king.</li>
 </ol>
 
 <h4 id="the-cons">The cons:</h4>
@@ -170,17 +170,17 @@ then in the <code>golang-opz</code> directory run only once:</p>
 <ol>
 <li>Long boot times, around 1 min caused by a massive software stack.</li>
 <li>Latency, around 10 ms with <a href="http://jackaudio.org/" target="_blank">jackd process</a> just using 20% of the CPU.</li>
-<li>Additonal latency because of SuperCollder&rsquo;s <a href="http://doc.sccode.org/Guides/ClientVsServer.html" target="_blank">client-server architecture</a>.</li>
+<li>Additional latency because of SuperCollder&rsquo;s <a href="http://doc.sccode.org/Guides/ClientVsServer.html" target="_blank">client-server architecture</a>.</li>
 <li>Unstable on raspberry pi, more software more bugs.</li>
 <li><a href="http://jackaudio.org/" target="_blank">jackd process</a> would crash after one minute of inactivity if using a reverb effect for some reason.</li>
 </ol>
 
-<p>In conclusion the end product is not as practical as I wished it was, it boots slowly, massive software overhead, buggy and still power hungry device, SuperCollider on Raspberry Pi Zero isn&rsquo;t a good enough for this task.</p>
+<p>In conclusion, the end product is not as practical as I wished it was, it boots slowly, massive software overhead, buggy and still power-hungry device, SuperCollider on Raspberry Pi Zero isn&rsquo;t a good enough for this task.</p>
 
 <h3 id="the-shape-of-things-to-come">The shape of things to come</h3>
 
-<p>I need a device with no boot time and almost real-time performance so I&rsquo;ll go with a microcontroller, the Zero board is repaced with a
-<a href="https://www.pjrc.com/store/teensy36.html" target="_blank">Teensy 3.6</a>, a small beast of an microcontroller with an aditional chip of <a href="https://www.electrodragon.com/product/2pcs-ipus-ips6404-iot-ram/" target="_blank">8MB of RAM</a>, and 32 GB of flash storage.
+<p>I need a device with no boot time and almost real-time performance so I&rsquo;ll go with a microcontroller, the Zero board is replaced with a
+<a href="https://www.pjrc.com/store/teensy36.html" target="_blank">Teensy 3.6</a>, a small beast of a microcontroller with an additional chip of <a href="https://www.electrodragon.com/product/2pcs-ipus-ips6404-iot-ram/" target="_blank">8MB of RAM</a>, and 32 GB of flash storage.
 <img src="/images/thigs_to_come.jpg" alt="plugin" /></p>
 ]]></content>
         </item>
