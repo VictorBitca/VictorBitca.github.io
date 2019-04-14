@@ -26,7 +26,7 @@ It all began almost a year ago, when I’ve been playing with my PO-20 “Arcade
     type="text/css">
 
 
-<link rel="stylesheet" href="https://VictorBitca.github.io/scss/main.min.50e6d9c8e569be23ae2247be1d285857f3e7b163cdc42a3c3b508b48999974c6.css">
+<link rel="stylesheet" href="https://VictorBitca.github.io/scss/main.min.bb99a4928071d3fbc0385a381d2834e4e9f956fc3d40654bab71e337b11fd079.css">
 
 
 
@@ -44,7 +44,7 @@ It all began almost a year ago, when I’ve been playing with my PO-20 “Arcade
 
 <meta itemprop="datePublished" content="2019-04-13T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2019-04-13T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="1061">
+<meta itemprop="wordCount" content="1066">
 
 
 
@@ -116,7 +116,7 @@ It all began almost a year ago, when I’ve been playing with my PO-20 “Arcade
     <main class="post">
 
         <div class="post-info">
-            <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>5 minutes
+            <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>6 minutes
 
             
 
@@ -139,7 +139,7 @@ It all began almost a year ago, when I’ve been playing with my PO-20 “Arcade
 maybe if it was there would also be a community around pocket operators like there is one for <a href="https://magiclantern.fm/" target="_blank">Canon “Magic Lantern”</a> firmware.
 Well, there was no such thing. But there is <a href="https://github.com/topisani/OTTO" target="_blank">OTTO</a>, an open source project initially inspired by OP-1 but clearly going in their own direction at the moment, consider contributing if you&rsquo;re interested.</p>
 
-<p>I was thinking about joining them but ultimately decided against that, my main concerns were the power-hungry hardware (raspberry pi 3+) I wanted something smaller with long battery life.
+<p>I was thinking about joining them but ultimately decided against that, my main concerns were the power-hungry hardware (Raspberry Pi 3+) I wanted something smaller with long battery life.
 The tools also raised some concern, everything was built from scratch in C++ and Faust, it would take years, and years it took to reach a V1.0 (still unreleased at the moment of editing this) but no doubt the end result could be something beautiful.</p>
 
 <p>Starting from scratch I was thinking to go the way of <a href="https://www.critterandguitari.com/organelle" target="_blank">Critter and Guitari Organelle</a> with <a href="https://puredata.info/" target="_blank">Pure Data</a>
@@ -147,15 +147,25 @@ In a few days of toying around, I realized that visual programming will not cut 
 
 <h2 id="first-prototypes">First prototypes</h2>
 
-<p>After a few days of comparing communities, language features and GitHub stars of a <a href="https://en.wikipedia.org/wiki/Comparison_of_audio_synthesis_environments" target="_blank">few</a> environments&hellip; <a href="https://supercollider.github.io/" target="_blank">SuperCollider</a> was looking like a winner.
+<p>After a few days of comparing communities, language features and GitHub stars of <a href="https://en.wikipedia.org/wiki/Comparison_of_audio_synthesis_environments" target="_blank">some environments&hellip;</a></p>
+
+<p><a href="https://supercollider.github.io/" target="_blank">SuperCollider</a> was looking like a winner.
 With an active open source community, it was like a silver bullet for all my problems,
 SuperCollider can easily be set up to run on a <a href="https://supercollider.github.io/development/building-raspberrypi" target="_blank">Raspberry Pi</a>.</p>
 
 <p>So the choice of hardware at that moment was clear, a Raspberry Pi Zero and a dedicated audio board (<a href="https://fe-pi.com/" target="_blank">Fe-Pi</a> or <a href="https://www.pjrc.com/store/teensy3_audio.html" target="_blank">Teensy audio adaptor</a> it&rsquo;s based on the same chip) would do the trick.
 Combined with a ~2000 mAh battery it should run for ~5 hours, still not as much as I would like but it will do for the moment.</p>
 
-<p><img src="https://VictorBitca.github.io/images/3d+proto.jpg" alt="proto-v1" />
-Kinda looks like an amateur pocket operator, doesn&rsquo;t it?</p>
+
+    <figure class="left" >
+        <img src="https://VictorBitca.github.io/images/3d&#43;proto.jpg"   />
+
+        
+            <figcaption class="center" >Looks like a wannabe pocket operator, doesn&#39;t it?</figcaption>
+        
+    </figure>
+
+
 
 <p>The first prototype was quickly made in Fusion and the plastic parts printed.
 It, of course, has a few drawbacks:</p>
@@ -165,19 +175,48 @@ It, of course, has a few drawbacks:</p>
 <li>Not enough buttons.</li>
 </ol>
 
-<p><img src="https://VictorBitca.github.io/images/sequencer_render.jpg" alt="proto-v2" />
-The second prototype used mechanical keyboard buttons, and it had a lot more of them.
-Initially, I cloned Volca Sample functional plus some extra stuff.
-Then I started looking into how OP-Z handles the sequencing and started to recreate it in Supercollider.
-After some time took the plunge and bought an OP-Z from I think the first or second publically available batches.</p>
+
+    <figure class="left" >
+        <img src="https://VictorBitca.github.io/images/sequencer_render.jpg"   />
+
+        
+    </figure>
+
+
+
+<p>The second prototype used mechanical keyboard buttons, and it had a lot more of them.
+Initially, I cloned Volca Sample functional plus some extra stuff.</p>
+
+
+    <figure class="left" >
+        <img src="https://VictorBitca.github.io/images/sequencer.gif"   />
+
+        
+            <figcaption class="center" >OP-1 anyone?</figcaption>
+        
+    </figure>
+
+
+
+<p>Then I started looking into how OP-Z handles the sequencing and started to recreate it in Supercollider.
+After some time took the plunge and bought an OP-Z, I think from the first or second publically available batches.</p>
 
 <h2 id="op-z-era">OP-Z era</h2>
 
-<p><img src="https://VictorBitca.github.io/images/opz_raspberry.jpg" alt="op-z" /></p>
 
-<p>After playing for a while with the OP-Z I thought there is no point to try to recreate the sequencer style, it would take too much time so I decided to reuse the Raspberry Pi and audio IO board and slapped them on the back of my OP-Z, it seemed the most reasonable way to get the most out of it in the shortest time possible, OP_Z already had the sequencer that I wanted but it didn&rsquo;t have any sampling capabilities so it should be a beautiful fusion.</p>
+    <figure class="left" >
+        <img src="https://VictorBitca.github.io/images/opz_raspberry.jpg"   />
 
-<h4 id="the-end-result-is-this">The end result is this:</h4>
+        
+            <figcaption class="center" >A tight fit</figcaption>
+        
+    </figure>
+
+
+
+<p>After playing for a while with the OP-Z I thought there is no point to try to recreate the sequencer style, it would take too much time so I decided to reuse the Raspberry Pi and audio IO board and slapped them on the back of my OP-Z, it seemed the most reasonable way to get the most out of it in the shortest time possible, OP-Z already had the sequencer that I wanted but it didn&rsquo;t have any sampling capabilities so it should be a beautiful fusion.</p>
+
+<h4 id="the-end-result">The end result</h4>
 
 
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
@@ -185,7 +224,7 @@ After some time took the plunge and bought an OP-Z from I think the first or sec
 </div>
 
 
-<h4 id="how-to-build-something-similar">How to build something similar.</h4>
+<h4 id="how-to-build-something-similar">How to build something similar</h4>
 
 <p>Part list:</p>
 
@@ -281,9 +320,9 @@ then in the <code>golang-opz</code> directory run only once:</p>
 
 <ol>
 <li>Long boot times, around 1 min caused by a massive software stack.</li>
-<li>Latency, around 10 ms with <a href="http://jackaudio.org/" target="_blank">jackd process</a> just using 20% of the CPU.</li>
+<li>Latency, around 10 ms with just <a href="http://jackaudio.org/" target="_blank">jackd process</a> using 20% of the CPU.</li>
 <li>Additional latency because of SuperCollder&rsquo;s <a href="http://doc.sccode.org/Guides/ClientVsServer.html" target="_blank">client-server architecture</a>.</li>
-<li>Unstable on raspberry pi, more software more bugs.</li>
+<li>Unstable on Raspberry Pi, more software more bugs.</li>
 <li><a href="http://jackaudio.org/" target="_blank">jackd process</a> would crash after one minute of inactivity if using a reverb effect for some reason.</li>
 </ol>
 
@@ -292,8 +331,18 @@ then in the <code>golang-opz</code> directory run only once:</p>
 <h3 id="the-shape-of-things-to-come">The shape of things to come</h3>
 
 <p>I need a device with no boot time and almost real-time performance so I&rsquo;ll go with a microcontroller, the Zero board is replaced with a
-<a href="https://www.pjrc.com/store/teensy36.html" target="_blank">Teensy 3.6</a>, a small beast of a microcontroller with an additional chip of <a href="https://www.electrodragon.com/product/2pcs-ipus-ips6404-iot-ram/" target="_blank">8MB of RAM</a>, and 32 GB of flash storage.
-<img src="https://VictorBitca.github.io/images/thigs_to_come.jpg" alt="plugin" /></p>
+<a href="https://www.pjrc.com/store/teensy36.html" target="_blank">Teensy 3.6</a>, a small beast of a microcontroller with an additional chip of <a href="https://www.electrodragon.com/product/2pcs-ipus-ips6404-iot-ram/" target="_blank">8MB of RAM</a>, and 32 GB of flash storage.</p>
+
+
+    <figure class="left" >
+        <img src="https://VictorBitca.github.io/images/thigs_to_come.jpg"   />
+
+        
+            <figcaption class="center" >A propper plugin thingy</figcaption>
+        
+    </figure>
+
+
 
             </div>
         </article>
@@ -302,7 +351,7 @@ then in the <code>golang-opz</code> directory run only once:</p>
 
         <div class="post-info">
 
-            <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>1061 Words</p>
+            <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>1066 Words</p>
 
             <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>2019-04-13 03:00 &#43;0300</p>
         </div>
