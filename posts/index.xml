@@ -6,8 +6,117 @@
         <description>Recent content in Posts on Hello there...</description>
         <generator>Hugo -- gohugo.io</generator>
         <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-        <lastBuildDate>Sat, 13 Apr 2019 00:00:00 +0000</lastBuildDate>
+        <lastBuildDate>Fri, 19 Apr 2019 00:00:00 +0000</lastBuildDate>
         <atom:link href="https://VictorBitca.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>A problem you probably don&#39;t have</title>
+            <link>https://VictorBitca.github.io/posts/2019/04/a-problem-you-probably-dont-have/</link>
+            <pubDate>Fri, 19 Apr 2019 00:00:00 +0000</pubDate>
+            
+            <guid>https://VictorBitca.github.io/posts/2019/04/a-problem-you-probably-dont-have/</guid>
+            <description>The problem Probably you&amp;rsquo;ve been binge-watching a series and those pesky intros always got in your way, the intro and outro song is already playing on repeat in your head, the visuals already burned onto your retina, you&amp;rsquo;re ready to do anything to not hear one more time that intro song.
+Some streaming services like Netflix already have a skip intro button, but how does it work? Do you really think that people at Netflix in charge of their content specify in their contracts that content providers should also provide the intro/outro time range?</description>
+            <content type="html"><![CDATA[
+
+<h2 id="the-problem">The problem</h2>
+
+<p>Probably you&rsquo;ve been binge-watching a series and those pesky intros always got in your way, the intro and outro song is already playing on repeat in your head, the visuals already burned onto your retina, you&rsquo;re ready to do anything to not hear one more time that intro song.</p>
+
+<p>Some streaming services like Netflix already have a skip intro button, but how does it work?
+Do you really think that people at Netflix in charge of their content specify in their contracts that content providers should also provide the intro/outro time range?
+Don&rsquo;t be silly, that would be too easy.</p>
+
+<p>This time we&rsquo;ll try to automate that, mostly because at first glance it seemed like a challenge when some series have intros that are prefixed by a variable length pre-intro scene, so every episode has a unique intro song time range.
+I&rsquo;ll use <code>golang</code> mostly because I&rsquo;m not very familiar with it.
+I&rsquo;ll also need to install <a href="https://ffmpeg.org/" target="_blank"><code>ffmpeg</code></a> to do some work on the video files themselves and <code>golang</code> <a href="https://github.com/go-fingerprint/" target="_blank">wrappers</a> for <a href="https://acoustid.org/chromaprint" target="_blank">chromaprint</a></p>
+
+<h2 id="before-i-can-start">Before I can start</h2>
+
+<p>Let&rsquo;s imagine I have have some episodes, yeah, I&rsquo;m totally a legit owner of all those imaginary episodes.
+First, I need to strip the audio from the video files, using <code>ffmpeg</code> is fast and in my case, it looks like this</p>
+
+<p>Strip the audio stream: <code>ffmpeg -i input.mkv -vn -c:a copy output.m4a</code></p>
+
+<p>Next, I&rsquo;ll need to uncompress it into a .wav file also drop as many bytes as possible, making it mono and trimming it to first 3 minutes where usually the intro song plays should be good enough.</p>
+
+<p>Convert to .wav: <code>ffmpeg -i output.m4a output.wav</code></p>
+
+<p>Convert stereo .wav to mono .wav: <code>ffmpeg -I output.wav -ac 1 m_output.wav</code></p>
+
+<p>Trim down to 180 seconds: <code>ffmpeg -i m_output.wav -af atrim=0:180 m_t_output.wav</code></p>
+
+<p>Yes, it can be automated with a bash script, but I needed to do for like ten files&hellip; I should&rsquo;ve written a script.</p>
+
+<h2 id="the-actual-work">The actual work</h2>
+
+<p>By running a piece of raw audio data (a .wav file with no header) through chromaprint you get the fingerprints of those files which are actually just spectrograms, <a href="https://oxygene.sk/2011/01/how-does-chromaprint-work/" target="_blank">more info on how it works</a>.</p>
+
+
+    <figure class="left" >
+        <img src="/images/ep2wav.jpg"   />
+
+        
+            <figcaption class="center" >Typical output for a 3min .wav file</figcaption>
+        
+    </figure>
+
+
+
+<p>Comparing two perfectly aligned audio files where the video editor was spot on with the intro song timing results in this image. The black area at the beginning is where the spectrograms match perfectly, thus, the common areas are highlighted clearly.</p>
+
+
+    <figure class="left" >
+        <img src="/images/2min-diff.jpg"   />
+
+        
+            <figcaption class="center" >Comparing first 2min of two episodes</figcaption>
+        
+    </figure>
+
+
+
+<p>But in some cases, most of the cases actually intros aren&rsquo;t aligned perfectly, before the song intro begins there could be scenes from previous episodes or some pre-intro scenes from the current episode, those scenes always vary in lenght and if I were to compare the spectograms it would look like a bunch of noise.</p>
+
+<p>The only way to find the common areas on two different spectrograms is to slide them past each other like a puzzle each iteration resulting in a match score.
+I start with an 50% offset between the slices (<a href="https://blog.golang.org/go-slices-usage-and-internals" target="_blank">golang view of an array</a>) and end on -50% offset, good enough for the intro I&rsquo;m searching, each time the offset decreases the slices get actually a bit bigger then again smaller (highlighted in blue), after all the slide and compare action I&rsquo;ll pick the iteration with the best score and do a comparison, usually resulting in something like the picture above.</p>
+
+<p>The initial state looks something like this.
+
+    <figure class="left" >
+        <img src="/images/match-search.jpg"   />
+
+        
+            <figcaption class="center" >Incremental sliding and comparing two fingerprints</figcaption>
+        
+    </figure>
+
+</p>
+
+<p>By the way, raw fingerprints of those two files are just <code>int32</code> slices, images above are just for visual aid and the <code>int32</code> values are one-pixel width vertical slices from each fingerprint.
+The comparison between the values is done using <a href="https://en.wikipedia.org/wiki/Hamming_distance" target="_blank">Hamming distance</a> for each pair of <code>int32</code> values.</p>
+
+<p>Once I compared the best match I get a similar result but with more numbers:</p>
+
+<p><code>[15, 20, 9, 13, 12, 10, 6, 7, 3, 2, 2, 1, 0, 3, 2, 1, 9, 13, 12, 14]</code></p>
+
+<p>Each value is the Hamming distance between two <code>int32</code> pairs and its easy to spot somewhere in the middle there is a subsequence that gets below 10 and sits there for quite a while.
+That is the matching area I was looking for, If I were to compare those fingerprints and output an image it would have a blacker area somewhere in the middle, next step is to calculate how long it is, then taking into account the offset it is trivial to calculate where the intro song started and ended for both files.</p>
+
+
+    <figure class="left" >
+        <img src="/images/matcher_demo.gif"   />
+
+        
+            <figcaption class="center" >Searching for intro in 10 files (single threaded)</figcaption>
+        
+    </figure>
+
+
+
+<p>The implementation can be seen <a href="https://github.com/VictorBitca/matcher" target="_blank"><code>here</code></a>.</p>
+]]></content>
+        </item>
         
         <item>
             <title>Creating an OP-Z Plugin</title>
@@ -77,7 +186,7 @@ Initially, I cloned Volca Sample functional plus some extra stuff.</p>
 
 
     <figure class="left" >
-        <img src="/images/sequencer.gif"   />
+        <img src="/images/sequencer_demo.gif"   />
 
         
             <figcaption class="center" >OP-1 anyone?</figcaption>
