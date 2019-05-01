@@ -7,7 +7,7 @@
 <meta name="author"
     content="map[name:Victor Bitca]">
 <meta name="description"
-    content="The problem Probably you&amp;rsquo;ve been binge-watching a series and those pesky intros always got in your way, the intro and outro song is already playing on repeat in your head, the visuals already burned onto your retina, you&amp;rsquo;re ready to do anything to not hear one more time that intro song.
+    content="Probably you&amp;rsquo;ve been binge-watching a series and those pesky intros always got in your way. The intro and outro song is already playing on repeat in your head, the visuals already burned onto your retina, you&amp;rsquo;re ready to do anything to not hear one more time that intro song.
 Some streaming services like Netflix already have a skip intro button, but how does it work? Do you really think that people at Netflix in charge of their content specify in their contracts that content providers should also provide the intro/outro time range?" />
 <meta name="keywords" content="" />
 <meta name="robots" content="noodp" />
@@ -38,22 +38,22 @@ Some streaming services like Netflix already have a skip intro button, but how d
 <link rel="shortcut icon" href="https://VictorBitca.github.io/favicon.ico">
 <meta name="theme-color" content="#252627">
 <meta itemprop="name" content="A problem you probably don&#39;t have">
-<meta itemprop="description" content="The problem Probably you&rsquo;ve been binge-watching a series and those pesky intros always got in your way, the intro and outro song is already playing on repeat in your head, the visuals already burned onto your retina, you&rsquo;re ready to do anything to not hear one more time that intro song.
+<meta itemprop="description" content="Probably you&rsquo;ve been binge-watching a series and those pesky intros always got in your way. The intro and outro song is already playing on repeat in your head, the visuals already burned onto your retina, you&rsquo;re ready to do anything to not hear one more time that intro song.
 Some streaming services like Netflix already have a skip intro button, but how does it work? Do you really think that people at Netflix in charge of their content specify in their contracts that content providers should also provide the intro/outro time range?">
 
 
 <meta itemprop="datePublished" content="2019-04-19T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2019-04-19T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="770">
+<meta itemprop="wordCount" content="784">
 
 
 
-<meta itemprop="keywords" content="" />
+<meta itemprop="keywords" content="golang,chromaprint,audio matching," />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://VictorBitca.github.io"/>
 
 <meta name="twitter:title" content="A problem you probably don&#39;t have"/>
-<meta name="twitter:description" content="The problem Probably you&rsquo;ve been binge-watching a series and those pesky intros always got in your way, the intro and outro song is already playing on repeat in your head, the visuals already burned onto your retina, you&rsquo;re ready to do anything to not hear one more time that intro song.
+<meta name="twitter:description" content="Probably you&rsquo;ve been binge-watching a series and those pesky intros always got in your way. The intro and outro song is already playing on repeat in your head, the visuals already burned onto your retina, you&rsquo;re ready to do anything to not hear one more time that intro song.
 Some streaming services like Netflix already have a skip intro button, but how does it work? Do you really think that people at Netflix in charge of their content specify in their contracts that content providers should also provide the intro/outro time range?"/>
 
 
@@ -131,9 +131,8 @@ Some streaming services like Netflix already have a skip intro button, but how d
             <div class="post-content">
                 
 
-<h2 id="the-problem">The problem</h2>
-
-<p>Probably you&rsquo;ve been binge-watching a series and those pesky intros always got in your way, the intro and outro song is already playing on repeat in your head, the visuals already burned onto your retina, you&rsquo;re ready to do anything to not hear one more time that intro song.</p>
+<p>Probably you&rsquo;ve been binge-watching a series and those pesky intros always got in your way.
+The intro and outro song is already playing on repeat in your head, the visuals already burned onto your retina, you&rsquo;re ready to do anything to not hear one more time that intro song.</p>
 
 <p>Some streaming services like Netflix already have a skip intro button, but how does it work?
 Do you really think that people at Netflix in charge of their content specify in their contracts that content providers should also provide the intro/outro time range?
@@ -143,10 +142,10 @@ Don&rsquo;t be silly, that would be too easy.</p>
 I&rsquo;ll use <code>golang</code> mostly because I&rsquo;m not very familiar with it.
 I&rsquo;ll also need to install <a href="https://ffmpeg.org/" target="_blank"><code>ffmpeg</code></a> to do some work on the video files themselves and <code>golang</code> <a href="https://github.com/go-fingerprint/" target="_blank">wrappers</a> for <a href="https://acoustid.org/chromaprint" target="_blank">chromaprint</a></p>
 
-<h2 id="before-i-can-start">Before I can start</h2>
+<h2 id="preparation-phase">Preparation phase</h2>
 
-<p>Let&rsquo;s imagine I have have some episodes, yeah, I&rsquo;m totally a legit owner of all those imaginary episodes.
-First, I need to strip the audio from the video files, using <code>ffmpeg</code> is fast and in my case, it looks like this</p>
+<p>Let&rsquo;s imagine I own some JoJo&rsquo;s Bizarre Adventure episodes.
+First, I need to strip the audio from the video files, using <code>ffmpeg</code> is fast and it looks like this in my case.</p>
 
 <p>Strip the audio stream: <code>ffmpeg -i input.mkv -vn -c:a copy output.m4a</code></p>
 
@@ -160,7 +159,7 @@ First, I need to strip the audio from the video files, using <code>ffmpeg</code>
 
 <p>Yes, it can be automated with a bash script, but I needed to do for like ten files&hellip; I should&rsquo;ve written a script.</p>
 
-<h2 id="the-actual-work">The actual work</h2>
+<h2 id="finding-the-common-region">Finding the common region</h2>
 
 <p>By running a piece of raw audio data (a .wav file with no header) through chromaprint you get the fingerprints of those files which are actually just spectrograms, <a href="https://oxygene.sk/2011/01/how-does-chromaprint-work/" target="_blank">more info on how it works</a>.</p>
 
@@ -175,7 +174,8 @@ First, I need to strip the audio from the video files, using <code>ffmpeg</code>
 
 
 
-<p>Comparing two perfectly aligned audio files where the video editor was spot on with the intro song timing results in this image. The black area at the beginning is where the spectrograms match perfectly, thus, the common areas are highlighted clearly.</p>
+<p>Comparing two perfectly aligned audio files results in this image.
+The black area at the beginning is where the spectrograms <code>XOR</code>-ed perfectly resulting mostly in a black area.</p>
 
 
     <figure class="left" >
@@ -188,22 +188,24 @@ First, I need to strip the audio from the video files, using <code>ffmpeg</code>
 
 
 
-<p>But in some cases, most of the cases actually intros aren&rsquo;t aligned perfectly, before the song intro begins there could be scenes from previous episodes or some pre-intro scenes from the current episode, those scenes always vary in lenght and if I were to compare the spectograms it would look like a bunch of noise.</p>
+<p>But in some cases, most of the cases actually intros aren&rsquo;t aligned perfectly, before the intro song begins there could be some scenes from previous episodes or some pre-intro scenes from the current episode.
+Those scenes always vary in length and if I were to compare the spectrograms it would look like a bunch of noise.</p>
 
 <p>The only way to find the common areas on two different spectrograms is to slide them past each other like a puzzle each iteration resulting in a match score.
-I start with an 50% offset between the slices (<a href="https://blog.golang.org/go-slices-usage-and-internals" target="_blank">golang view of an array</a>) and end on -50% offset, good enough for the intro I&rsquo;m searching, each time the offset decreases the slices get actually a bit bigger then again smaller (highlighted in blue), after all the slide and compare action I&rsquo;ll pick the iteration with the best score and do a comparison, usually resulting in something like the picture above.</p>
+I start with an 50% offset between the slices (<a href="https://blog.golang.org/go-slices-usage-and-internals" target="_blank">golang view of an array</a>) and end on -50% offset, good enough for the intro I&rsquo;m searching, each time the offset decreases the slices get actually a bit bigger then again smaller (highlighted in blue).</p>
 
-<p>The initial state looks something like this.
+<p>After all the slide and compare action, I&rsquo;ll pick the iteration with the best score and do a comparison, usually resulting in something like the picture above.</p>
+
 
     <figure class="left" >
         <img src="https://VictorBitca.github.io/images/match-search.jpg"   />
 
         
-            <figcaption class="center" >Incremental sliding and comparing two fingerprints</figcaption>
+            <figcaption class="center" >Initial state - incremental sliding and comparing two fingerprints</figcaption>
         
     </figure>
 
-</p>
+
 
 <p>By the way, raw fingerprints of those two files are just <code>int32</code> slices, images above are just for visual aid and the <code>int32</code> values are one-pixel width vertical slices from each fingerprint.
 The comparison between the values is done using <a href="https://en.wikipedia.org/wiki/Hamming_distance" target="_blank">Hamming distance</a> for each pair of <code>int32</code> values.</p>
@@ -226,6 +228,11 @@ That is the matching area I was looking for, If I were to compare those fingerpr
 
 
 
+<h2 id="conclusion">Conclusion</h2>
+
+<p>The end result is a pretty reliable way of finding common regions between two or more audio files, at the moment of writing one major drawback is that the starting point
+is only an offset of 50% between the audio files.</p>
+
 <p>The implementation can be seen <a href="https://github.com/VictorBitca/matcher" target="_blank"><code>here</code></a>.</p>
 
             </div>
@@ -234,8 +241,11 @@ That is the matching area I was looking for, If I were to compare those fingerpr
         <hr />
 
         <div class="post-info">
+                <p>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg><span class="tag"><a href="https://VictorBitca.github.io/tags/golang">golang</a></span><span class="tag"><a href="https://VictorBitca.github.io/tags/chromaprint">chromaprint</a></span><span class="tag"><a href="https://VictorBitca.github.io/tags/audio-matching">audio matching</a></span>
+                </p>
 
-            <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>770 Words</p>
+            <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>784 Words</p>
 
             <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>2019-04-19 03:00 &#43;0300</p>
         </div>

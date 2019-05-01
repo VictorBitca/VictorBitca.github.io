@@ -6,9 +6,73 @@
     <description>Recent content in Tags on Hello there...</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
+    <lastBuildDate>Fri, 19 Apr 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://VictorBitca.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Audio Matching</title>
+      <link>https://VictorBitca.github.io/tags/audio-matching/</link>
+      <pubDate>Fri, 19 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://VictorBitca.github.io/tags/audio-matching/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Chromaprint</title>
+      <link>https://VictorBitca.github.io/tags/chromaprint/</link>
+      <pubDate>Fri, 19 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://VictorBitca.github.io/tags/chromaprint/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Golang</title>
+      <link>https://VictorBitca.github.io/tags/golang/</link>
+      <pubDate>Fri, 19 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://VictorBitca.github.io/tags/golang/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Op Z</title>
+      <link>https://VictorBitca.github.io/tags/op-z/</link>
+      <pubDate>Sat, 13 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://VictorBitca.github.io/tags/op-z/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Sampler</title>
+      <link>https://VictorBitca.github.io/tags/sampler/</link>
+      <pubDate>Sat, 13 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://VictorBitca.github.io/tags/sampler/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Sclang</title>
+      <link>https://VictorBitca.github.io/tags/sclang/</link>
+      <pubDate>Sat, 13 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://VictorBitca.github.io/tags/sclang/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Synth</title>
+      <link>https://VictorBitca.github.io/tags/synth/</link>
+      <pubDate>Sat, 13 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://VictorBitca.github.io/tags/synth/</guid>
+      <description></description>
+    </item>
     
   </channel>
 </rss>

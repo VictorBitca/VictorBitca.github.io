@@ -7,8 +7,7 @@
 <meta name="author"
     content="map[name:Victor Bitca]">
 <meta name="description"
-    content="Intro So let this be a cautionary tale why it is a good/bad idea to build a synth/sampler/whatever musical machine on a Raspberry Pi.
-It all began almost a year ago, when I’ve been playing with my PO-20 “Arcade” and wondered what if it was hackable, maybe if it was there would also be a community around pocket operators like there is one for Canon “Magic Lantern” firmware. Well, there was no such thing." />
+    content="Where it actually started It all began almost a year ago, when I’ve been playing with my PO-20 “Arcade” and wondered what if it was hackable, maybe if it was there would also be a community around pocket operators like there is one for Canon “Magic Lantern” firmware. Well, there was no such thing. But there is OTTO, an open source project initially inspired by OP-1 but clearly going in their own direction at the moment, consider contributing if you&amp;rsquo;re interested." />
 <meta name="keywords" content="" />
 <meta name="robots" content="noodp" />
 <link rel="canonical" href="https://VictorBitca.github.io/posts/2019/04/creating-an-op-z-plugin/" />
@@ -38,23 +37,21 @@ It all began almost a year ago, when I’ve been playing with my PO-20 “Arcade
 <link rel="shortcut icon" href="https://VictorBitca.github.io/favicon.ico">
 <meta name="theme-color" content="#252627">
 <meta itemprop="name" content="Creating an OP-Z Plugin">
-<meta itemprop="description" content="Intro So let this be a cautionary tale why it is a good/bad idea to build a synth/sampler/whatever musical machine on a Raspberry Pi.
-It all began almost a year ago, when I’ve been playing with my PO-20 “Arcade” and wondered what if it was hackable, maybe if it was there would also be a community around pocket operators like there is one for Canon “Magic Lantern” firmware. Well, there was no such thing.">
+<meta itemprop="description" content="Where it actually started It all began almost a year ago, when I’ve been playing with my PO-20 “Arcade” and wondered what if it was hackable, maybe if it was there would also be a community around pocket operators like there is one for Canon “Magic Lantern” firmware. Well, there was no such thing. But there is OTTO, an open source project initially inspired by OP-1 but clearly going in their own direction at the moment, consider contributing if you&rsquo;re interested.">
 
 
 <meta itemprop="datePublished" content="2019-04-13T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2019-04-13T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="1066">
+<meta itemprop="wordCount" content="1068">
 
 
 
-<meta itemprop="keywords" content="" />
+<meta itemprop="keywords" content="op-z,synth,sampler,sclang,golang," />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://VictorBitca.github.io"/>
 
 <meta name="twitter:title" content="Creating an OP-Z Plugin"/>
-<meta name="twitter:description" content="Intro So let this be a cautionary tale why it is a good/bad idea to build a synth/sampler/whatever musical machine on a Raspberry Pi.
-It all began almost a year ago, when I’ve been playing with my PO-20 “Arcade” and wondered what if it was hackable, maybe if it was there would also be a community around pocket operators like there is one for Canon “Magic Lantern” firmware. Well, there was no such thing."/>
+<meta name="twitter:description" content="Where it actually started It all began almost a year ago, when I’ve been playing with my PO-20 “Arcade” and wondered what if it was hackable, maybe if it was there would also be a community around pocket operators like there is one for Canon “Magic Lantern” firmware. Well, there was no such thing. But there is OTTO, an open source project initially inspired by OP-1 but clearly going in their own direction at the moment, consider contributing if you&rsquo;re interested."/>
 
 
 
@@ -131,9 +128,7 @@ It all began almost a year ago, when I’ve been playing with my PO-20 “Arcade
             <div class="post-content">
                 
 
-<h2 id="intro">Intro</h2>
-
-<p>So let this be a cautionary tale why it is a good/bad idea to build a synth/sampler/whatever musical machine on a Raspberry Pi.</p>
+<h2 id="where-it-actually-started">Where it actually started</h2>
 
 <p>It all began almost a year ago, when I’ve been playing with my <a href="https://www.teenageengineering.com/store#po-20" target="_blank">PO-20 “Arcade”</a> and wondered what if it was hackable,
 maybe if it was there would also be a community around pocket operators like there is one for <a href="https://magiclantern.fm/" target="_blank">Canon “Magic Lantern”</a> firmware.
@@ -244,6 +239,10 @@ After some time took the plunge and bought an OP-Z, I think from the first or se
 
 <p>It has two folders, <code>opz-sc-extensions</code> contains SuperCollider extension, for more details on how to use <a href="http://doc.sccode.org/Guides/UsingExtensions.html" target="_blank">extensions</a> with SuperCollider, the <code>opz-plugin</code> folder contains some files that launches the extensions and a <code>golang-opz</code> folder with some code needed to further process the SuperCollider sample output because the OP-Z won&rsquo;t accept a simple <code>.aif</code> file.</p>
 
+<h3 id="update">Update</h3>
+
+<p>OP-Z recieved an <a href="https://www.teenageengineering.com/downloads/op-z" target="_blank">update</a> (1.1.27) and now you should be able to import WAV or AIFF files without a header (metadata).</p>
+
 <p>It needs a custom &ldquo;header&rdquo;, this is needed only for the sampler.
 There was no particular reason for <code>go</code>, I just needed a tool that I could use to search and modify some bytes in the output file, there&rsquo;s no such low-level API in <code>sclang</code>.</p>
 
@@ -350,8 +349,11 @@ then in the <code>golang-opz</code> directory run only once:</p>
         <hr />
 
         <div class="post-info">
+                <p>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg><span class="tag"><a href="https://VictorBitca.github.io/tags/op-z">op-z</a></span><span class="tag"><a href="https://VictorBitca.github.io/tags/synth">synth</a></span><span class="tag"><a href="https://VictorBitca.github.io/tags/sampler">sampler</a></span><span class="tag"><a href="https://VictorBitca.github.io/tags/sclang">sclang</a></span><span class="tag"><a href="https://VictorBitca.github.io/tags/golang">golang</a></span>
+                </p>
 
-            <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>1066 Words</p>
+            <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>1068 Words</p>
 
             <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>2019-04-13 03:00 &#43;0300</p>
         </div>

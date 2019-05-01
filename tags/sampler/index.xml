@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Sampler on Hello there...</title>
+    <link>https://VictorBitca.github.io/tags/sampler/</link>
+    <description>Recent content in Sampler on Hello there...</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
+    <lastBuildDate>Sat, 13 Apr 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://VictorBitca.github.io/tags/sampler/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Creating an OP-Z Plugin</title>
+      <link>https://VictorBitca.github.io/posts/2019/04/creating-an-op-z-plugin/</link>
+      <pubDate>Sat, 13 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://VictorBitca.github.io/posts/2019/04/creating-an-op-z-plugin/</guid>
+      <description>Where it actually started It all began almost a year ago, when I’ve been playing with my PO-20 “Arcade” and wondered what if it was hackable, maybe if it was there would also be a community around pocket operators like there is one for Canon “Magic Lantern” firmware. Well, there was no such thing. But there is OTTO, an open source project initially inspired by OP-1 but clearly going in their own direction at the moment, consider contributing if you&amp;rsquo;re interested.</description>
+    </item>
+    
+  </channel>
+</rss>

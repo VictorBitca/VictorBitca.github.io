@@ -15,13 +15,12 @@
             <pubDate>Fri, 19 Apr 2019 00:00:00 +0000</pubDate>
             
             <guid>https://VictorBitca.github.io/posts/2019/04/a-problem-you-probably-dont-have/</guid>
-            <description>The problem Probably you&amp;rsquo;ve been binge-watching a series and those pesky intros always got in your way, the intro and outro song is already playing on repeat in your head, the visuals already burned onto your retina, you&amp;rsquo;re ready to do anything to not hear one more time that intro song.
+            <description>Probably you&amp;rsquo;ve been binge-watching a series and those pesky intros always got in your way. The intro and outro song is already playing on repeat in your head, the visuals already burned onto your retina, you&amp;rsquo;re ready to do anything to not hear one more time that intro song.
 Some streaming services like Netflix already have a skip intro button, but how does it work? Do you really think that people at Netflix in charge of their content specify in their contracts that content providers should also provide the intro/outro time range?</description>
             <content type="html"><![CDATA[
 
-<h2 id="the-problem">The problem</h2>
-
-<p>Probably you&rsquo;ve been binge-watching a series and those pesky intros always got in your way, the intro and outro song is already playing on repeat in your head, the visuals already burned onto your retina, you&rsquo;re ready to do anything to not hear one more time that intro song.</p>
+<p>Probably you&rsquo;ve been binge-watching a series and those pesky intros always got in your way.
+The intro and outro song is already playing on repeat in your head, the visuals already burned onto your retina, you&rsquo;re ready to do anything to not hear one more time that intro song.</p>
 
 <p>Some streaming services like Netflix already have a skip intro button, but how does it work?
 Do you really think that people at Netflix in charge of their content specify in their contracts that content providers should also provide the intro/outro time range?
@@ -31,10 +30,10 @@ Don&rsquo;t be silly, that would be too easy.</p>
 I&rsquo;ll use <code>golang</code> mostly because I&rsquo;m not very familiar with it.
 I&rsquo;ll also need to install <a href="https://ffmpeg.org/" target="_blank"><code>ffmpeg</code></a> to do some work on the video files themselves and <code>golang</code> <a href="https://github.com/go-fingerprint/" target="_blank">wrappers</a> for <a href="https://acoustid.org/chromaprint" target="_blank">chromaprint</a></p>
 
-<h2 id="before-i-can-start">Before I can start</h2>
+<h2 id="preparation-phase">Preparation phase</h2>
 
-<p>Let&rsquo;s imagine I have have some episodes, yeah, I&rsquo;m totally a legit owner of all those imaginary episodes.
-First, I need to strip the audio from the video files, using <code>ffmpeg</code> is fast and in my case, it looks like this</p>
+<p>Let&rsquo;s imagine I own some JoJo&rsquo;s Bizarre Adventure episodes.
+First, I need to strip the audio from the video files, using <code>ffmpeg</code> is fast and it looks like this in my case.</p>
 
 <p>Strip the audio stream: <code>ffmpeg -i input.mkv -vn -c:a copy output.m4a</code></p>
 
@@ -48,7 +47,7 @@ First, I need to strip the audio from the video files, using <code>ffmpeg</code>
 
 <p>Yes, it can be automated with a bash script, but I needed to do for like ten files&hellip; I should&rsquo;ve written a script.</p>
 
-<h2 id="the-actual-work">The actual work</h2>
+<h2 id="finding-the-common-region">Finding the common region</h2>
 
 <p>By running a piece of raw audio data (a .wav file with no header) through chromaprint you get the fingerprints of those files which are actually just spectrograms, <a href="https://oxygene.sk/2011/01/how-does-chromaprint-work/" target="_blank">more info on how it works</a>.</p>
 
@@ -63,7 +62,8 @@ First, I need to strip the audio from the video files, using <code>ffmpeg</code>
 
 
 
-<p>Comparing two perfectly aligned audio files where the video editor was spot on with the intro song timing results in this image. The black area at the beginning is where the spectrograms match perfectly, thus, the common areas are highlighted clearly.</p>
+<p>Comparing two perfectly aligned audio files results in this image.
+The black area at the beginning is where the spectrograms <code>XOR</code>-ed perfectly resulting mostly in a black area.</p>
 
 
     <figure class="left" >
@@ -76,22 +76,24 @@ First, I need to strip the audio from the video files, using <code>ffmpeg</code>
 
 
 
-<p>But in some cases, most of the cases actually intros aren&rsquo;t aligned perfectly, before the song intro begins there could be scenes from previous episodes or some pre-intro scenes from the current episode, those scenes always vary in lenght and if I were to compare the spectograms it would look like a bunch of noise.</p>
+<p>But in some cases, most of the cases actually intros aren&rsquo;t aligned perfectly, before the intro song begins there could be some scenes from previous episodes or some pre-intro scenes from the current episode.
+Those scenes always vary in length and if I were to compare the spectrograms it would look like a bunch of noise.</p>
 
 <p>The only way to find the common areas on two different spectrograms is to slide them past each other like a puzzle each iteration resulting in a match score.
-I start with an 50% offset between the slices (<a href="https://blog.golang.org/go-slices-usage-and-internals" target="_blank">golang view of an array</a>) and end on -50% offset, good enough for the intro I&rsquo;m searching, each time the offset decreases the slices get actually a bit bigger then again smaller (highlighted in blue), after all the slide and compare action I&rsquo;ll pick the iteration with the best score and do a comparison, usually resulting in something like the picture above.</p>
+I start with an 50% offset between the slices (<a href="https://blog.golang.org/go-slices-usage-and-internals" target="_blank">golang view of an array</a>) and end on -50% offset, good enough for the intro I&rsquo;m searching, each time the offset decreases the slices get actually a bit bigger then again smaller (highlighted in blue).</p>
 
-<p>The initial state looks something like this.
+<p>After all the slide and compare action, I&rsquo;ll pick the iteration with the best score and do a comparison, usually resulting in something like the picture above.</p>
+
 
     <figure class="left" >
         <img src="/images/match-search.jpg"   />
 
         
-            <figcaption class="center" >Incremental sliding and comparing two fingerprints</figcaption>
+            <figcaption class="center" >Initial state - incremental sliding and comparing two fingerprints</figcaption>
         
     </figure>
 
-</p>
+
 
 <p>By the way, raw fingerprints of those two files are just <code>int32</code> slices, images above are just for visual aid and the <code>int32</code> values are one-pixel width vertical slices from each fingerprint.
 The comparison between the values is done using <a href="https://en.wikipedia.org/wiki/Hamming_distance" target="_blank">Hamming distance</a> for each pair of <code>int32</code> values.</p>
@@ -114,6 +116,11 @@ That is the matching area I was looking for, If I were to compare those fingerpr
 
 
 
+<h2 id="conclusion">Conclusion</h2>
+
+<p>The end result is a pretty reliable way of finding common regions between two or more audio files, at the moment of writing one major drawback is that the starting point
+is only an offset of 50% between the audio files.</p>
+
 <p>The implementation can be seen <a href="https://github.com/VictorBitca/matcher" target="_blank"><code>here</code></a>.</p>
 ]]></content>
         </item>
@@ -124,13 +131,10 @@ That is the matching area I was looking for, If I were to compare those fingerpr
             <pubDate>Sat, 13 Apr 2019 00:00:00 +0000</pubDate>
             
             <guid>https://VictorBitca.github.io/posts/2019/04/creating-an-op-z-plugin/</guid>
-            <description>Intro So let this be a cautionary tale why it is a good/bad idea to build a synth/sampler/whatever musical machine on a Raspberry Pi.
-It all began almost a year ago, when I’ve been playing with my PO-20 “Arcade” and wondered what if it was hackable, maybe if it was there would also be a community around pocket operators like there is one for Canon “Magic Lantern” firmware. Well, there was no such thing.</description>
+            <description>Where it actually started It all began almost a year ago, when I’ve been playing with my PO-20 “Arcade” and wondered what if it was hackable, maybe if it was there would also be a community around pocket operators like there is one for Canon “Magic Lantern” firmware. Well, there was no such thing. But there is OTTO, an open source project initially inspired by OP-1 but clearly going in their own direction at the moment, consider contributing if you&amp;rsquo;re interested.</description>
             <content type="html"><![CDATA[
 
-<h2 id="intro">Intro</h2>
-
-<p>So let this be a cautionary tale why it is a good/bad idea to build a synth/sampler/whatever musical machine on a Raspberry Pi.</p>
+<h2 id="where-it-actually-started">Where it actually started</h2>
 
 <p>It all began almost a year ago, when I’ve been playing with my <a href="https://www.teenageengineering.com/store#po-20" target="_blank">PO-20 “Arcade”</a> and wondered what if it was hackable,
 maybe if it was there would also be a community around pocket operators like there is one for <a href="https://magiclantern.fm/" target="_blank">Canon “Magic Lantern”</a> firmware.
@@ -240,6 +244,10 @@ After some time took the plunge and bought an OP-Z, I think from the first or se
 </ol>
 
 <p>It has two folders, <code>opz-sc-extensions</code> contains SuperCollider extension, for more details on how to use <a href="http://doc.sccode.org/Guides/UsingExtensions.html" target="_blank">extensions</a> with SuperCollider, the <code>opz-plugin</code> folder contains some files that launches the extensions and a <code>golang-opz</code> folder with some code needed to further process the SuperCollider sample output because the OP-Z won&rsquo;t accept a simple <code>.aif</code> file.</p>
+
+<h3 id="update">Update</h3>
+
+<p>OP-Z recieved an <a href="https://www.teenageengineering.com/downloads/op-z" target="_blank">update</a> (1.1.27) and now you should be able to import WAV or AIFF files without a header (metadata).</p>
 
 <p>It needs a custom &ldquo;header&rdquo;, this is needed only for the sampler.
 There was no particular reason for <code>go</code>, I just needed a tool that I could use to search and modify some bytes in the output file, there&rsquo;s no such low-level API in <code>sclang</code>.</p>
