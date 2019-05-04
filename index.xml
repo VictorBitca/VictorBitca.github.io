@@ -6,10 +6,20 @@
     <description>Recent content on Hello there...</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Fri, 19 Apr 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 04 May 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://VictorBitca.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>A proper OP-Z plugin prototype</title>
+      <link>https://VictorBitca.github.io/posts/2019/05/a-proper-op-z-plugin-prototype/</link>
+      <pubDate>Sat, 04 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://VictorBitca.github.io/posts/2019/05/a-proper-op-z-plugin-prototype/</guid>
+      <description>Let&amp;rsquo;s be honest, previous attempt at an OP-Z plugin thingy was a failure, Main drawbacks being the boot times, all the bugs and overhead that come with running Linux &amp;amp; jack &amp;amp; supercollider on such a small machine. You just don&amp;rsquo;t need Linux if you want to run a medium complexity synth. But most importantly it kinda failed at being fun.
+With a microcontroller, the boot times are around a second or less, it&amp;rsquo;s faster than the OP-Z!</description>
+    </item>
     
     <item>
       <title>A problem you probably don&#39;t have</title>

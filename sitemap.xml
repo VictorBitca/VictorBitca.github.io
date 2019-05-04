@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://VictorBitca.github.io/posts/2019/05/a-proper-op-z-plugin-prototype/</loc>
+    <lastmod>2019-05-04T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://VictorBitca.github.io/posts/2019/04/a-problem-you-probably-dont-have/</loc>
     <lastmod>2019-04-19T00:00:00+00:00</lastmod>
   </url>
@@ -42,19 +47,25 @@
   
   <url>
     <loc>https://VictorBitca.github.io/</loc>
-    <lastmod>2019-04-19T00:00:00+00:00</lastmod>
+    <lastmod>2019-05-04T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://VictorBitca.github.io/tags/microcontroller/</loc>
+    <lastmod>2019-05-04T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://VictorBitca.github.io/tags/op-z/</loc>
-    <lastmod>2019-04-13T00:00:00+00:00</lastmod>
+    <lastmod>2019-05-04T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://VictorBitca.github.io/posts/</loc>
-    <lastmod>2019-04-19T00:00:00+00:00</lastmod>
+    <lastmod>2019-05-04T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -72,13 +83,19 @@
   
   <url>
     <loc>https://VictorBitca.github.io/tags/synth/</loc>
-    <lastmod>2019-04-13T00:00:00+00:00</lastmod>
+    <lastmod>2019-05-04T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://VictorBitca.github.io/tags/</loc>
     <lastmod>2019-04-19T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://VictorBitca.github.io/tags/teensy/</loc>
+    <lastmod>2019-05-04T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
