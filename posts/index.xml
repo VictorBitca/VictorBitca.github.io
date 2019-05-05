@@ -16,14 +16,14 @@
             
             <guid>https://VictorBitca.github.io/posts/2019/05/a-proper-op-z-plugin-prototype/</guid>
             <description>Let&amp;rsquo;s be honest, previous attempt at an OP-Z plugin thingy was a failure, Main drawbacks being the boot times, all the bugs and overhead that come with running Linux &amp;amp; jack &amp;amp; supercollider on such a small machine. You just don&amp;rsquo;t need Linux if you want to run a medium complexity synth. But most importantly it kinda failed at being fun.
-With a microcontroller, the boot times are around a second or less, it&amp;rsquo;s faster than the OP-Z!</description>
+With teensy 3.6, the boot times are around a second or less, it&amp;rsquo;s faster than the OP-Z!</description>
             <content type="html"><![CDATA[<p>Let&rsquo;s be honest, <a href="https://victorbitca.github.io/posts/2019/04/creating-an-op-z-plugin/" target="_blank">previous attempt</a> at an OP-Z plugin thingy was a failure,
 Main drawbacks being the boot times, all the bugs and overhead that come with running <code>Linux</code> &amp; <code>jack</code> &amp; <code>supercollider</code> on such a small machine.
 You just don&rsquo;t need Linux if you want to run a medium complexity synth.
 But most importantly it kinda failed at being fun.</p>
 
-<p>With a microcontroller, the boot times are around a second or less, it&rsquo;s faster than the OP-Z!
-The CPU usage is less on a microcontroller than on Raspberry Pi Zero for the same building blocks.
+<p>With teensy 3.6, the boot times are around a second or less, it&rsquo;s faster than the OP-Z!
+The CPU usage is less on teensy than on Raspberry Pi Zero for the same building blocks (oscilators and other effects).
 Teensy audio library is a really great tool, synths that can rival the OP-Z&rsquo;s built-in ones can be easily built using the basic building blocks.</p>
 
 

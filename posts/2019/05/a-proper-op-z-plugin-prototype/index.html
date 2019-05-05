@@ -8,7 +8,7 @@
     content="map[name:Victor Bitca]">
 <meta name="description"
     content="Let&amp;rsquo;s be honest, previous attempt at an OP-Z plugin thingy was a failure, Main drawbacks being the boot times, all the bugs and overhead that come with running Linux &amp;amp; jack &amp;amp; supercollider on such a small machine. You just don&amp;rsquo;t need Linux if you want to run a medium complexity synth. But most importantly it kinda failed at being fun.
-With a microcontroller, the boot times are around a second or less, it&amp;rsquo;s faster than the OP-Z!" />
+With teensy 3.6, the boot times are around a second or less, it&amp;rsquo;s faster than the OP-Z!" />
 <meta name="keywords" content="" />
 <meta name="robots" content="noodp" />
 <link rel="canonical" href="https://VictorBitca.github.io/posts/2019/05/a-proper-op-z-plugin-prototype/" />
@@ -39,12 +39,12 @@ With a microcontroller, the boot times are around a second or less, it&amp;rsquo
 <meta name="theme-color" content="#252627">
 <meta itemprop="name" content="A proper OP-Z plugin prototype">
 <meta itemprop="description" content="Let&rsquo;s be honest, previous attempt at an OP-Z plugin thingy was a failure, Main drawbacks being the boot times, all the bugs and overhead that come with running Linux &amp; jack &amp; supercollider on such a small machine. You just don&rsquo;t need Linux if you want to run a medium complexity synth. But most importantly it kinda failed at being fun.
-With a microcontroller, the boot times are around a second or less, it&rsquo;s faster than the OP-Z!">
+With teensy 3.6, the boot times are around a second or less, it&rsquo;s faster than the OP-Z!">
 
 
 <meta itemprop="datePublished" content="2019-05-04T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2019-05-04T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="168">
+<meta itemprop="wordCount" content="171">
 
 
 
@@ -54,7 +54,7 @@ With a microcontroller, the boot times are around a second or less, it&rsquo;s f
 
 <meta name="twitter:title" content="A proper OP-Z plugin prototype"/>
 <meta name="twitter:description" content="Let&rsquo;s be honest, previous attempt at an OP-Z plugin thingy was a failure, Main drawbacks being the boot times, all the bugs and overhead that come with running Linux &amp; jack &amp; supercollider on such a small machine. You just don&rsquo;t need Linux if you want to run a medium complexity synth. But most importantly it kinda failed at being fun.
-With a microcontroller, the boot times are around a second or less, it&rsquo;s faster than the OP-Z!"/>
+With teensy 3.6, the boot times are around a second or less, it&rsquo;s faster than the OP-Z!"/>
 
 
 
@@ -134,8 +134,8 @@ Main drawbacks being the boot times, all the bugs and overhead that come with ru
 You just don&rsquo;t need Linux if you want to run a medium complexity synth.
 But most importantly it kinda failed at being fun.</p>
 
-<p>With a microcontroller, the boot times are around a second or less, it&rsquo;s faster than the OP-Z!
-The CPU usage is less on a microcontroller than on Raspberry Pi Zero for the same building blocks.
+<p>With teensy 3.6, the boot times are around a second or less, it&rsquo;s faster than the OP-Z!
+The CPU usage is less on teensy than on Raspberry Pi Zero for the same building blocks (oscilators and other effects).
 Teensy audio library is a really great tool, synths that can rival the OP-Z&rsquo;s built-in ones can be easily built using the basic building blocks.</p>
 
 
@@ -159,7 +159,7 @@ A small semi-modular portable plugin <a href="http://www.makenoisemusic.com/synt
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg><span class="tag"><a href="https://VictorBitca.github.io/tags/op-z">op-z</a></span><span class="tag"><a href="https://VictorBitca.github.io/tags/synth">synth</a></span><span class="tag"><a href="https://VictorBitca.github.io/tags/teensy">teensy</a></span><span class="tag"><a href="https://VictorBitca.github.io/tags/microcontroller">microcontroller</a></span>
                 </p>
 
-            <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>168 Words</p>
+            <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>171 Words</p>
 
             <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>2019-05-04 03:00 &#43;0300</p>
         </div>
