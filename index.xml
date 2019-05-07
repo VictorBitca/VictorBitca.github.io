@@ -49,14 +49,5 @@ Some streaming services like Netflix already have a skip intro button, but how d
       <description>Well&amp;hellip; it&amp;rsquo;s a blog</description>
     </item>
     
-    <item>
-      <title></title>
-      <link>https://VictorBitca.github.io/posts/1/01/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://VictorBitca.github.io/posts/1/01/</guid>
-      <description>Getting started The limitations Only 50 pins availble on teensy</description>
-    </item>
-    
   </channel>
 </rss>
