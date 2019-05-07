@@ -16,13 +16,24 @@
             
             <guid>https://VictorBitca.github.io/posts/2019/05/a-proper-op-z-plugin-prototype/</guid>
             <description>Let&amp;rsquo;s be honest, previous attempt at an OP-Z plugin thingy was a failure, Main drawbacks being the boot times, all the bugs and overhead that come with running Linux &amp;amp; jack &amp;amp; supercollider on such a small machine. You just don&amp;rsquo;t need Linux if you want to run a medium complexity synth. But most importantly it kinda failed at being fun.
-With teensy 3.6, the boot times are around a second or less, it&amp;rsquo;s faster than the OP-Z!</description>
+Teesny 3.6 and teensy audio board  With teensy 3.</description>
             <content type="html"><![CDATA[<p>Let&rsquo;s be honest, <a href="https://victorbitca.github.io/posts/2019/04/creating-an-op-z-plugin/" target="_blank">previous attempt</a> at an OP-Z plugin thingy was a failure,
 Main drawbacks being the boot times, all the bugs and overhead that come with running <code>Linux</code> &amp; <code>jack</code> &amp; <code>supercollider</code> on such a small machine.
 You just don&rsquo;t need Linux if you want to run a medium complexity synth.
 But most importantly it kinda failed at being fun.</p>
 
-<p>With teensy 3.6, the boot times are around a second or less, it&rsquo;s faster than the OP-Z!
+
+    <figure class="left" >
+        <img src="/images/thigs_to_come.jpg"   />
+
+        
+            <figcaption class="center" >Teesny 3.6 and teensy audio board</figcaption>
+        
+    </figure>
+
+
+
+<p>With <a href="https://www.pjrc.com/store/teensy36.html" target="_blank">teensy 3.6</a> &amp; <a href="https://www.pjrc.com/store/teensy3_audio.html" target="_blank">teensy audio board</a>, the boot times are around a second or less, it&rsquo;s faster than the OP-Z!
 The CPU usage is less on teensy than on Raspberry Pi Zero for the same building blocks (oscilators and other effects).
 Teensy audio library is a really great tool, synths that can rival the OP-Z&rsquo;s built-in ones can be easily built using the basic building blocks.</p>
 
@@ -380,6 +391,23 @@ then in the <code>golang-opz</code> directory run only once:</p>
 
 
 <h4 id="the-follow-up-https-victorbitca-github-io-posts-2019-05-a-proper-op-z-plugin-prototype"><a href="https://victorbitca.github.io/posts/2019/05/a-proper-op-z-plugin-prototype/" target="_blank">The follow-up&hellip;</a></h4>
+]]></content>
+        </item>
+        
+        <item>
+            <title></title>
+            <link>https://VictorBitca.github.io/posts/1/01/</link>
+            <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+            
+            <guid>https://VictorBitca.github.io/posts/1/01/</guid>
+            <description>Getting started The limitations Only 50 pins availble on teensy</description>
+            <content type="html"><![CDATA[
+
+<h2 id="getting-started">Getting started</h2>
+
+<h2 id="the-limitations">The limitations</h2>
+
+<p>Only 50 pins availble on teensy</p>
 ]]></content>
         </item>
         

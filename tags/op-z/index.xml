@@ -18,7 +18,7 @@
       
       <guid>https://VictorBitca.github.io/posts/2019/05/a-proper-op-z-plugin-prototype/</guid>
       <description>Let&amp;rsquo;s be honest, previous attempt at an OP-Z plugin thingy was a failure, Main drawbacks being the boot times, all the bugs and overhead that come with running Linux &amp;amp; jack &amp;amp; supercollider on such a small machine. You just don&amp;rsquo;t need Linux if you want to run a medium complexity synth. But most importantly it kinda failed at being fun.
-With teensy 3.6, the boot times are around a second or less, it&amp;rsquo;s faster than the OP-Z!</description>
+Teesny 3.6 and teensy audio board  With teensy 3.</description>
     </item>
     
     <item>
