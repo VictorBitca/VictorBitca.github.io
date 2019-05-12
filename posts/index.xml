@@ -46,7 +46,7 @@ The CPU usage is less on teensy than on Raspberry Pi Zero for the same building 
 <p>The first iteration it&rsquo;s a simple hackable synth, maybe also a sampler in the future.
 A small semi-modular portable plugin <a href="http://www.makenoisemusic.com/synthesizers/ohcoast" target="_blank">like this one</a> could be a bit more fun but that&rsquo;s for the next time.</p>
 
-<p><a href="https://github.com/VictorBitca/opz-teensy" target="_blank">Full code here</a>, just open the teensy-opz.ino in arduino and upload it.</p>
+<p><a href="https://github.com/VictorBitca/opz-teensy" target="_blank">Full code here</a>.</p>
 ]]></content>
         </item>
         
