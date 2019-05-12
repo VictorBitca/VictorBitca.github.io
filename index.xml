@@ -22,11 +22,11 @@ Teesny 3.6 and teensy audio board  With teensy 3.</description>
     </item>
     
     <item>
-      <title>A problem you probably don&#39;t have</title>
-      <link>https://VictorBitca.github.io/posts/2019/04/a-problem-you-probably-dont-have/</link>
+      <title>Finding common regions in multiple audio files</title>
+      <link>https://VictorBitca.github.io/posts/2019/04/finding-common-regions-in-multiple-audio-files/</link>
       <pubDate>Fri, 19 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://VictorBitca.github.io/posts/2019/04/a-problem-you-probably-dont-have/</guid>
+      <guid>https://VictorBitca.github.io/posts/2019/04/finding-common-regions-in-multiple-audio-files/</guid>
       <description>Probably you&amp;rsquo;ve been binge-watching a series and those pesky intros always got in your way. The intro and outro song is already playing on repeat in your head, the visuals already burned onto your retina, you&amp;rsquo;re ready to do anything to not hear one more time that intro song.
 Some streaming services like Netflix already have a skip intro button, but how does it work? Do you really think that people at Netflix in charge of their content specify in their contracts that content providers should also provide the intro/outro time range?</description>
     </item>
