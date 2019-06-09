@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author"
+    content="map[name:Victor Bitca]">
+<meta name="description"
+    content="Let&amp;rsquo;s be honest, previous attempt at an OP-Z plugin thingy was a failure, Main drawbacks being the boot times, all the bugs and overhead that come with running Linux &amp;amp; jack &amp;amp; supercollider on such a small machine. You just don&amp;rsquo;t need Linux if you want to run a medium complexity synth. But most importantly it kinda failed at being fun.
+Teesny 3.6 and teensy audio board  With teensy 3." />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="https://VictorBitca.github.io/posts/2019/06/a-proper-op-z-plugin-prototype/" />
+
+
+<title>
+    
+    A proper OP-Z plugin prototype :: Hello there...  — there...
+    
+</title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.2.1/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+<link rel="stylesheet" href="https://VictorBitca.github.io/scss/main.min.2508fd4bf06e8d1a3c3a51ae0236172f80a6abb73183f6b8836b8f5d38710a7a.css">
+
+
+
+<link rel="apple-touch-icon" sizes="180x180" href="https://VictorBitca.github.io/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://VictorBitca.github.io/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://VictorBitca.github.io/favicon-16x16.png">
+<link rel="manifest" href="https://VictorBitca.github.io/site.webmanifest">
+<link rel="mask-icon" href="https://VictorBitca.github.io/safari-pinned-tab.svg" color="#252627">
+<link rel="shortcut icon" href="https://VictorBitca.github.io/favicon.ico">
+<meta name="theme-color" content="#252627">
+<meta itemprop="name" content="A proper OP-Z plugin prototype">
+<meta itemprop="description" content="Let&rsquo;s be honest, previous attempt at an OP-Z plugin thingy was a failure, Main drawbacks being the boot times, all the bugs and overhead that come with running Linux &amp; jack &amp; supercollider on such a small machine. You just don&rsquo;t need Linux if you want to run a medium complexity synth. But most importantly it kinda failed at being fun.
+Teesny 3.6 and teensy audio board  With teensy 3.">
+
+
+<meta itemprop="datePublished" content="2019-06-08T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2019-06-08T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="629">
+
+
+
+<meta itemprop="keywords" content="op-z,synth,teensy,microcontroller," />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://VictorBitca.github.io"/>
+
+<meta name="twitter:title" content="A proper OP-Z plugin prototype"/>
+<meta name="twitter:description" content="Let&rsquo;s be honest, previous attempt at an OP-Z plugin thingy was a failure, Main drawbacks being the boot times, all the bugs and overhead that come with running Linux &amp; jack &amp; supercollider on such a small machine. You just don&rsquo;t need Linux if you want to run a medium complexity synth. But most importantly it kinda failed at being fun.
+Teesny 3.6 and teensy audio board  With teensy 3."/>
+
+
+
+
+<meta property="article:published_time" content="2019-06-08 00:00:00 &#43;0000 UTC" />
+
+
+
+
+
+
+
+
+    </head>
+
+    <body class="dark-theme">
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="https://VictorBitca.github.io/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">></span>
+            <span class="logo__text">$ cd </span>
+            <span class="logo__cursor"></span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="https://VictorBitca.github.io/about/">About</a></li><li><a href="https://VictorBitca.github.io/posts/">Posts</a></li>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+
+            <span class="theme-toggle"><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+</svg>
+</span>
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>3 minutes
+
+            
+
+            </p>
+        </div>
+
+        <article>
+            <h1 class="post-title"><a href="https://VictorBitca.github.io/posts/2019/06/a-proper-op-z-plugin-prototype/">A proper OP-Z plugin prototype</a></h1>
+
+            
+
+            <div class="post-content">
+                
+
+<p>Let&rsquo;s be honest, <a href="https://victorbitca.github.io/posts/2019/04/creating-an-op-z-plugin/" target="_blank">previous attempt</a> at an OP-Z plugin thingy was a failure,
+Main drawbacks being the boot times, all the bugs and overhead that come with running <code>Linux</code> &amp; <code>jack</code> &amp; <code>supercollider</code> on such a small machine.
+You just don&rsquo;t need Linux if you want to run a medium complexity synth.
+But most importantly it kinda failed at being fun.</p>
+
+
+    <figure class="left" >
+        <img src="https://VictorBitca.github.io/images/thigs_to_come.jpg"   />
+
+        
+            <figcaption class="center" >Teesny 3.6 and teensy audio board</figcaption>
+        
+    </figure>
+
+
+
+<p>With <a href="https://www.pjrc.com/store/teensy36.html" target="_blank">teensy 3.6</a> &amp; <a href="https://www.pjrc.com/store/teensy3_audio.html" target="_blank">teensy audio board</a>, the boot times are around a second or less, it&rsquo;s faster than the OP-Z!
+The CPU usage is less on teensy than on Raspberry Pi Zero for the same building blocks (oscilators and other effects).
+<a href="https://www.pjrc.com/teensy/gui/" target="_blank">Teensy audio library</a> is a really great tool, synths that can rival the OP-Z&rsquo;s built-in ones can be easily built using the basic building blocks.</p>
+
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="//www.youtube.com/embed/MKe8P8wL87o" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+
+<p>The first iteration it&rsquo;s a simple hackable synth, maybe also a sampler in the future.
+A small semi-modular portable plugin <a href="http://www.makenoisemusic.com/synthesizers/ohcoast" target="_blank">like this one</a> could be a bit more fun but that&rsquo;s for the next time.</p>
+
+<p><a href="https://github.com/VictorBitca/opz-teensy" target="_blank">Full code here</a>.</p>
+
+<h2 id="june-update">June update</h2>
+
+<p>The natural evolution of the previous design:</p>
+
+
+    <figure class="left" >
+        <img src="https://VictorBitca.github.io/images/minimodular.jpg"   />
+
+        
+            <figcaption class="center" >The minimodular</figcaption>
+        
+    </figure>
+
+
+
+<p>The micro-modular was inspired by the <a href="http://www.makenoisemusic.com/synthesizers/ohcoast" target="_blank">o-coast</a> and the <a href="https://bastl-instruments.com/instruments/kastle" target="_blank">kastl</a> and of course the full size <a href="https://en.wikipedia.org/wiki/Modular_synthesizer" target="_blank">modular systems</a>.
+While some of those run mostly analog circuitry in their signal paths, teensy can&rsquo;t do that, it&rsquo;s just an emulation of one.</p>
+
+<p>Initially, things had to be simple, connections could not be stackable, one output in only in one input,
+The micro-modular is based on <a href="https://www.pjrc.com/store/teensy36.html" target="_blank">teensy 3.6</a> as its main board and an Arduino Nano as a slave expansion board,
+In hindsight, I should have ditched the Arduino and some &ldquo;modules&rdquo; on the board, for example, FX section should not be on board.</p>
+
+<p>Also, Arduino nano is not compatible with the teensy board, Arduino runs on 5v and it could fry the teensy board, it had to be converted to 3.3V, there are tutorials for this so I&rsquo;m not gonna cover this here.</p>
+
+<p>Next step is the teensy firmware, teensy audio tool is good for medium complexity synth, but I needed:</p>
+
+<ul>
+<li>4 oscillators with FM, PM and PW modulation</li>
+<li>2 LFOs with PW modulation</li>
+<li>A VCF</li>
+<li>a pair of VCAs</li>
+<li>two envelopes generators and a few utilities like mixers and splitters</li>
+</ul>
+
+<p>all of those only for one voice, the synth would have 4 at least.</p>
+
+<p>One major drawback of the teensy audio framework is that <code>AudioConnection</code> objects can&rsquo;t be created at the runtime so every possible connection has to be made beforehand and it looks like a total mess.</p>
+
+
+    <figure class="left" >
+        <img src="https://VictorBitca.github.io/images/one_voice.jpg"   />
+
+        
+            <figcaption class="center" >No</figcaption>
+        
+    </figure>
+
+
+
+<p>Once I was done with the firmware CPU and memory usage was above 80% with a power consumption of 140 mA from the OP-Z (when driving the headset at full power) that&rsquo;s above the advertised 100 mA max that OP-Z could output, so I had to underclock it a bit and remove extra FX and LEDs, even then I could not get it below 120 mA without removing a synth voice so I left it at 120 mA.</p>
+
+<p>The end result is a close enough modular emulation that certainly provides a lot more sound variety than any built-in op-z synth engine.</p>
+
+<h2 id="drawbacks">Drawbacks</h2>
+
+<ul>
+<li>Power limitation</li>
+<li>Decreased battery life</li>
+<li>Not as flexible as a modular</li>
+<li>Internal audio clipping</li>
+<li>Not tightly integrated with the OP-Z</li>
+<li>Massive code base</li>
+</ul>
+
+<h2 id="whats-the-point">Whats the point</h2>
+
+<p>Given that your phone has more processing power and always in your pocket what&rsquo;s the point in trying to create another portable device that can do only one thing, honestly I dont know, I just felt like toying around with novelty hardware creation, I think people are drawn to it even if its limited to only one function like the demand for pocket operators and other toy like synths shows or maybe its the tactile interface, feel different than smartphone.</p>
+
+            </div>
+        </article>
+
+        <hr />
+
+        <div class="post-info">
+                <p>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg><span class="tag"><a href="https://VictorBitca.github.io/tags/op-z">op-z</a></span><span class="tag"><a href="https://VictorBitca.github.io/tags/synth">synth</a></span><span class="tag"><a href="https://VictorBitca.github.io/tags/teensy">teensy</a></span><span class="tag"><a href="https://VictorBitca.github.io/tags/microcontroller">microcontroller</a></span>
+                </p>
+
+            <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>629 Words</p>
+
+            <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>2019-06-08 03:00 &#43;0300</p>
+        </div>
+
+        
+            <div class="pagination">
+                <div class="pagination__title">
+                    <span class="pagination__title-h"></span>
+                    <hr />
+                </div>
+
+                <div class="pagination__buttons">
+                    
+
+                    
+                        <span class="button next">
+                            <a href="https://VictorBitca.github.io/posts/2019/04/finding-common-regions-in-multiple-audio-files/">
+                                <span class="button__text">Finding common regions in multiple audio files</span>
+                                <span class="button__icon">→</span>
+                            </a>
+                        </span>
+                    
+                </div>
+            </div>
+        
+
+        
+    </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>&copy; 2019</span>
+            
+                <span><a href="https://VictorBitca.github.io">Victor Bitca</a></span>
+            
+            <span><a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></span>
+            <span> <a href="https://VictorBitca.github.io/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a></span>
+        </div>
+    </div>
+    <div class="footer__inner">
+        <div class="footer__content">
+
+        </div>
+    </div>
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>Powered by <a href="http://gohugo.io">Hugo</a></span>
+            <span>Made with &#10084; by <a href="https://github.com/rhazdon">rhazdon</a></span>
+        </div>
+    </div>
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+
+
+<script type="text/javascript" src="https://VictorBitca.github.io/js/bundle.min.cf7871ed49474a80ed457154d24e61f7881adbe0f9384951a74ac46b688a39a4dbfa68bc6d37baeb058186de354ead3487d4ee7f083ea4cba860c48600b694f3.js" integrity="sha512-z3hx7UlHSoDtRXFU0k5h94ga2&#43;D5OElRp0rEa2iKOaTb&#43;mi8bTe66wWBht41Tq00h9Tufwg&#43;pMuoYMSGALaU8w=="></script>
+
+
+
+    </body>
+</html>

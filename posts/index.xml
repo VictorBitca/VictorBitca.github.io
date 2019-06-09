@@ -6,18 +6,20 @@
         <description>Recent content in Posts on Hello there...</description>
         <generator>Hugo -- gohugo.io</generator>
         <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-        <lastBuildDate>Sat, 04 May 2019 00:00:00 +0000</lastBuildDate>
+        <lastBuildDate>Sat, 08 Jun 2019 00:00:00 +0000</lastBuildDate>
         <atom:link href="https://VictorBitca.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
         
         <item>
             <title>A proper OP-Z plugin prototype</title>
-            <link>https://VictorBitca.github.io/posts/2019/05/a-proper-op-z-plugin-prototype/</link>
-            <pubDate>Sat, 04 May 2019 00:00:00 +0000</pubDate>
+            <link>https://VictorBitca.github.io/posts/2019/06/a-proper-op-z-plugin-prototype/</link>
+            <pubDate>Sat, 08 Jun 2019 00:00:00 +0000</pubDate>
             
-            <guid>https://VictorBitca.github.io/posts/2019/05/a-proper-op-z-plugin-prototype/</guid>
+            <guid>https://VictorBitca.github.io/posts/2019/06/a-proper-op-z-plugin-prototype/</guid>
             <description>Let&amp;rsquo;s be honest, previous attempt at an OP-Z plugin thingy was a failure, Main drawbacks being the boot times, all the bugs and overhead that come with running Linux &amp;amp; jack &amp;amp; supercollider on such a small machine. You just don&amp;rsquo;t need Linux if you want to run a medium complexity synth. But most importantly it kinda failed at being fun.
 Teesny 3.6 and teensy audio board  With teensy 3.</description>
-            <content type="html"><![CDATA[<p>Let&rsquo;s be honest, <a href="https://victorbitca.github.io/posts/2019/04/creating-an-op-z-plugin/" target="_blank">previous attempt</a> at an OP-Z plugin thingy was a failure,
+            <content type="html"><![CDATA[
+
+<p>Let&rsquo;s be honest, <a href="https://victorbitca.github.io/posts/2019/04/creating-an-op-z-plugin/" target="_blank">previous attempt</a> at an OP-Z plugin thingy was a failure,
 Main drawbacks being the boot times, all the bugs and overhead that come with running <code>Linux</code> &amp; <code>jack</code> &amp; <code>supercollider</code> on such a small machine.
 You just don&rsquo;t need Linux if you want to run a medium complexity synth.
 But most importantly it kinda failed at being fun.</p>
@@ -47,6 +49,74 @@ The CPU usage is less on teensy than on Raspberry Pi Zero for the same building 
 A small semi-modular portable plugin <a href="http://www.makenoisemusic.com/synthesizers/ohcoast" target="_blank">like this one</a> could be a bit more fun but that&rsquo;s for the next time.</p>
 
 <p><a href="https://github.com/VictorBitca/opz-teensy" target="_blank">Full code here</a>.</p>
+
+<h2 id="june-update">June update</h2>
+
+<p>The natural evolution of the previous design:</p>
+
+
+    <figure class="left" >
+        <img src="/images/minimodular.jpg"   />
+
+        
+            <figcaption class="center" >The minimodular</figcaption>
+        
+    </figure>
+
+
+
+<p>The micro-modular was inspired by the <a href="http://www.makenoisemusic.com/synthesizers/ohcoast" target="_blank">o-coast</a> and the <a href="https://bastl-instruments.com/instruments/kastle" target="_blank">kastl</a> and of course the full size <a href="https://en.wikipedia.org/wiki/Modular_synthesizer" target="_blank">modular systems</a>.
+While some of those run mostly analog circuitry in their signal paths, teensy can&rsquo;t do that, it&rsquo;s just an emulation of one.</p>
+
+<p>Initially, things had to be simple, connections could not be stackable, one output in only in one input,
+The micro-modular is based on <a href="https://www.pjrc.com/store/teensy36.html" target="_blank">teensy 3.6</a> as its main board and an Arduino Nano as a slave expansion board,
+In hindsight, I should have ditched the Arduino and some &ldquo;modules&rdquo; on the board, for example, FX section should not be on board.</p>
+
+<p>Also, Arduino nano is not compatible with the teensy board, Arduino runs on 5v and it could fry the teensy board, it had to be converted to 3.3V, there are tutorials for this so I&rsquo;m not gonna cover this here.</p>
+
+<p>Next step is the teensy firmware, teensy audio tool is good for medium complexity synth, but I needed:</p>
+
+<ul>
+<li>4 oscillators with FM, PM and PW modulation</li>
+<li>2 LFOs with PW modulation</li>
+<li>A VCF</li>
+<li>a pair of VCAs</li>
+<li>two envelopes generators and a few utilities like mixers and splitters</li>
+</ul>
+
+<p>all of those only for one voice, the synth would have 4 at least.</p>
+
+<p>One major drawback of the teensy audio framework is that <code>AudioConnection</code> objects can&rsquo;t be created at the runtime so every possible connection has to be made beforehand and it looks like a total mess.</p>
+
+
+    <figure class="left" >
+        <img src="/images/one_voice.jpg"   />
+
+        
+            <figcaption class="center" >No</figcaption>
+        
+    </figure>
+
+
+
+<p>Once I was done with the firmware CPU and memory usage was above 80% with a power consumption of 140 mA from the OP-Z (when driving the headset at full power) that&rsquo;s above the advertised 100 mA max that OP-Z could output, so I had to underclock it a bit and remove extra FX and LEDs, even then I could not get it below 120 mA without removing a synth voice so I left it at 120 mA.</p>
+
+<p>The end result is a close enough modular emulation that certainly provides a lot more sound variety than any built-in op-z synth engine.</p>
+
+<h2 id="drawbacks">Drawbacks</h2>
+
+<ul>
+<li>Power limitation</li>
+<li>Decreased battery life</li>
+<li>Not as flexible as a modular</li>
+<li>Internal audio clipping</li>
+<li>Not tightly integrated with the OP-Z</li>
+<li>Massive code base</li>
+</ul>
+
+<h2 id="whats-the-point">Whats the point</h2>
+
+<p>Given that your phone has more processing power and always in your pocket what&rsquo;s the point in trying to create another portable device that can do only one thing, honestly I dont know, I just felt like toying around with novelty hardware creation, I think people are drawn to it even if its limited to only one function like the demand for pocket operators and other toy like synths shows or maybe its the tactile interface, feel different than smartphone.</p>
 ]]></content>
         </item>
         
@@ -67,8 +137,7 @@ The intro and outro song is already playing on repeat in your head, the visuals 
 Do you really think that people at Netflix in charge of their content specify in their contracts that content providers should also provide the intro/outro time range?
 Don&rsquo;t be silly, that would be too easy.</p>
 
-<p>This time we&rsquo;ll try to automate that, mostly because at first glance it seemed like a challenge when some series have intros that are prefixed by a variable length pre-intro scene, so every episode has a unique intro song time range.
-I&rsquo;ll use <code>golang</code> mostly because I&rsquo;m not very familiar with it.
+<p>I&rsquo;ll try to automate that using <code>golang</code> mostly because I wasn&rsquo;t very familiar with it at the time.
 I&rsquo;ll also need to install <a href="https://ffmpeg.org/" target="_blank"><code>ffmpeg</code></a> to do some work on the video files themselves and <code>golang</code> <a href="https://github.com/go-fingerprint/" target="_blank">wrappers</a> for <a href="https://acoustid.org/chromaprint" target="_blank">chromaprint</a></p>
 
 <h2 id="preparation-phase">Preparation phase</h2>
@@ -159,8 +228,7 @@ That is the matching area I was looking for, If I were to compare those fingerpr
 
 <h2 id="conclusion">Conclusion</h2>
 
-<p>The end result is a pretty reliable way of finding common regions between two or more audio files, at the moment of writing one major drawback is that the starting point
-is only an offset of 50% between the audio files.</p>
+<p>The end result is a pretty reliable way of finding common regions between two or more audio files.</p>
 
 <p>The implementation can be seen <a href="https://github.com/VictorBitca/matcher" target="_blank"><code>here</code></a>.</p>
 ]]></content>
