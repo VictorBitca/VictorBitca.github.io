@@ -55,6 +55,15 @@ A small semi-modular portable plugin <a href="http://www.makenoisemusic.com/synt
 <p>The natural evolution of the previous design:</p>
 
 
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="//www.youtube.com/embed/5gF2k2Sb0Bk" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+
+<p>The micro-modular was inspired by the <a href="http://www.makenoisemusic.com/synthesizers/ohcoast" target="_blank">o-coast</a> and the <a href="https://bastl-instruments.com/instruments/kastle" target="_blank">kastl</a> and of course the full size <a href="https://en.wikipedia.org/wiki/Modular_synthesizer" target="_blank">modular systems</a>.
+While some of those run mostly analog circuitry in their signal paths, teensy can&rsquo;t do that, it&rsquo;s just an emulation of one.</p>
+
+
     <figure class="left" >
         <img src="/images/minimodular.jpg"   />
 
@@ -64,9 +73,6 @@ A small semi-modular portable plugin <a href="http://www.makenoisemusic.com/synt
     </figure>
 
 
-
-<p>The micro-modular was inspired by the <a href="http://www.makenoisemusic.com/synthesizers/ohcoast" target="_blank">o-coast</a> and the <a href="https://bastl-instruments.com/instruments/kastle" target="_blank">kastl</a> and of course the full size <a href="https://en.wikipedia.org/wiki/Modular_synthesizer" target="_blank">modular systems</a>.
-While some of those run mostly analog circuitry in their signal paths, teensy can&rsquo;t do that, it&rsquo;s just an emulation of one.</p>
 
 <p>Initially, things had to be simple, connections could not be stackable, one output in only in one input,
 The micro-modular is based on <a href="https://www.pjrc.com/store/teensy36.html" target="_blank">teensy 3.6</a> as its main board and an Arduino Nano as a slave expansion board,
@@ -80,8 +86,8 @@ In hindsight, I should have ditched the Arduino and some &ldquo;modules&rdquo; o
 <li>4 oscillators with FM, PM and PW modulation</li>
 <li>2 LFOs with PW modulation</li>
 <li>A VCF</li>
-<li>a pair of VCAs</li>
-<li>two envelopes generators and a few utilities like mixers and splitters</li>
+<li>A pair of VCAs</li>
+<li>Two envelopes generators and a few utilities like mixers and splitters</li>
 </ul>
 
 <p>all of those only for one voice, the synth would have 4 at least.</p>
@@ -106,7 +112,7 @@ In hindsight, I should have ditched the Arduino and some &ldquo;modules&rdquo; o
 <h2 id="drawbacks">Drawbacks</h2>
 
 <ul>
-<li>Power limitation</li>
+<li>OP-Z current limit at ~140 mA</li>
 <li>Decreased battery life</li>
 <li>Not as flexible as a modular</li>
 <li>Internal audio clipping</li>
