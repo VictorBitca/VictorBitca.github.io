@@ -27,7 +27,7 @@ Teesny 3.6 and teensy audio board  With teensy 3.</description>
       <pubDate>Fri, 19 Apr 2019 00:00:00 +0000</pubDate>
       
       <guid>https://VictorBitca.github.io/posts/2019/04/finding-common-regions-in-multiple-audio-files/</guid>
-      <description>Probably you&amp;rsquo;ve been binge-watching a series and those pesky intros always got in your way. The intro and outro song is already playing on repeat in your head, the visuals already burned onto your retina, you&amp;rsquo;re ready to do anything to not hear one more time that intro song.
+      <description>Probably you&amp;rsquo;ve been binge-watching a series and the intro/outro song is already stuck in your head, the visuals already burned onto your retina, you&amp;rsquo;re ready to do anything to not hear one more time those songs.
 Some streaming services like Netflix already have a skip intro button, but how does it work? Do you really think that people at Netflix in charge of their content specify in their contracts that content providers should also provide the intro/outro time range?</description>
     </item>
     
@@ -37,7 +37,9 @@ Some streaming services like Netflix already have a skip intro button, but how d
       <pubDate>Sat, 13 Apr 2019 00:00:00 +0000</pubDate>
       
       <guid>https://VictorBitca.github.io/posts/2019/04/creating-an-op-z-plugin/</guid>
-      <description>Where it actually started It all began almost a year ago, when I’ve been playing with my PO-20 “Arcade” and wondered what if it was hackable, maybe if it was there would also be a community around pocket operators like there is one for Canon “Magic Lantern” firmware. Well, there was no such thing. But there is OTTO, an open source project initially inspired by OP-1 but clearly going in their own direction at the moment, consider contributing if you&amp;rsquo;re interested.</description>
+      <description>Update On 19.07.01 there was a firmware update, now OP-Z can sample from usb or the mic making half of this article deprecated.
+Intro It began in the summer of 2018, when I’ve been playing with my PO-20 “Arcade” wondering if it&amp;rsquo;s hackable, maybe there&amp;rsquo;s a community around hacking pocket operators like there is one for Canon “Magic Lantern” firmware.
+There is no such thing. But there is OTTO, an open source project initially inspired by OP-1 but clearly going in their own direction at the moment, consider contributing if you&amp;rsquo;re interested.</description>
     </item>
     
     <item>

@@ -132,18 +132,17 @@ In hindsight, I should have ditched the Arduino and some &ldquo;modules&rdquo; o
             <pubDate>Fri, 19 Apr 2019 00:00:00 +0000</pubDate>
             
             <guid>https://VictorBitca.github.io/posts/2019/04/finding-common-regions-in-multiple-audio-files/</guid>
-            <description>Probably you&amp;rsquo;ve been binge-watching a series and those pesky intros always got in your way. The intro and outro song is already playing on repeat in your head, the visuals already burned onto your retina, you&amp;rsquo;re ready to do anything to not hear one more time that intro song.
+            <description>Probably you&amp;rsquo;ve been binge-watching a series and the intro/outro song is already stuck in your head, the visuals already burned onto your retina, you&amp;rsquo;re ready to do anything to not hear one more time those songs.
 Some streaming services like Netflix already have a skip intro button, but how does it work? Do you really think that people at Netflix in charge of their content specify in their contracts that content providers should also provide the intro/outro time range?</description>
             <content type="html"><![CDATA[
 
-<p>Probably you&rsquo;ve been binge-watching a series and those pesky intros always got in your way.
-The intro and outro song is already playing on repeat in your head, the visuals already burned onto your retina, you&rsquo;re ready to do anything to not hear one more time that intro song.</p>
+<p>Probably you&rsquo;ve been binge-watching a series and the intro/outro song is already stuck in your head, the visuals already burned onto your retina, you&rsquo;re ready to do anything to not hear one more time those songs.</p>
 
 <p>Some streaming services like Netflix already have a skip intro button, but how does it work?
 Do you really think that people at Netflix in charge of their content specify in their contracts that content providers should also provide the intro/outro time range?
 Don&rsquo;t be silly, that would be too easy.</p>
 
-<p>I&rsquo;ll try to automate that using <code>golang</code> mostly because I wasn&rsquo;t very familiar with it at the time.
+<p>I&rsquo;ll try to automate that using <code>golang</code> and <code>chromaprint</code> mostly for fun and profit and maybe I&rsquo;ll learn something along the way.
 I&rsquo;ll also need to install <a href="https://ffmpeg.org/" target="_blank"><code>ffmpeg</code></a> to do some work on the video files themselves and <code>golang</code> <a href="https://github.com/go-fingerprint/" target="_blank">wrappers</a> for <a href="https://acoustid.org/chromaprint" target="_blank">chromaprint</a></p>
 
 <h2 id="preparation-phase">Preparation phase</h2>
@@ -195,8 +194,9 @@ The black area at the beginning is where the spectrograms <code>XOR</code>-ed pe
 <p>But in some cases, most of the cases actually intros aren&rsquo;t aligned perfectly, before the intro song begins there could be some scenes from previous episodes or some pre-intro scenes from the current episode.
 Those scenes always vary in length and if I were to compare the spectrograms it would look like a bunch of noise.</p>
 
-<p>The only way to find the common areas on two different spectrograms is to slide them past each other like a puzzle each iteration resulting in a match score.
-I start with an 50% offset between the slices (<a href="https://blog.golang.org/go-slices-usage-and-internals" target="_blank">golang view of an array</a>) and end on -50% offset, good enough for the intro I&rsquo;m searching, each time the offset decreases the slices get actually a bit bigger then again smaller (highlighted in blue).</p>
+<p>One way to find the common areas on two different spectrograms is to slide them past each other like a puzzle each iteration resulting in a match score.
+I start with an 50% offset between the slices (<a href="https://blog.golang.org/go-slices-usage-and-internals" target="_blank">golang view of an array</a>) and end on -50% offset, good enough for the intro I&rsquo;m searching, each time the offset decreases the slices get actually a bit bigger then again smaller (highlighted in blue).
+Another way could be using the &ldquo;Longest Common Substring&rdquo; approach with some tolerance between values but that&rsquo;s for another time.</p>
 
 <p>After all the slide and compare action, I&rsquo;ll pick the iteration with the best score and do a comparison, usually resulting in something like the picture above.</p>
 
@@ -234,7 +234,7 @@ That is the matching area I was looking for, If I were to compare those fingerpr
 
 <h2 id="conclusion">Conclusion</h2>
 
-<p>The end result is a pretty reliable way of finding common regions between two or more audio files.</p>
+<p>The end result is a pretty reliable way of finding common regions/fingerprints in two or more audio files.</p>
 
 <p>The implementation can be seen <a href="https://github.com/VictorBitca/matcher" target="_blank"><code>here</code></a>.</p>
 ]]></content>
@@ -246,17 +246,25 @@ That is the matching area I was looking for, If I were to compare those fingerpr
             <pubDate>Sat, 13 Apr 2019 00:00:00 +0000</pubDate>
             
             <guid>https://VictorBitca.github.io/posts/2019/04/creating-an-op-z-plugin/</guid>
-            <description>Where it actually started It all began almost a year ago, when I’ve been playing with my PO-20 “Arcade” and wondered what if it was hackable, maybe if it was there would also be a community around pocket operators like there is one for Canon “Magic Lantern” firmware. Well, there was no such thing. But there is OTTO, an open source project initially inspired by OP-1 but clearly going in their own direction at the moment, consider contributing if you&amp;rsquo;re interested.</description>
+            <description>Update On 19.07.01 there was a firmware update, now OP-Z can sample from usb or the mic making half of this article deprecated.
+Intro It began in the summer of 2018, when I’ve been playing with my PO-20 “Arcade” wondering if it&amp;rsquo;s hackable, maybe there&amp;rsquo;s a community around hacking pocket operators like there is one for Canon “Magic Lantern” firmware.
+There is no such thing. But there is OTTO, an open source project initially inspired by OP-1 but clearly going in their own direction at the moment, consider contributing if you&amp;rsquo;re interested.</description>
             <content type="html"><![CDATA[
 
-<h2 id="where-it-actually-started">Where it actually started</h2>
+<h4 id="update">Update</h4>
 
-<p>It all began almost a year ago, when I’ve been playing with my <a href="https://www.teenageengineering.com/store#po-20" target="_blank">PO-20 “Arcade”</a> and wondered what if it was hackable,
-maybe if it was there would also be a community around pocket operators like there is one for <a href="https://magiclantern.fm/" target="_blank">Canon “Magic Lantern”</a> firmware.
-Well, there was no such thing. But there is <a href="https://github.com/topisani/OTTO" target="_blank">OTTO</a>, an open source project initially inspired by OP-1 but clearly going in their own direction at the moment, consider contributing if you&rsquo;re interested.</p>
+<p>On 19.07.01 there was a firmware update, now OP-Z can sample from usb or the mic making half of this article deprecated.</p>
 
-<p>I was thinking about joining them but ultimately decided against that, my main concerns were the power-hungry hardware (Raspberry Pi 3+) I wanted something smaller with long battery life.
-The tools also raised some concern, everything was built from scratch in C++ and Faust, it would take years, and years it took to reach a V1.0 (still unreleased at the moment of editing this) but no doubt the end result could be something beautiful.</p>
+<h2 id="intro">Intro</h2>
+
+<p>It began in the summer of 2018, when I’ve been playing with my <a href="https://www.teenageengineering.com/store#po-20" target="_blank">PO-20 “Arcade”</a> wondering if it&rsquo;s hackable,
+maybe there&rsquo;s a community around hacking pocket operators like there is one for <a href="https://magiclantern.fm/" target="_blank">Canon “Magic Lantern”</a> firmware.</p>
+
+<p>There is no such thing. But there is <a href="https://github.com/topisani/OTTO" target="_blank"><code>OTTO</code></a>, an open source project initially inspired by OP-1 but clearly going in their own direction at the moment, consider contributing if you&rsquo;re interested.</p>
+
+<p>I was thinking about joining <code>OTTO</code> but ultimately decided against that, my main concerns were the power-hungry hardware (Raspberry Pi 3+) I wanted something smaller with long battery life.</p>
+
+<p>The tools also raised some concern, everything was built from scratch in C++ and Faust, it would take years, and years it took to reach a V1.0 (still unreleased at the moment ofwriting) but no doubt the end result could be something beautiful.</p>
 
 <p>Starting from scratch I was thinking to go the way of <a href="https://www.critterandguitari.com/organelle" target="_blank">Critter and Guitari Organelle</a> with <a href="https://puredata.info/" target="_blank">Pure Data</a>
 In a few days of toying around, I realized that visual programming will not cut it, I needed a proper programing language.</p>
@@ -269,7 +277,7 @@ In a few days of toying around, I realized that visual programming will not cut 
 With an active open source community, it was like a silver bullet for all my problems,
 SuperCollider can easily be set up to run on a <a href="https://supercollider.github.io/development/building-raspberrypi" target="_blank">Raspberry Pi</a>.</p>
 
-<p>So the choice of hardware at that moment was clear, a Raspberry Pi Zero and a dedicated audio board (<a href="https://fe-pi.com/" target="_blank">Fe-Pi</a> or <a href="https://www.pjrc.com/store/teensy3_audio.html" target="_blank">Teensy audio adaptor</a> it&rsquo;s based on the same chip) would do the trick.
+<p>The choice of hardware at that moment was clear, a Raspberry Pi Zero and a dedicated audio board (<a href="https://fe-pi.com/" target="_blank">Fe-Pi</a> or <a href="https://www.pjrc.com/store/teensy3_audio.html" target="_blank">Teensy audio adaptor</a> both based on the same chip) would do the trick.
 Combined with a ~2000 mAh battery it should run for ~5 hours, still not as much as I would like but it will do for the moment.</p>
 
 
@@ -317,7 +325,7 @@ Initially, I cloned Volca Sample functional plus some extra stuff.</p>
 <p>Then I started looking into how OP-Z handles the sequencing and started to recreate it in Supercollider.
 After some time took the plunge and bought an OP-Z, I think from the first or second publically available batches.</p>
 
-<h2 id="op-z-era">OP-Z era</h2>
+<h2 id="op-z-era">OP-Z Era</h2>
 
 
     <figure class="left" >
@@ -330,7 +338,7 @@ After some time took the plunge and bought an OP-Z, I think from the first or se
 
 
 
-<p>After playing for a while with the OP-Z I thought there is no point to try to recreate the sequencer style, it would take too much time so I decided to reuse the Raspberry Pi and audio IO board and slapped them on the back of my OP-Z, it seemed the most reasonable way to get the most out of it in the shortest time possible, OP-Z already had the sequencer that I wanted but it didn&rsquo;t have any sampling capabilities so it should be a beautiful fusion.</p>
+<p>After spending some time with OP-Z I thought there is no point to try to recreate the sequencer, it would take too much time. I decided to reuse the Raspberry Pi and audio IO board and slapped them on the back of my OP-Z, it seemed the most reasonable way to get the most out of it in the shortest time possible, OP-Z already had the sequencer that I wanted but it didn&rsquo;t have any sampling capabilities(at the time of writing) so it should be a beautiful fusion.</p>
 
 <h4 id="the-end-result">The end result</h4>
 
@@ -340,7 +348,7 @@ After some time took the plunge and bought an OP-Z, I think from the first or se
 </div>
 
 
-<h4 id="how-to-build-something-similar">How to build something similar</h4>
+<h4 id="how-to-build-something-similar-dont-t">How to build something similar(dont&rsquo;t)</h4>
 
 <p>Part list:</p>
 
@@ -360,7 +368,7 @@ After some time took the plunge and bought an OP-Z, I think from the first or se
 
 <p>It has two folders, <code>opz-sc-extensions</code> contains SuperCollider extension, for more details on how to use <a href="http://doc.sccode.org/Guides/UsingExtensions.html" target="_blank">extensions</a> with SuperCollider, the <code>opz-plugin</code> folder contains some files that launches the extensions and a <code>golang-opz</code> folder with some code needed to further process the SuperCollider sample output because the OP-Z won&rsquo;t accept a simple <code>.aif</code> file.</p>
 
-<h3 id="update">Update</h3>
+<h3 id="update-1">Update</h3>
 
 <p>OP-Z recieved an <a href="https://www.teenageengineering.com/downloads/op-z" target="_blank">update</a> (1.1.27) and now you should be able to import WAV or AIFF files without a header (metadata).</p>
 

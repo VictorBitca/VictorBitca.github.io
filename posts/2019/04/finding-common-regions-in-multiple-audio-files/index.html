@@ -7,7 +7,7 @@
 <meta name="author"
     content="map[name:Victor Bitca]">
 <meta name="description"
-    content="Probably you&amp;rsquo;ve been binge-watching a series and those pesky intros always got in your way. The intro and outro song is already playing on repeat in your head, the visuals already burned onto your retina, you&amp;rsquo;re ready to do anything to not hear one more time that intro song.
+    content="Probably you&amp;rsquo;ve been binge-watching a series and the intro/outro song is already stuck in your head, the visuals already burned onto your retina, you&amp;rsquo;re ready to do anything to not hear one more time those songs.
 Some streaming services like Netflix already have a skip intro button, but how does it work? Do you really think that people at Netflix in charge of their content specify in their contracts that content providers should also provide the intro/outro time range?" />
 <meta name="keywords" content="" />
 <meta name="robots" content="noodp" />
@@ -38,13 +38,13 @@ Some streaming services like Netflix already have a skip intro button, but how d
 <link rel="shortcut icon" href="https://VictorBitca.github.io/favicon.ico">
 <meta name="theme-color" content="#252627">
 <meta itemprop="name" content="Finding common regions in multiple audio files">
-<meta itemprop="description" content="Probably you&rsquo;ve been binge-watching a series and those pesky intros always got in your way. The intro and outro song is already playing on repeat in your head, the visuals already burned onto your retina, you&rsquo;re ready to do anything to not hear one more time that intro song.
+<meta itemprop="description" content="Probably you&rsquo;ve been binge-watching a series and the intro/outro song is already stuck in your head, the visuals already burned onto your retina, you&rsquo;re ready to do anything to not hear one more time those songs.
 Some streaming services like Netflix already have a skip intro button, but how does it work? Do you really think that people at Netflix in charge of their content specify in their contracts that content providers should also provide the intro/outro time range?">
 
 
 <meta itemprop="datePublished" content="2019-04-19T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2019-04-19T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="727">
+<meta itemprop="wordCount" content="737">
 
 
 
@@ -53,7 +53,7 @@ Some streaming services like Netflix already have a skip intro button, but how d
 <meta name="twitter:image" content="https://VictorBitca.github.io"/>
 
 <meta name="twitter:title" content="Finding common regions in multiple audio files"/>
-<meta name="twitter:description" content="Probably you&rsquo;ve been binge-watching a series and those pesky intros always got in your way. The intro and outro song is already playing on repeat in your head, the visuals already burned onto your retina, you&rsquo;re ready to do anything to not hear one more time that intro song.
+<meta name="twitter:description" content="Probably you&rsquo;ve been binge-watching a series and the intro/outro song is already stuck in your head, the visuals already burned onto your retina, you&rsquo;re ready to do anything to not hear one more time those songs.
 Some streaming services like Netflix already have a skip intro button, but how does it work? Do you really think that people at Netflix in charge of their content specify in their contracts that content providers should also provide the intro/outro time range?"/>
 
 
@@ -131,14 +131,13 @@ Some streaming services like Netflix already have a skip intro button, but how d
             <div class="post-content">
                 
 
-<p>Probably you&rsquo;ve been binge-watching a series and those pesky intros always got in your way.
-The intro and outro song is already playing on repeat in your head, the visuals already burned onto your retina, you&rsquo;re ready to do anything to not hear one more time that intro song.</p>
+<p>Probably you&rsquo;ve been binge-watching a series and the intro/outro song is already stuck in your head, the visuals already burned onto your retina, you&rsquo;re ready to do anything to not hear one more time those songs.</p>
 
 <p>Some streaming services like Netflix already have a skip intro button, but how does it work?
 Do you really think that people at Netflix in charge of their content specify in their contracts that content providers should also provide the intro/outro time range?
 Don&rsquo;t be silly, that would be too easy.</p>
 
-<p>I&rsquo;ll try to automate that using <code>golang</code> mostly because I wasn&rsquo;t very familiar with it at the time.
+<p>I&rsquo;ll try to automate that using <code>golang</code> and <code>chromaprint</code> mostly for fun and profit and maybe I&rsquo;ll learn something along the way.
 I&rsquo;ll also need to install <a href="https://ffmpeg.org/" target="_blank"><code>ffmpeg</code></a> to do some work on the video files themselves and <code>golang</code> <a href="https://github.com/go-fingerprint/" target="_blank">wrappers</a> for <a href="https://acoustid.org/chromaprint" target="_blank">chromaprint</a></p>
 
 <h2 id="preparation-phase">Preparation phase</h2>
@@ -190,8 +189,9 @@ The black area at the beginning is where the spectrograms <code>XOR</code>-ed pe
 <p>But in some cases, most of the cases actually intros aren&rsquo;t aligned perfectly, before the intro song begins there could be some scenes from previous episodes or some pre-intro scenes from the current episode.
 Those scenes always vary in length and if I were to compare the spectrograms it would look like a bunch of noise.</p>
 
-<p>The only way to find the common areas on two different spectrograms is to slide them past each other like a puzzle each iteration resulting in a match score.
-I start with an 50% offset between the slices (<a href="https://blog.golang.org/go-slices-usage-and-internals" target="_blank">golang view of an array</a>) and end on -50% offset, good enough for the intro I&rsquo;m searching, each time the offset decreases the slices get actually a bit bigger then again smaller (highlighted in blue).</p>
+<p>One way to find the common areas on two different spectrograms is to slide them past each other like a puzzle each iteration resulting in a match score.
+I start with an 50% offset between the slices (<a href="https://blog.golang.org/go-slices-usage-and-internals" target="_blank">golang view of an array</a>) and end on -50% offset, good enough for the intro I&rsquo;m searching, each time the offset decreases the slices get actually a bit bigger then again smaller (highlighted in blue).
+Another way could be using the &ldquo;Longest Common Substring&rdquo; approach with some tolerance between values but that&rsquo;s for another time.</p>
 
 <p>After all the slide and compare action, I&rsquo;ll pick the iteration with the best score and do a comparison, usually resulting in something like the picture above.</p>
 
@@ -229,7 +229,7 @@ That is the matching area I was looking for, If I were to compare those fingerpr
 
 <h2 id="conclusion">Conclusion</h2>
 
-<p>The end result is a pretty reliable way of finding common regions between two or more audio files.</p>
+<p>The end result is a pretty reliable way of finding common regions/fingerprints in two or more audio files.</p>
 
 <p>The implementation can be seen <a href="https://github.com/VictorBitca/matcher" target="_blank"><code>here</code></a>.</p>
 
@@ -243,7 +243,7 @@ That is the matching area I was looking for, If I were to compare those fingerpr
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg><span class="tag"><a href="https://VictorBitca.github.io/tags/golang">golang</a></span><span class="tag"><a href="https://VictorBitca.github.io/tags/chromaprint">chromaprint</a></span><span class="tag"><a href="https://VictorBitca.github.io/tags/audio-matching">audio matching</a></span>
                 </p>
 
-            <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>727 Words</p>
+            <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>737 Words</p>
 
             <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>2019-04-19 03:00 &#43;0300</p>
         </div>
