@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>chromaprint on 3AM Engineering</title>
-    <link>https://3am.engineering/tags/chromaprint/</link>
+    <link>https://victorbitca.github.io/tags/chromaprint/</link>
     <description>Recent content in chromaprint on 3AM Engineering</description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Fri, 19 Apr 2019 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://3am.engineering/tags/chromaprint/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://victorbitca.github.io/tags/chromaprint/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Skip that intro</title>
-      <link>https://3am.engineering/2019/04/skip-that-intro/</link>
+      <link>https://victorbitca.github.io/2019/04/skip-that-intro/</link>
       <pubDate>Fri, 19 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://3am.engineering/2019/04/skip-that-intro/</guid>
+      <guid>https://victorbitca.github.io/2019/04/skip-that-intro/</guid>
       <description>Probably you&amp;rsquo;ve been binge-watching a series and the intro/outro song is already stuck in your head, the visuals already burned onto your retina, you&amp;rsquo;re ready to do anything to not hear one more time those songs.
 Some streaming services like Netflix already have a skip intro button, but how does it work? Do you really think that people at Netflix in charge of their content specify in their contracts that content providers should also provide the intro/outro time range?</description>
     </item>
