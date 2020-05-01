@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>chromaprint on 3AM Engineering</title>
-    <link>https://3am.engineering/tags/chromaprint/</link>
-    <description>Recent content in chromaprint on 3AM Engineering</description>
+    <title>audio fingerprinting on 3AM Engineering</title>
+    <link>https://3am.engineering/tags/audio-fingerprinting/</link>
+    <description>Recent content in audio fingerprinting on 3AM Engineering</description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Fri, 19 Apr 2019 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://3am.engineering/tags/chromaprint/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://3am.engineering/tags/audio-fingerprinting/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>

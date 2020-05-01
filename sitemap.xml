@@ -3,100 +3,82 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://VictorBitca.github.io/posts/2019/06/a-proper-op-z-plugin-prototype/</loc>
+    <loc>https://3am.engineering/</loc>
+    <lastmod>2020-01-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://3am.engineering/about/</loc>
+    <lastmod>2020-01-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://3am.engineering/2019/06/a-proper-op-z-plugin/</loc>
     <lastmod>2019-06-08T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://VictorBitca.github.io/posts/2019/04/finding-common-regions-in-multiple-audio-files/</loc>
+    <loc>https://3am.engineering/tags/golang/</loc>
+    <lastmod>2019-06-08T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://3am.engineering/tags/op-z/</loc>
+    <lastmod>2019-06-08T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://3am.engineering/posts/</loc>
+    <lastmod>2019-06-08T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://3am.engineering/tags/sampler/</loc>
+    <lastmod>2019-06-08T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://3am.engineering/tags/sclang/</loc>
+    <lastmod>2019-06-08T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://3am.engineering/tags/synth/</loc>
+    <lastmod>2019-06-08T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://3am.engineering/tags/</loc>
+    <lastmod>2019-06-08T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://3am.engineering/tags/audio-fingerprinting/</loc>
     <lastmod>2019-04-19T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://VictorBitca.github.io/posts/2019/04/creating-an-op-z-plugin/</loc>
+    <loc>https://3am.engineering/tags/chromaprint/</loc>
+    <lastmod>2019-04-19T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://3am.engineering/2019/04/skip-that-intro/</loc>
+    <lastmod>2019-04-19T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://3am.engineering/2019/04/an-op-z-plugin/</loc>
     <lastmod>2019-04-13T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://VictorBitca.github.io/about/</loc>
-    <lastmod>2019-04-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://VictorBitca.github.io/</loc>
+    <loc>https://3am.engineering/metalenspolicy/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://VictorBitca.github.io/tags/audio-matching/</loc>
-    <lastmod>2019-04-19T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://VictorBitca.github.io/tags/chromaprint/</loc>
-    <lastmod>2019-04-19T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://VictorBitca.github.io/tags/golang/</loc>
-    <lastmod>2019-04-19T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://VictorBitca.github.io/</loc>
-    <lastmod>2019-06-08T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://VictorBitca.github.io/tags/microcontroller/</loc>
-    <lastmod>2019-06-08T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://VictorBitca.github.io/tags/op-z/</loc>
-    <lastmod>2019-06-08T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://VictorBitca.github.io/posts/</loc>
-    <lastmod>2019-06-08T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://VictorBitca.github.io/tags/sampler/</loc>
-    <lastmod>2019-04-13T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://VictorBitca.github.io/tags/sclang/</loc>
-    <lastmod>2019-04-13T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://VictorBitca.github.io/tags/synth/</loc>
-    <lastmod>2019-06-08T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://VictorBitca.github.io/tags/</loc>
-    <lastmod>2019-04-19T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://VictorBitca.github.io/tags/teensy/</loc>
-    <lastmod>2019-06-08T00:00:00+00:00</lastmod>
-    <priority>0</priority>
+    <loc>https://3am.engineering/categories/</loc>
   </url>
   
 </urlset>
