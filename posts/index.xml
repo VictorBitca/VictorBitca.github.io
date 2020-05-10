@@ -137,8 +137,7 @@ Some streaming services like Netflix already have a skip intro button, but how d
 <p>Probably you&rsquo;ve been binge-watching a series and the intro/outro song is already stuck in your head, the visuals already burned onto your retina, you&rsquo;re ready to do anything to not hear one more time those songs.</p>
 
 <p>Some streaming services like Netflix already have a skip intro button, but how does it work?
-Do you really think that people at Netflix in charge of their content specify in their contracts that content providers should also provide the intro/outro time range?
-Don&rsquo;t be silly, that would be too easy.</p>
+Do you really think that people at Netflix in charge of their content specify in their contracts that content providers should also provide the intro/outro time range? That would be too easy.</p>
 
 <p>I&rsquo;ll try to automate that using <code>golang</code> and <code>chromaprint</code> mostly for fun and profit and maybe I&rsquo;ll learn something along the way.
 I&rsquo;ll also need to install <a href="https://ffmpeg.org/"><code>ffmpeg</code></a> to do some work on the video files themselves and <code>golang</code> <a href="https://github.com/go-fingerprint/">wrappers</a> for <a href="https://acoustid.org/chromaprint">chromaprint</a></p>
