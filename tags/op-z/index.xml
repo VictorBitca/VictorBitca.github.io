@@ -2,30 +2,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>op-z on 3AM Engineering</title>
-    <link>https://victorbitca.github.io/tags/op-z/</link>
+    <link>https://3am.engineering/tags/op-z/</link>
     <description>Recent content in op-z on 3AM Engineering</description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Sat, 08 Jun 2019 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://victorbitca.github.io/tags/op-z/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://3am.engineering/tags/op-z/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>A proper OP-Z plugin</title>
-      <link>https://victorbitca.github.io/2019/06/a-proper-op-z-plugin/</link>
+      <link>https://3am.engineering/2019/06/a-proper-op-z-plugin/</link>
       <pubDate>Sat, 08 Jun 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://victorbitca.github.io/2019/06/a-proper-op-z-plugin/</guid>
+      <guid>https://3am.engineering/2019/06/a-proper-op-z-plugin/</guid>
       <description>Let&amp;rsquo;s be honest, previous attempt at an OP-Z plugin thingy was a failure, Main drawbacks being the boot times, all the bugs and overhead that come with running Linux &amp;amp; jack &amp;amp; supercollider on such a small machine. You just don&amp;rsquo;t need Linux if you want to run a medium complexity synth. But most importantly it kinda failed at being fun.
 Teesny 3.6 and teensy audio board  With teensy 3.</description>
     </item>
     
     <item>
       <title>An OP-Z plugin</title>
-      <link>https://victorbitca.github.io/2019/04/an-op-z-plugin/</link>
+      <link>https://3am.engineering/2019/04/an-op-z-plugin/</link>
       <pubDate>Sat, 13 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://victorbitca.github.io/2019/04/an-op-z-plugin/</guid>
+      <guid>https://3am.engineering/2019/04/an-op-z-plugin/</guid>
       <description>Update On 19.07.01 there was a firmware update, now OP-Z can sample from usb or the mic making half of this article deprecated.
 Intro It began in the summer of 2018, when I’ve been playing with my PO-20 “Arcade” wondering if it&amp;rsquo;s hackable, maybe there&amp;rsquo;s a community around hacking pocket operators like there is one for Canon “Magic Lantern” firmware.
 There is no such thing. But there is OTTO, an open source project initially inspired by OP-1 but clearly going in their own direction at the moment, consider contributing if you&amp;rsquo;re interested.</description>

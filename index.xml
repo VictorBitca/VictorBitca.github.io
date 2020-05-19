@@ -2,49 +2,49 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>3AM Engineering</title>
-    <link>https://victorbitca.github.io/</link>
+    <link>https://3am.engineering/</link>
     <description>Recent content on 3AM Engineering</description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Mon, 20 Jan 2020 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://victorbitca.github.io/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://3am.engineering/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>About</title>
-      <link>https://victorbitca.github.io/about/</link>
+      <link>https://3am.engineering/about/</link>
       <pubDate>Mon, 20 Jan 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://victorbitca.github.io/about/</guid>
+      <guid>https://3am.engineering/about/</guid>
       <description>This is Victor&amp;rsquo;s blog mostly featuring work on prototypes that I found interesting at the time of writing.</description>
     </item>
     
     <item>
       <title>A proper OP-Z plugin</title>
-      <link>https://victorbitca.github.io/2019/06/a-proper-op-z-plugin/</link>
+      <link>https://3am.engineering/2019/06/a-proper-op-z-plugin/</link>
       <pubDate>Sat, 08 Jun 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://victorbitca.github.io/2019/06/a-proper-op-z-plugin/</guid>
+      <guid>https://3am.engineering/2019/06/a-proper-op-z-plugin/</guid>
       <description>Let&amp;rsquo;s be honest, previous attempt at an OP-Z plugin thingy was a failure, Main drawbacks being the boot times, all the bugs and overhead that come with running Linux &amp;amp; jack &amp;amp; supercollider on such a small machine. You just don&amp;rsquo;t need Linux if you want to run a medium complexity synth. But most importantly it kinda failed at being fun.
 Teesny 3.6 and teensy audio board  With teensy 3.</description>
     </item>
     
     <item>
       <title>Skip that intro</title>
-      <link>https://victorbitca.github.io/2019/04/skip-that-intro/</link>
+      <link>https://3am.engineering/2019/04/skip-that-intro/</link>
       <pubDate>Fri, 19 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://victorbitca.github.io/2019/04/skip-that-intro/</guid>
+      <guid>https://3am.engineering/2019/04/skip-that-intro/</guid>
       <description>Probably you&amp;rsquo;ve been binge-watching a series and the intro/outro song is already stuck in your head, the visuals already burned onto your retina, you&amp;rsquo;re ready to do anything to not hear one more time those songs.
 Some streaming services like Netflix already have a skip intro button, but how does it work? Do you really think that people at Netflix in charge of their content specify in their contracts that content providers should also provide the intro/outro time range?</description>
     </item>
     
     <item>
       <title>An OP-Z plugin</title>
-      <link>https://victorbitca.github.io/2019/04/an-op-z-plugin/</link>
+      <link>https://3am.engineering/2019/04/an-op-z-plugin/</link>
       <pubDate>Sat, 13 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://victorbitca.github.io/2019/04/an-op-z-plugin/</guid>
+      <guid>https://3am.engineering/2019/04/an-op-z-plugin/</guid>
       <description>Update On 19.07.01 there was a firmware update, now OP-Z can sample from usb or the mic making half of this article deprecated.
 Intro It began in the summer of 2018, when I’ve been playing with my PO-20 “Arcade” wondering if it&amp;rsquo;s hackable, maybe there&amp;rsquo;s a community around hacking pocket operators like there is one for Canon “Magic Lantern” firmware.
 There is no such thing. But there is OTTO, an open source project initially inspired by OP-1 but clearly going in their own direction at the moment, consider contributing if you&amp;rsquo;re interested.</description>
@@ -52,10 +52,10 @@ There is no such thing. But there is OTTO, an open source project initially insp
     
     <item>
       <title></title>
-      <link>https://victorbitca.github.io/metalenspolicy/</link>
+      <link>https://3am.engineering/metalenspolicy/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://victorbitca.github.io/metalenspolicy/</guid>
+      <guid>https://3am.engineering/metalenspolicy/</guid>
       <description>Privacy Policy This policy applies to all information collected or submitted on the Metalens app for iOS devices. If you choose to use Metalens, then you agree to the collection and use of information concerning this policy.
 Information we collect Metalens collects anonymous statistics such as crash reports and anonymized feature usage statistics. Metalens does not use third-party services that may collect information used to identify you.
 Ads and analytics Metalens does not serve ads.</description>
@@ -63,11 +63,11 @@ Ads and analytics Metalens does not serve ads.</description>
     
     <item>
       <title></title>
-      <link>https://victorbitca.github.io/metalensterms/</link>
+      <link>https://3am.engineering/metalensterms/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://victorbitca.github.io/metalensterms/</guid>
-      <description>Metalens Terms and Conditions of Use 1. Terms By accessing this Website, accessible from victorbitca.github.io, you are agreeing to be bound by these Website Terms and Conditions of Use and agree that you are responsible for the agreement with any applicable local laws. If you disagree with any of these terms, you are prohibited from accessing this site. The materials contained in this Website are protected by copyright and trade mark law.</description>
+      <guid>https://3am.engineering/metalensterms/</guid>
+      <description>Metalens Terms and Conditions of Use 1. Terms By accessing this Website, accessible from 3am.engineering, you are agreeing to be bound by these Website Terms and Conditions of Use and agree that you are responsible for the agreement with any applicable local laws. If you disagree with any of these terms, you are prohibited from accessing this site. The materials contained in this Website are protected by copyright and trade mark law.</description>
     </item>
     
   </channel>
