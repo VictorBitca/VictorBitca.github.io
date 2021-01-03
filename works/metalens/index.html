@@ -5,12 +5,12 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="author" content="Victor Bitca">
-<meta name="description" content="Download it on the app store TL;DR: If you&amp;rsquo;ll download the app don&amp;rsquo;t forget to toggle the Safari switch in Settings
-  Motivation I would often scroll HN, see something interesting but not open the link, by the time I got home from the office (remember offices?) it was from the top items. At the end of the day, I just wanted a way to go back in time at a specific hour or get a curated list of news items" />
+<meta name="description" content="Download it on the app store TL;DR: If you downloaded the app don&amp;rsquo;t forget to toggle the Safari switch in Settings
+  The &amp;ldquo;Do something with Hacker News&amp;rdquo; idea Searching for HN clients on the app store there are many reasonable looking apps, some of them clearly abandoned, many look like a developer needed at least one random published app to get the job. If another HN client is to be built, then it should be overbuilt, to stand out with its gimmicks and questionable features." />
 <meta name="keywords" content=", iOS, Swift, Hacker News" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="" />
-<link rel="canonical" href="https://3am.engineering/2020/05/metalens-for-hacker-news/" />
+<link rel="canonical" href="https://3am.engineering/works/metalens/" />
 
 
     <title>
@@ -32,21 +32,21 @@
 
 
 <meta itemprop="name" content="Metalens for Hacker News">
-<meta itemprop="description" content="Download it on the app store TL;DR: If you&rsquo;ll download the app don&rsquo;t forget to toggle the Safari switch in Settings
-  Motivation I would often scroll HN, see something interesting but not open the link, by the time I got home from the office (remember offices?) it was from the top items. At the end of the day, I just wanted a way to go back in time at a specific hour or get a curated list of news items">
+<meta itemprop="description" content="Download it on the app store TL;DR: If you downloaded the app don&rsquo;t forget to toggle the Safari switch in Settings
+  The &ldquo;Do something with Hacker News&rdquo; idea Searching for HN clients on the app store there are many reasonable looking apps, some of them clearly abandoned, many look like a developer needed at least one random published app to get the job. If another HN client is to be built, then it should be overbuilt, to stand out with its gimmicks and questionable features.">
 
 
 <meta itemprop="datePublished" content="2020-05-19T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2020-05-19T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="899">
+<meta itemprop="wordCount" content="712">
 
 
 
 <meta itemprop="keywords" content="iOS, Swift, Hacker News," />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Metalens for Hacker News"/>
-<meta name="twitter:description" content="Download it on the app store TL;DR: If you&rsquo;ll download the app don&rsquo;t forget to toggle the Safari switch in Settings
-  Motivation I would often scroll HN, see something interesting but not open the link, by the time I got home from the office (remember offices?) it was from the top items. At the end of the day, I just wanted a way to go back in time at a specific hour or get a curated list of news items"/>
+<meta name="twitter:description" content="Download it on the app store TL;DR: If you downloaded the app don&rsquo;t forget to toggle the Safari switch in Settings
+  The &ldquo;Do something with Hacker News&rdquo; idea Searching for HN clients on the app store there are many reasonable looking apps, some of them clearly abandoned, many look like a developer needed at least one random published app to get the job. If another HN client is to be built, then it should be overbuilt, to stand out with its gimmicks and questionable features."/>
 
 
 
@@ -112,7 +112,7 @@
         </div>
 
         <article>
-            <h2 class="post-title"><a href="https://3am.engineering/2020/05/metalens-for-hacker-news/">Metalens for Hacker News</a></h2>
+            <h2 class="post-title"><a href="https://3am.engineering/works/metalens/">Metalens for Hacker News</a></h2>
 
             
 
@@ -121,61 +121,48 @@
 
 <h4 id="download-it-on-the-app-store-https-apps-apple-com-us-app-metalens-id1506654571-ls-1"><a href="https://apps.apple.com/us/app/metalens/id1506654571?ls=1">Download it on the app store</a></h4>
 
-<p>TL;DR: If you&rsquo;ll download the app don&rsquo;t forget to toggle the Safari switch in Settings</p>
+<p>TL;DR: If you downloaded the app don&rsquo;t forget to toggle the Safari switch in Settings</p>
 
 <figure>
     <img src="/images/metalens_logo.jpg"/> 
 </figure>
 
 
-<h3 id="motivation">Motivation</h3>
+<h2 id="the-do-something-with-hacker-news-idea">The &ldquo;Do something with Hacker News&rdquo; idea</h2>
 
-<p>I would often scroll HN, see something interesting but not open the link, by the time I got home from the office (remember offices?) it was from the top items. At the end of the day, I just wanted a way to go back in time at a specific hour or get a curated list of news items</p>
+<p>Searching for HN clients on the app store there are many reasonable looking apps, some of them clearly abandoned, many look like a developer needed at least one random published app to get the job.
+If another HN client is to be built, then it should be overbuilt, to stand out with its gimmicks and questionable features.</p>
+
+<p>But the iOS app wasn’t the first spawn of the “do something with Hacker News” itch of mine, the first one was a newsletter, complete with sketchy categorization provided by GCP NLP, even if using HN comments and the article text as input.</p>
 
 <figure>
     <img src="/images/hn_digest_1.jpg"
-         alt="Metalens daily HN digest email"/> <figcaption>
-            <p>Metalens daily HN digest email</p>
+         alt="Yes, very useful categorization"/> <figcaption>
+            <p>Yes, very useful categorization</p>
         </figcaption>
 </figure>
 
 
-<p>This is how it all started, as a newsletter, with only one subscriber, me.
-For categorization I used natural language processing from GCP, news items would get categorized either by the site&rsquo;s content or by HN comments, depends on what source gave a better confidence result.
-If the categories seem familiar it&rsquo;s probably because Reddit probably uses the same API for its categorization.</p>
+<p>You might recognize that the same categories pop up in certain subreddits, I&rsquo;m thinking they might&rsquo;ve taken a similar approach trying to add something of value to their feeds.</p>
 
-<p>Either way, it would only hit the mark for half of the items, the rest of the items needed some manual help, the language processing, and categorization part need a lot more work,
-I think that&rsquo;s one reason why AI startups use people and sell it as an AI service, Intelligence as a Service?</p>
-
-<h1 id="the-ios-app">The iOS app</h1>
+<h2 id="the-ios-app">The iOS app</h2>
 
 <figure>
     <img src="/images/metalens_app.jpg"/> 
 </figure>
 
 
-<p>A few months ago I decided to put my best efforts into an iOS client for HN, yes I know there are some good apps out there but they offer the same or fewer features than the HN website.</p>
+<p>A few weeks into the &ldquo;do something with Hacker News&rdquo; phase I decided that another iOS HN client should make the world a better place.</p>
 
-<p>The almost &ldquo;real-time&rdquo; analytics I thought looks fun and even offers an insight into how an item/topic is doing overtime in comments and score activity.</p>
+<p>But it can&rsquo;t be just another wrapper around the site, that would be too boring.</p>
 
-<p>I often use the granular time travel to back and read some pretty cool items I missed, it works fine for me, I&rsquo;m more of a lurker, the comments I wanted to write are often already written by somebody else or the subject is way out of my domain of expertise.</p>
+<p>Besides the granular snapshots, it should also have a graph representation of the community engagement with the news item, both comments and upvoting activity, pretty graphs and analytics really put the &ldquo;meta&rdquo; in the &ldquo;Metalens&rdquo;!</p>
 
-<h3 id="happy-accidents">Happy accidents</h3>
+<p>For good measure throw a &ldquo;curated feed&rdquo; feature that would pick news items using &ldquo;handcrafted algorithms&rdquo;, no need to chose what to read, an algorithm can do the thinking for you.</p>
 
-<p>About the flame graph, on top it tracks score activity and on the bottom the conversation activity.</p>
+<p>This should show other HN client developers that if something is worth doing, then it&rsquo;s also worth overdoing it.</p>
 
-<figure>
-    <img src="/images/metalens_graphs.jpg"
-         alt="Flamy graphs!"/> <figcaption>
-            <p>Flamy graphs!</p>
-        </figcaption>
-</figure>
-
-
-<p>But its appearance is a &ldquo;bug&rdquo;, I mean there should only be a max of 5 red dots, 3 yellow, 2 blue, per column in score activity.
-It&rsquo;s the result of a series of little happy accidents made in a late-night engineering session. I looked at it the other day, I have no idea what I wrote, I&rsquo;ll leave that part untouched, wrote some tests to make sure the output values were withing range, I&rsquo;ll leave the magic undisturbed, plus it makes the flame graph look more &ldquo;flamy&rdquo;!</p>
-
-<h3 id="swiftui">SwiftUI</h3>
+<h2 id="swiftui-needed-one-more-year-the-oven">SwiftUI needed one more year the oven</h2>
 
 <p>Initially tried Swift UI, development was going so fast, &ldquo;I will probably never go back to UIKit&rdquo; I was thinking while clicking away, the prototyping phase went smooth.
 But SwiftUI it&rsquo;s not ready for production yet, it makes some things trivial and some trivial things a pain in the ass.</p>
@@ -189,9 +176,9 @@ But SwiftUI it&rsquo;s not ready for production yet, it makes some things trivia
 <p>There are workarounds, but it felt like I was fighting SwiftUI.
 Also, the app at that stage had some bizarre bugs when items in a list would not have the correct height until you scrolled a pixel or two.
 Then the scrolling performance was not good, using UIKit and CoreAnimation reduced CPU time in half when scrolling the same items.
-I had to rewrite it all in good old UIKit.</p>
+A rewrite using UIKit was imminent.</p>
 
-<h3 id="app-store-review-process">App store review process</h3>
+<h2 id="apple-really-wants-you-to-open-links-in-safari">Apple really wants you to open links in Safari</h2>
 
 <p>I got the same rejection reason as <a href="https://medium.com/swlh/my-app-is-dead-in-the-water-93a97a137eff">Matt Stanford with his Hacker News Zero app</a>.
 The only way I could get it approved was by opening links in Safari app, while every other app seems to get away just fine by opening them in <code>SFSafariViewController</code>.
@@ -207,31 +194,30 @@ I included a toggle switch in settings when enabled opens links in <code>SFSafar
 </figure>
 
 
-<p>Then there was the inappropriate use of auto-renewing subscriptions, the reviewers were very insistent that I should use non-renewing subscription even after adding additional features to the Metalens Premium package.
-Ok, Apple, be it your way.</p>
+<h2 id="no-auto-renewing-subscriptions-for-you">No auto-renewing subscriptions for you</h2>
+
+<p>The reviewers were very insistent that I should use a non-renewing subscription.
+Shame, since I really could’ve used the total MRR of $2 generated by the turned on and forgotten $0.50 monthly auto-renewing subscription.</p>
 
 <figure>
     <img src="/images/subscriptions_issues.jpg"/> 
 </figure>
 
 
-<p>But after 6 reviews and 5 iterations, Metalens finally got approved. If you plan to install and use it definitely toggle on the &ldquo;Use internal Safari browser&rdquo; switch.</p>
+<p>But after 6 reviews and 5 iterations, Metalens finally got approved. If you plan to install and use it, then definitely toggle on the &ldquo;Use internal Safari browser&rdquo; switch.</p>
 
-<h3 id="upcoming-features-and-improvements">Upcoming features and improvements</h3>
+<h2 id="upcoming-features-and-improvements-maybe">Upcoming features and improvements (maybe)</h2>
 
-<p>The app is still not there yet in terms of features, there is a lot more work to be done, If you would like to support the development and prevent another forgotten HN client app zombie on the app store you should subscribe to Metalens Premium.</p>
+<p>The app is still not there yet, it could have a few extra features of questionable usefulness bolted on.</p>
 
 <ul>
-<li>Add search, seems like a trivial thing to add with <a href="https://hn.algolia.com/api">HN Search API</a></li>
-<li>Add trends with <a href="https://showcase.metamate.io/hackernews-trends">Metamate</a></li>
-<li>I would really like to improve the current &ldquo;Curated Feed&rdquo; section, rework categories and maybe use trends to its advantage, a lot to explore here.</li>
+<li>Add trends for the search feature, something similar to <a href="https://showcase.metamate.io/hackernews-trends">Metamate</a></li>
 <li>Get notified when someone replies to your comments or submission.</li>
-<li>Add one-time payment as an alternative to subscriptions.</li>
 </ul>
 
-<h1 id="the-backend">The backend</h1>
+<h2 id="the-backend">The backend</h2>
 
-<p>Nothing special, Go + SQLite running in a VM on CGP with Cloudflare + CF Workers so I could take advantage of their network and cache in case the app gets a surge of requests, how optimistic of me.</p>
+<p>Nothing special, Go + SQLite running in a VM on CGP with Cloudflare + CF Workers so I could take advantage of their network and cache in case the app gets a surge of requests, ready just in case it gets exposure to millions of users overnight.</p>
 
             </div>
         </article>

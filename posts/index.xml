@@ -14,35 +14,28 @@
             
             <guid>https://3am.engineering/2020/05/metalens-for-hacker-news/</guid>
             <description>Download it on the app store TL;DR: If you&amp;rsquo;ll download the app don&amp;rsquo;t forget to toggle the Safari switch in Settings
- Motivation I would often scroll HN, see something interesting but not open the link, by the time I got home from the office (remember offices?) it was from the top items. At the end of the day, I just wanted a way to go back in time at a specific hour or get a curated list of news items</description>
+  Motivation I would often scroll HN, see something interesting but not open the link, by the time I got home from the office (remember offices?) it was from the top items. At the end of the day, I just wanted a way to go back in time at a specific hour or get a curated list of news items</description>
             <content type="html"><![CDATA[
 
 <h4 id="download-it-on-the-app-store-https-apps-apple-com-us-app-metalens-id1506654571-ls-1"><a href="https://apps.apple.com/us/app/metalens/id1506654571?ls=1">Download it on the app store</a></h4>
 
 <p>TL;DR: If you&rsquo;ll download the app don&rsquo;t forget to toggle the Safari switch in Settings</p>
 
-
-    <figure class="left" >
-        <img src="/images/metalens_logo.jpg"   />
-
-        
-    </figure>
-
+<figure>
+    <img src="/images/metalens_logo.jpg"/> 
+</figure>
 
 
 <h3 id="motivation">Motivation</h3>
 
 <p>I would often scroll HN, see something interesting but not open the link, by the time I got home from the office (remember offices?) it was from the top items. At the end of the day, I just wanted a way to go back in time at a specific hour or get a curated list of news items</p>
 
-
-    <figure class="left" >
-        <img src="/images/hn_digest_1.jpg"   />
-
-        
-            <figcaption class="center" >Metalens daily HN digest email</figcaption>
-        
-    </figure>
-
+<figure>
+    <img src="/images/hn_digest_1.jpg"
+         alt="Metalens daily HN digest email"/> <figcaption>
+            <p>Metalens daily HN digest email</p>
+        </figcaption>
+</figure>
 
 
 <p>This is how it all started, as a newsletter, with only one subscriber, me.
@@ -54,13 +47,9 @@ I think that&rsquo;s one reason why AI startups use people and sell it as an AI 
 
 <h1 id="the-ios-app">The iOS app</h1>
 
-
-    <figure class="left" >
-        <img src="/images/metalens_app.jpg"   />
-
-        
-    </figure>
-
+<figure>
+    <img src="/images/metalens_app.jpg"/> 
+</figure>
 
 
 <p>A few months ago I decided to put my best efforts into an iOS client for HN, yes I know there are some good apps out there but they offer the same or fewer features than the HN website.</p>
@@ -73,15 +62,12 @@ I think that&rsquo;s one reason why AI startups use people and sell it as an AI 
 
 <p>About the flame graph, on top it tracks score activity and on the bottom the conversation activity.</p>
 
-
-    <figure class="left" >
-        <img src="/images/metalens_graphs.jpg"   />
-
-        
-            <figcaption class="center" >Flamy graphs!</figcaption>
-        
-    </figure>
-
+<figure>
+    <img src="/images/metalens_graphs.jpg"
+         alt="Flamy graphs!"/> <figcaption>
+            <p>Flamy graphs!</p>
+        </figcaption>
+</figure>
 
 
 <p>But its appearance is a &ldquo;bug&rdquo;, I mean there should only be a max of 5 red dots, 3 yellow, 2 blue, per column in score activity.
@@ -111,27 +97,20 @@ I included a toggle switch in settings when enabled opens links in <code>SFSafar
 
 <p>The more you think about it the less sense it makes. Why Apple even added <code>SFSafariViewController</code> and recommends it as the primary way to open external links, should it only be used for ToS and Privacy Policies?</p>
 
-
-    <figure class="left" >
-        <img src="/images/legal_issues.jpg"   />
-
-        
-            <figcaption class="center" >Copyright infringement?</figcaption>
-        
-    </figure>
-
+<figure>
+    <img src="/images/legal_issues.jpg"
+         alt="Copyright infringement?"/> <figcaption>
+            <p>Copyright infringement?</p>
+        </figcaption>
+</figure>
 
 
 <p>Then there was the inappropriate use of auto-renewing subscriptions, the reviewers were very insistent that I should use non-renewing subscription even after adding additional features to the Metalens Premium package.
 Ok, Apple, be it your way.</p>
 
-
-    <figure class="left" >
-        <img src="/images/subscriptions_issues.jpg"   />
-
-        
-    </figure>
-
+<figure>
+    <img src="/images/subscriptions_issues.jpg"/> 
+</figure>
 
 
 <p>But after 6 reviews and 5 iterations, Metalens finally got approved. If you plan to install and use it definitely toggle on the &ldquo;Use internal Safari browser&rdquo; switch.</p>
@@ -161,7 +140,7 @@ Ok, Apple, be it your way.</p>
             
             <guid>https://3am.engineering/2019/06/a-proper-op-z-plugin/</guid>
             <description>Let&amp;rsquo;s be honest, previous attempt at an OP-Z plugin thingy was a failure, Main drawbacks being the boot times, all the bugs and overhead that come with running Linux &amp;amp; jack &amp;amp; supercollider on such a small machine. You just don&amp;rsquo;t need Linux if you want to run a medium complexity synth. But most importantly it kinda failed at being fun.
-Teesny 3.6 and teensy audio board  With teensy 3.</description>
+  Teesny 3.6 and teensy audio board</description>
             <content type="html"><![CDATA[
 
 <p>Let&rsquo;s be honest, <a href="https://victorbitca.github.io/posts/2019/04/creating-an-op-z-plugin/">previous attempt</a> at an OP-Z plugin thingy was a failure,
@@ -169,15 +148,12 @@ Main drawbacks being the boot times, all the bugs and overhead that come with ru
 You just don&rsquo;t need Linux if you want to run a medium complexity synth.
 But most importantly it kinda failed at being fun.</p>
 
-
-    <figure class="left" >
-        <img src="/images/thigs_to_come.jpg"   />
-
-        
-            <figcaption class="center" >Teesny 3.6 and teensy audio board</figcaption>
-        
-    </figure>
-
+<figure>
+    <img src="/images/thigs_to_come.jpg"
+         alt="Teesny 3.6 and teensy audio board"/> <figcaption>
+            <p>Teesny 3.6 and teensy audio board</p>
+        </figcaption>
+</figure>
 
 
 <p>With <a href="https://www.pjrc.com/store/teensy36.html">teensy 3.6</a> &amp; <a href="https://www.pjrc.com/store/teensy3_audio.html">teensy audio board</a>, the boot times are around a second or less, it&rsquo;s faster than the OP-Z!
@@ -208,15 +184,12 @@ A small semi-modular portable plugin <a href="http://www.makenoisemusic.com/synt
 <p>The micro-modular was inspired by the <a href="http://www.makenoisemusic.com/synthesizers/ohcoast">o-coast</a> and the <a href="https://bastl-instruments.com/instruments/kastle">kastl</a> and of course the full size <a href="https://en.wikipedia.org/wiki/Modular_synthesizer">modular systems</a>.
 While some of those run mostly analog circuitry in their signal paths, teensy can&rsquo;t do that, it&rsquo;s just an emulation of one.</p>
 
-
-    <figure class="left" >
-        <img src="/images/minimodular.jpg"   />
-
-        
-            <figcaption class="center" >The minimodular</figcaption>
-        
-    </figure>
-
+<figure>
+    <img src="/images/minimodular.jpg"
+         alt="The minimodular"/> <figcaption>
+            <p>The minimodular</p>
+        </figcaption>
+</figure>
 
 
 <p>Initially, things had to be simple, connections could not be stackable, one output in only in one input,
@@ -239,15 +212,12 @@ In hindsight, I should have ditched the Arduino and some &ldquo;modules&rdquo; o
 
 <p>One major drawback of the teensy audio framework is that <code>AudioConnection</code> objects can&rsquo;t be created at the runtime so every possible connection has to be made beforehand and it looks like a total mess.</p>
 
-
-    <figure class="left" >
-        <img src="/images/one_voice.jpg"   />
-
-        
-            <figcaption class="center" >No</figcaption>
-        
-    </figure>
-
+<figure>
+    <img src="/images/one_voice.jpg"
+         alt="No"/> <figcaption>
+            <p>No</p>
+        </figcaption>
+</figure>
 
 
 <p>Once I was done with the firmware CPU and memory usage was above 80% with a power consumption of 140 mA from the OP-Z (when driving the headset at full power) that&rsquo;s above the advertised 100 mA max that OP-Z could output, so I had to underclock it a bit and remove extra FX and LEDs, even then I could not get it below 120 mA without removing a synth voice so I left it at 120 mA.</p>
@@ -310,29 +280,23 @@ First, I need to strip the audio from the video files, using <code>ffmpeg</code>
 
 <p>By running a piece of raw audio data (a .wav file with no header) through chromaprint you get the fingerprints of those files which are actually just spectrograms, <a href="https://oxygene.sk/2011/01/how-does-chromaprint-work/">more info on how it works</a>.</p>
 
-
-    <figure class="left" >
-        <img src="/images/ep2wav.jpg"   />
-
-        
-            <figcaption class="center" >Typical output for a 3min .wav file</figcaption>
-        
-    </figure>
-
+<figure>
+    <img src="/images/ep2wav.jpg"
+         alt="Typical output for a 3min .wav file"/> <figcaption>
+            <p>Typical output for a 3min .wav file</p>
+        </figcaption>
+</figure>
 
 
 <p>Comparing two perfectly aligned audio files results in this image.
 The black area at the beginning is where the spectrograms <code>XOR</code>-ed perfectly resulting mostly in a black area.</p>
 
-
-    <figure class="left" >
-        <img src="/images/2min-diff.jpg"   />
-
-        
-            <figcaption class="center" >Comparing first 2min of two episodes</figcaption>
-        
-    </figure>
-
+<figure>
+    <img src="/images/2min-diff.jpg"
+         alt="Comparing first 2min of two episodes"/> <figcaption>
+            <p>Comparing first 2min of two episodes</p>
+        </figcaption>
+</figure>
 
 
 <p>But in some cases, most of the cases actually intros aren&rsquo;t aligned perfectly, before the intro song begins there could be some scenes from previous episodes or some pre-intro scenes from the current episode.
@@ -344,15 +308,12 @@ Another way could be using the &ldquo;Longest Common Substring&rdquo; approach w
 
 <p>After all the slide and compare action, I&rsquo;ll pick the iteration with the best score and do a comparison, usually resulting in something like the picture above.</p>
 
-
-    <figure class="left" >
-        <img src="/images/match-search.jpg"   />
-
-        
-            <figcaption class="center" >Initial state - incremental sliding and comparing two fingerprints</figcaption>
-        
-    </figure>
-
+<figure>
+    <img src="/images/match-search.jpg"
+         alt="Initial state - incremental sliding and comparing two fingerprints"/> <figcaption>
+            <p>Initial state - incremental sliding and comparing two fingerprints</p>
+        </figcaption>
+</figure>
 
 
 <p>By the way, raw fingerprints of those two files are just <code>int32</code> slices, images above are just for visual aid and the <code>int32</code> values are one-pixel width vertical slices from each fingerprint.
@@ -365,15 +326,12 @@ The comparison between the values is done using <a href="https://en.wikipedia.or
 <p>Each value is the Hamming distance between two <code>int32</code> pairs and its easy to spot somewhere in the middle there is a subsequence that gets below 10 and sits there for quite a while.
 That is the matching area I was looking for, If I were to compare those fingerprints and output an image it would have a blacker area somewhere in the middle, next step is to calculate how long it is, then taking into account the offset it is trivial to calculate where the intro song started and ended for both files.</p>
 
-
-    <figure class="left" >
-        <img src="/images/matcher_demo.gif"   />
-
-        
-            <figcaption class="center" >Searching for intro in 10 files (single threaded)</figcaption>
-        
-    </figure>
-
+<figure>
+    <img src="/images/matcher_demo.gif"
+         alt="Searching for intro in 10 files (single threaded)"/> <figcaption>
+            <p>Searching for intro in 10 files (single threaded)</p>
+        </figcaption>
+</figure>
 
 
 <h2 id="conclusion">Conclusion</h2>
@@ -424,15 +382,12 @@ SuperCollider can easily be set up to run on a <a href="https://supercollider.gi
 <p>The choice of hardware at that moment was clear, a Raspberry Pi Zero and a dedicated audio board (<a href="https://fe-pi.com/">Fe-Pi</a> or <a href="https://www.pjrc.com/store/teensy3_audio.html">Teensy audio adaptor</a> both based on the same chip) would do the trick.
 Combined with a ~2000 mAh battery it should run for ~5 hours, still not as much as I would like but it will do for the moment.</p>
 
-
-    <figure class="left" >
-        <img src="/images/3d&#43;proto.jpg"   />
-
-        
-            <figcaption class="center" >Looks like a wannabe pocket operator, doesn&#39;t it?</figcaption>
-        
-    </figure>
-
+<figure>
+    <img src="/images/3d&#43;proto.jpg"
+         alt="Looks like a wannabe pocket operator, doesn&amp;rsquo;t it?"/> <figcaption>
+            <p>Looks like a wannabe pocket operator, doesn&rsquo;t it?</p>
+        </figcaption>
+</figure>
 
 
 <p>The first prototype was quickly made in Fusion and the plastic parts printed.
@@ -443,27 +398,20 @@ It, of course, has a few drawbacks:</p>
 <li>Not enough buttons.</li>
 </ol>
 
-
-    <figure class="left" >
-        <img src="/images/sequencer_render.jpg"   />
-
-        
-    </figure>
-
+<figure>
+    <img src="/images/sequencer_render.jpg"/> 
+</figure>
 
 
 <p>The second prototype used mechanical keyboard buttons, and it had a lot more of them.
 Initially, I cloned Volca Sample functional plus some extra stuff.</p>
 
-
-    <figure class="left" >
-        <img src="/images/sequencer_demo.gif"   />
-
-        
-            <figcaption class="center" >OP-1 anyone?</figcaption>
-        
-    </figure>
-
+<figure>
+    <img src="/images/sequencer_demo.gif"
+         alt="OP-1 anyone?"/> <figcaption>
+            <p>OP-1 anyone?</p>
+        </figcaption>
+</figure>
 
 
 <p>Then I started looking into how OP-Z handles the sequencing and started to recreate it in Supercollider.
@@ -471,15 +419,12 @@ After some time took the plunge and bought an OP-Z, I think from the first or se
 
 <h2 id="op-z-era">OP-Z Era</h2>
 
-
-    <figure class="left" >
-        <img src="/images/opz_raspberry.jpg"   />
-
-        
-            <figcaption class="center" >A tight fit</figcaption>
-        
-    </figure>
-
+<figure>
+    <img src="/images/opz_raspberry.jpg"
+         alt="A tight fit"/> <figcaption>
+            <p>A tight fit</p>
+        </figcaption>
+</figure>
 
 
 <p>After spending some time with OP-Z I thought there is no point to try to recreate the sequencer, it would take too much time. I decided to reuse the Raspberry Pi and audio IO board and slapped them on the back of my OP-Z, it seemed the most reasonable way to get the most out of it in the shortest time possible, OP-Z already had the sequencer that I wanted but it didn&rsquo;t have any sampling capabilities(at the time of writing) so it should be a beautiful fusion.</p>
@@ -605,15 +550,12 @@ then in the <code>golang-opz</code> directory run only once:</p>
 <p>I need a device with no boot time and almost real-time performance so I&rsquo;ll go with a microcontroller, the Zero board is replaced with a
 <a href="https://www.pjrc.com/store/teensy36.html">Teensy 3.6</a>, a small beast of a microcontroller with an additional chip of <a href="https://www.electrodragon.com/product/2pcs-ipus-ips6404-iot-ram/">8MB of RAM</a>, and 32 GB of flash storage.</p>
 
-
-    <figure class="left" >
-        <img src="/images/thigs_to_come.jpg"   />
-
-        
-            <figcaption class="center" >A propper plugin thingy</figcaption>
-        
-    </figure>
-
+<figure>
+    <img src="/images/thigs_to_come.jpg"
+         alt="A propper plugin thingy"/> <figcaption>
+            <p>A propper plugin thingy</p>
+        </figcaption>
+</figure>
 
 
 <h4 id="the-follow-up-https-victorbitca-github-io-posts-2019-05-a-proper-op-z-plugin-prototype"><a href="https://victorbitca.github.io/posts/2019/05/a-proper-op-z-plugin-prototype/">The follow-up&hellip;</a></h4>
