@@ -5,8 +5,9 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="author" content="Victor Bitca">
-<meta name="description" content="Probably you&amp;rsquo;ve been binge-watching a series and the intro/outro song is already stuck in your head, the visuals already burned onto your retina, you&amp;rsquo;re ready to do anything to not hear one more time those songs.
-Some streaming services like Netflix already have a skip intro button, but how does it work? Do you really think that people at Netflix in charge of their content specify in their contracts that content providers should also provide the intro/outro time range?" />
+<meta name="description" content="If you ever binge-watched a series you should already be familiar with the urge to skip ASAP that intro/outro song.
+Many streaming services already have a skip intro button, but how does it work? Did you think that the content partners need to specify timestamps for intro/outros at the content ingest stage? That would be too easy.
+I attempted to automate the intro detection with chromaprint mostly for fun because it seems that was my definition of fun at the time." />
 <meta name="keywords" content=", golang, chromaprint, audio fingerprinting" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="" />
@@ -32,21 +33,23 @@ Some streaming services like Netflix already have a skip intro button, but how d
 
 
 <meta itemprop="name" content="Skip that intro">
-<meta itemprop="description" content="Probably you&rsquo;ve been binge-watching a series and the intro/outro song is already stuck in your head, the visuals already burned onto your retina, you&rsquo;re ready to do anything to not hear one more time those songs.
-Some streaming services like Netflix already have a skip intro button, but how does it work? Do you really think that people at Netflix in charge of their content specify in their contracts that content providers should also provide the intro/outro time range?">
+<meta itemprop="description" content="If you ever binge-watched a series you should already be familiar with the urge to skip ASAP that intro/outro song.
+Many streaming services already have a skip intro button, but how does it work? Did you think that the content partners need to specify timestamps for intro/outros at the content ingest stage? That would be too easy.
+I attempted to automate the intro detection with chromaprint mostly for fun because it seems that was my definition of fun at the time.">
 
 
 <meta itemprop="datePublished" content="2019-04-19T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2019-04-19T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="734">
+<meta itemprop="wordCount" content="750">
 
 
 
 <meta itemprop="keywords" content="golang,chromaprint,audio fingerprinting," />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Skip that intro"/>
-<meta name="twitter:description" content="Probably you&rsquo;ve been binge-watching a series and the intro/outro song is already stuck in your head, the visuals already burned onto your retina, you&rsquo;re ready to do anything to not hear one more time those songs.
-Some streaming services like Netflix already have a skip intro button, but how does it work? Do you really think that people at Netflix in charge of their content specify in their contracts that content providers should also provide the intro/outro time range?"/>
+<meta name="twitter:description" content="If you ever binge-watched a series you should already be familiar with the urge to skip ASAP that intro/outro song.
+Many streaming services already have a skip intro button, but how does it work? Did you think that the content partners need to specify timestamps for intro/outros at the content ingest stage? That would be too easy.
+I attempted to automate the intro detection with chromaprint mostly for fun because it seems that was my definition of fun at the time."/>
 
 
 
@@ -119,17 +122,18 @@ Some streaming services like Netflix already have a skip intro button, but how d
             <div class="post-content">
                 
 
-<p>Probably you&rsquo;ve been binge-watching a series and the intro/outro song is already stuck in your head, the visuals already burned onto your retina, you&rsquo;re ready to do anything to not hear one more time those songs.</p>
+<p>If you ever binge-watched a series you should already be familiar with the urge to skip ASAP that intro/outro song.</p>
 
-<p>Some streaming services like Netflix already have a skip intro button, but how does it work?
-Do you really think that people at Netflix in charge of their content specify in their contracts that content providers should also provide the intro/outro time range? That would be too easy.</p>
+<p>Many streaming services already have a skip intro button, but how does it work?
+Did you think that the content partners need to specify timestamps for intro/outros at the content ingest stage? That would be too easy.</p>
 
-<p>I&rsquo;ll try to automate that using <code>golang</code> and <code>chromaprint</code> mostly for fun and profit and maybe I&rsquo;ll learn something along the way.
-I&rsquo;ll also need to install <a href="https://ffmpeg.org/"><code>ffmpeg</code></a> to do some work on the video files themselves and <code>golang</code> <a href="https://github.com/go-fingerprint/">wrappers</a> for <a href="https://acoustid.org/chromaprint">chromaprint</a></p>
+<p>I attempted to automate the intro detection with <code>chromaprint</code> mostly for fun because it seems that was my definition of fun at the time.</p>
+
+<p>First thing, install the workhorse of the industry <a href="https://ffmpeg.org/"><code>ffmpeg</code></a> to do some work on the video files themselves and <code>golang</code> <a href="https://github.com/go-fingerprint/">wrappers</a> for <a href="https://acoustid.org/chromaprint">chromaprint</a></p>
 
 <h2 id="preparation-phase">Preparation phase</h2>
 
-<p>Let&rsquo;s imagine I own some JoJo&rsquo;s Bizarre Adventure episodes.
+<p>Let&rsquo;s say I got hold of some JoJo&rsquo;s Bizarre Adventure episodes.
 First, I need to strip the audio from the video files, using <code>ffmpeg</code> is fast and it looks like this in my case.</p>
 
 <p>Strip the audio stream: <code>ffmpeg -i input.mkv -vn -c:a copy output.m4a</code></p>
@@ -204,9 +208,10 @@ That is the matching area I was looking for, If I were to compare those fingerpr
 
 <h2 id="conclusion">Conclusion</h2>
 
-<p>The end result is a pretty reliable way of finding common regions/fingerprints in two or more audio files.</p>
+<p>The result is a robust way to find common regions/fingerprints in two or more audio files, at least in this concrete use case.</p>
 
-<p>The implementation can be seen <a href="https://github.com/VictorBitca/matcher"><code>here</code></a>.</p>
+<p>The implementation can be seen <a href="https://github.com/VictorBitca/matcher"><code>here</code></a>.
+Disclaimer: The solution is in no way perfect, probably not written in an idiomatic <code>golang</code> style since it was one of the first <code>golang</code> projects that was actually of any use.</p>
 
             </div>
         </article>

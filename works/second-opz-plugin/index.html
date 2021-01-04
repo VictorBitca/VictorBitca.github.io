@@ -5,7 +5,8 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="author" content="Victor Bitca">
-<meta name="description" content="Let&amp;rsquo;s be honest, previous attempt at an OP-Z plugin thingy was a failure, Main drawbacks being the boot times, all the bugs and overhead that come with running Linux &amp;amp; jack &amp;amp; supercollider on such a small machine. You just don&amp;rsquo;t need Linux if you want to run a medium complexity synth. But most importantly it kinda failed at being fun.
+<meta name="description" content="The, previous attempt at an OP-Z plugin thingy was a failure.
+The boot time, the bugs, and overhead that come with running Linux &#43; jack &#43; supercollider stack on such a Raspberry Pi Zero is too much. You don&amp;rsquo;t need Linux if you want to run a medium complexity synth. But it also failed at being fun and easy to use.
   Teesny 3.6 and teensy audio board" />
 <meta name="keywords" content=", op-z, synth, sampler, sclang, golang" />
 <meta name="robots" content="noodp" />
@@ -32,20 +33,22 @@
 
 
 <meta itemprop="name" content="A proper OP-Z plugin">
-<meta itemprop="description" content="Let&rsquo;s be honest, previous attempt at an OP-Z plugin thingy was a failure, Main drawbacks being the boot times, all the bugs and overhead that come with running Linux &amp; jack &amp; supercollider on such a small machine. You just don&rsquo;t need Linux if you want to run a medium complexity synth. But most importantly it kinda failed at being fun.
+<meta itemprop="description" content="The, previous attempt at an OP-Z plugin thingy was a failure.
+The boot time, the bugs, and overhead that come with running Linux &#43; jack &#43; supercollider stack on such a Raspberry Pi Zero is too much. You don&rsquo;t need Linux if you want to run a medium complexity synth. But it also failed at being fun and easy to use.
   Teesny 3.6 and teensy audio board">
 
 
 <meta itemprop="datePublished" content="2019-06-08T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2019-06-08T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="633">
+<meta itemprop="wordCount" content="625">
 
 
 
 <meta itemprop="keywords" content="op-z,synth,sampler,sclang,golang," />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="A proper OP-Z plugin"/>
-<meta name="twitter:description" content="Let&rsquo;s be honest, previous attempt at an OP-Z plugin thingy was a failure, Main drawbacks being the boot times, all the bugs and overhead that come with running Linux &amp; jack &amp; supercollider on such a small machine. You just don&rsquo;t need Linux if you want to run a medium complexity synth. But most importantly it kinda failed at being fun.
+<meta name="twitter:description" content="The, previous attempt at an OP-Z plugin thingy was a failure.
+The boot time, the bugs, and overhead that come with running Linux &#43; jack &#43; supercollider stack on such a Raspberry Pi Zero is too much. You don&rsquo;t need Linux if you want to run a medium complexity synth. But it also failed at being fun and easy to use.
   Teesny 3.6 and teensy audio board"/>
 
 
@@ -119,10 +122,11 @@
             <div class="post-content">
                 
 
-<p>Let&rsquo;s be honest, <a href="https://victorbitca.github.io/posts/2019/04/creating-an-op-z-plugin/">previous attempt</a> at an OP-Z plugin thingy was a failure,
-Main drawbacks being the boot times, all the bugs and overhead that come with running <code>Linux</code> &amp; <code>jack</code> &amp; <code>supercollider</code> on such a small machine.
-You just don&rsquo;t need Linux if you want to run a medium complexity synth.
-But most importantly it kinda failed at being fun.</p>
+<p>The, <a href="https://victorbitca.github.io/posts/2019/04/creating-an-op-z-plugin/">previous attempt</a> at an OP-Z plugin thingy was a failure.</p>
+
+<p>The boot time, the bugs, and overhead that come with running <code>Linux</code> + <code>jack</code> + <code>supercollider</code> stack on such a Raspberry Pi Zero is too much.
+You don&rsquo;t need Linux if you want to run a medium complexity synth.
+But it also failed at being fun and easy to use.</p>
 
 <figure>
     <img src="/images/thigs_to_come.jpg"
@@ -133,8 +137,8 @@ But most importantly it kinda failed at being fun.</p>
 
 
 <p>With <a href="https://www.pjrc.com/store/teensy36.html">teensy 3.6</a> &amp; <a href="https://www.pjrc.com/store/teensy3_audio.html">teensy audio board</a>, the boot times are around a second or less, it&rsquo;s faster than the OP-Z!
-The CPU usage is less on teensy than on Raspberry Pi Zero for the same building blocks (oscilators and other effects).
-<a href="https://www.pjrc.com/teensy/gui/">Teensy audio library</a> is a really great tool, synths that can rival the OP-Z&rsquo;s built-in ones can be easily built using the basic building blocks.</p>
+The CPU usage is less with Teensy than on Raspberry Pi Zero for the same building blocks (oscillators and other effects).
+<a href="https://www.pjrc.com/teensy/gui/">Teensy audio library</a> is a great tool, synths that can rival the OP-Z&rsquo;s built-in ones can be built using the basic building blocks.</p>
 
 
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
@@ -169,10 +173,11 @@ While some of those run mostly analog circuitry in their signal paths, teensy ca
 
 
 <p>Initially, things had to be simple, connections could not be stackable, one output in only in one input,
-The micro-modular is based on <a href="https://www.pjrc.com/store/teensy36.html">teensy 3.6</a> as its main board and an Arduino Nano as a slave expansion board,
-In hindsight, I should have ditched the Arduino and some &ldquo;modules&rdquo; on the board, for example, FX section should not be on board.</p>
+The micro-modular is based on <a href="https://www.pjrc.com/store/teensy36.html">teensy 3.6</a> as its mainboard and an Arduino Nano as a slave expansion board,
+In hindsight, I should have ditched the Arduino and some &ldquo;modules&rdquo; on the board, for example, the FX section should not be on board.</p>
 
-<p>Also, Arduino nano is not compatible with the teensy board, Arduino runs on 5v and it could fry the teensy board, it had to be converted to 3.3V, there are tutorials for this so I&rsquo;m not gonna cover this here.</p>
+<p>Beware, Arduino Nano is not compatible with the Teensy board out of the box.
+Arduino runs on 5v, it could damage the Teensy board, it had to be converted to 3.3V, there are tutorials for this so I&rsquo;m not gonna cover this here.</p>
 
 <p>Next step is the teensy firmware, teensy audio tool is good for medium complexity synth, but I needed:</p>
 
@@ -211,9 +216,12 @@ In hindsight, I should have ditched the Arduino and some &ldquo;modules&rdquo; o
 <li>Massive code base</li>
 </ul>
 
-<h2 id="whats-the-point">Whats the point</h2>
+<h2 id="conclusion">Conclusion</h2>
 
-<p>Given that your phone has more processing power and always in your pocket what&rsquo;s the point in trying to create another portable device that can do only one thing, honestly I dont know, I just felt like toying around with novelty hardware creation, I think people are drawn to it even if its limited to only one function like the demand for pocket operators and other toy like synths shows or maybe its the tactile interface, feel different than smartphone.</p>
+<p>Your phone has more processing power and always in your pocket, a specialized device like this one has limited appeal, just like all the other pocket synths that came before.</p>
+
+<p>The takeaway was that even if I wouldn’t have a use for the final product, the creation process is the most enjoyable part for me.
+Merging software and hardware into something results in greater satisfaction than just writing a standalone piece of software.</p>
 
             </div>
         </article>
