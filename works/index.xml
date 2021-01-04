@@ -22,7 +22,7 @@ If another HN client is to be built, it needs to stand out with its gimmicks and
     </item>
     
     <item>
-      <title>A proper OP-Z plugin</title>
+      <title>A proper hardware plugin for the OP-Z synth</title>
       <link>https://3am.engineering/works/second-opz-plugin/</link>
       <pubDate>Sat, 08 Jun 2019 00:00:00 +0000</pubDate>
       
@@ -33,7 +33,7 @@ The boot time, the bugs, and overhead that come with running Linux + jack + supe
     </item>
     
     <item>
-      <title>Skip that intro</title>
+      <title>Skip that intro!</title>
       <link>https://3am.engineering/works/skip-intro/</link>
       <pubDate>Fri, 19 Apr 2019 00:00:00 +0000</pubDate>
       
@@ -44,7 +44,7 @@ I attempted to automate the intro detection with chromaprint mostly for fun beca
     </item>
     
     <item>
-      <title>An OP-Z plugin</title>
+      <title>A hardware plugin for the OP-Z synth</title>
       <link>https://3am.engineering/works/first-opz-plugin/</link>
       <pubDate>Sat, 13 Apr 2019 00:00:00 +0000</pubDate>
       

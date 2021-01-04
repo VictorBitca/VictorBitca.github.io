@@ -38,7 +38,18 @@ If another HN client is to be built, it needs to stand out with its gimmicks and
       
       <guid>https://3am.engineering/about/</guid>
       <description>Victor Bitca Software Engineer, currently employed at Crunchyroll, where I contributed to various projects starting with UWP &amp;amp; iOS/tvOS apps to core backend microservices.
-This blog focuses on prototypes and areas that were of interest at the time of writing/development.</description>
+This blog focuses on prototypes and areas of interest at the time of writing/development.</description>
+    </item>
+    
+    <item>
+      <title>A proper hardware plugin for the OP-Z synth</title>
+      <link>https://3am.engineering/works/second-opz-plugin/</link>
+      <pubDate>Sat, 08 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://3am.engineering/works/second-opz-plugin/</guid>
+      <description>The, previous attempt at an OP-Z plugin thingy was a failure.
+The boot time, the bugs, and overhead that come with running Linux + jack + supercollider stack on such a Raspberry Pi Zero is too much. You don&amp;rsquo;t need Linux if you want to run a medium complexity synth. But it also failed at being fun and easy to use.
+  Teesny 3.6 and teensy audio board</description>
     </item>
     
     <item>
@@ -48,17 +59,6 @@ This blog focuses on prototypes and areas that were of interest at the time of w
       
       <guid>https://3am.engineering/2019/06/a-proper-op-z-plugin/</guid>
       <description>Let&amp;rsquo;s be honest, previous attempt at an OP-Z plugin thingy was a failure, Main drawbacks being the boot times, all the bugs and overhead that come with running Linux &amp;amp; jack &amp;amp; supercollider on such a small machine. You just don&amp;rsquo;t need Linux if you want to run a medium complexity synth. But most importantly it kinda failed at being fun.
-  Teesny 3.6 and teensy audio board</description>
-    </item>
-    
-    <item>
-      <title>A proper OP-Z plugin</title>
-      <link>https://3am.engineering/works/second-opz-plugin/</link>
-      <pubDate>Sat, 08 Jun 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://3am.engineering/works/second-opz-plugin/</guid>
-      <description>The, previous attempt at an OP-Z plugin thingy was a failure.
-The boot time, the bugs, and overhead that come with running Linux + jack + supercollider stack on such a Raspberry Pi Zero is too much. You don&amp;rsquo;t need Linux if you want to run a medium complexity synth. But it also failed at being fun and easy to use.
   Teesny 3.6 and teensy audio board</description>
     </item>
     
@@ -73,7 +73,7 @@ Some streaming services like Netflix already have a skip intro button, but how d
     </item>
     
     <item>
-      <title>Skip that intro</title>
+      <title>Skip that intro!</title>
       <link>https://3am.engineering/works/skip-intro/</link>
       <pubDate>Fri, 19 Apr 2019 00:00:00 +0000</pubDate>
       
@@ -84,11 +84,11 @@ I attempted to automate the intro detection with chromaprint mostly for fun beca
     </item>
     
     <item>
-      <title>An OP-Z plugin</title>
-      <link>https://3am.engineering/2019/04/an-op-z-plugin/</link>
+      <title>A hardware plugin for the OP-Z synth</title>
+      <link>https://3am.engineering/works/first-opz-plugin/</link>
       <pubDate>Sat, 13 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://3am.engineering/2019/04/an-op-z-plugin/</guid>
+      <guid>https://3am.engineering/works/first-opz-plugin/</guid>
       <description>Update On 19.07.01 there was a firmware update, now OP-Z can sample from usb or the mic making half of this article deprecated.
 Intro It began in the summer of 2018, when I’ve been playing with my PO-20 “Arcade” wondering if it&amp;rsquo;s hackable, maybe there&amp;rsquo;s a community around hacking pocket operators like there is one for Canon “Magic Lantern” firmware.
 There is no such thing. But there is OTTO, an open source project initially inspired by OP-1 but clearly going in their own direction at the moment, consider contributing if you&amp;rsquo;re interested.</description>
@@ -96,10 +96,10 @@ There is no such thing. But there is OTTO, an open source project initially insp
     
     <item>
       <title>An OP-Z plugin</title>
-      <link>https://3am.engineering/works/first-opz-plugin/</link>
+      <link>https://3am.engineering/2019/04/an-op-z-plugin/</link>
       <pubDate>Sat, 13 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://3am.engineering/works/first-opz-plugin/</guid>
+      <guid>https://3am.engineering/2019/04/an-op-z-plugin/</guid>
       <description>Update On 19.07.01 there was a firmware update, now OP-Z can sample from usb or the mic making half of this article deprecated.
 Intro It began in the summer of 2018, when I’ve been playing with my PO-20 “Arcade” wondering if it&amp;rsquo;s hackable, maybe there&amp;rsquo;s a community around hacking pocket operators like there is one for Canon “Magic Lantern” firmware.
 There is no such thing. But there is OTTO, an open source project initially inspired by OP-1 but clearly going in their own direction at the moment, consider contributing if you&amp;rsquo;re interested.</description>
