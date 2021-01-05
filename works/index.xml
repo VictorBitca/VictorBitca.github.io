@@ -48,9 +48,9 @@ I attempted to automate the intro detection with chromaprint mostly for fun beca
       <pubDate>Sat, 13 Apr 2019 00:00:00 +0000</pubDate>
       
       <guid>https://3am.engineering/works/first-opz-plugin/</guid>
-      <description>Update On 19.07.01 there was a firmware update, now OP-Z can sample from usb or the mic making half of this article deprecated.
-Intro It began in the summer of 2018, when I’ve been playing with my PO-20 “Arcade” wondering if it&amp;rsquo;s hackable, maybe there&amp;rsquo;s a community around hacking pocket operators like there is one for Canon “Magic Lantern” firmware.
-There is no such thing. But there is OTTO, an open source project initially inspired by OP-1 but clearly going in their own direction at the moment, consider contributing if you&amp;rsquo;re interested.</description>
+      <description>Update 19.07.01 Update, half of this article is irrelevant now, OP-Z can sample from USB or the mic and support custom synth engines (kinda) after some updates.
+Background Since I got my hands on the PO-20 “Arcade” I wanted to write custom firmware for it. Of course that wasn&amp;rsquo;t possible.
+The next best thing was the OTTO inspired by OP-1. I considered joining the project for a moment but writing most of the components from scratch would take years to reach a v.</description>
     </item>
     
   </channel>
