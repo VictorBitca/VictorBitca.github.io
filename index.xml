@@ -5,10 +5,20 @@
     <link>https://3am.engineering/</link>
     <description>Recent content on 3AM Engineering</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Tue, 19 May 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 13 Apr 2021 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://3am.engineering/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Is this thing a next-next-gen controller?</title>
+      <link>https://3am.engineering/works/controller-feedback/</link>
+      <pubDate>Tue, 13 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://3am.engineering/works/controller-feedback/</guid>
+      <description>TL;DR I wanted a controller specifically made for racing sim games, with force feedback like on the big expensive sim racing wheels, so I made one.
+  The Inspiration The new PS5 controller with its haptics and adaptive triggers marks the dawn of a new era [citation needed]. At least that&amp;rsquo;s what the reviewers say, I&amp;rsquo;ll give them the benefit of the doubt since I can&amp;rsquo;t get my hands on one.</description>
+    </item>
     
     <item>
       <title>Metalens for Hacker News</title>
@@ -26,8 +36,9 @@
       <pubDate>Mon, 20 Jan 2020 00:00:00 +0000</pubDate>
       
       <guid>https://3am.engineering/about/</guid>
-      <description>Victor Bitca Software Engineer, currently employed at Crunchyroll, where I contributed to various projects starting with UWP &amp;amp; iOS/tvOS apps to core backend microservices.
-This blog focuses on prototypes and areas of interest at the time of writing/development.</description>
+      <description>Victor Bitca Software Engineer, currently employed at Crunchyroll, contributed to various projects starting with Electron/iOS/tvOS apps to core backend microservices.
+This blog focuses on prototypes and other fun things.
+In hindsight, I&amp;rsquo;m always amazed by the things that were fun for my past self.</description>
     </item>
     
     <item>
