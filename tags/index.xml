@@ -1,15 +1,11 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tags on 3AM Engineering</title>
+    <title>Tags on 3am engineering</title>
     <link>https://3am.engineering/tags/</link>
-    <description>Recent content in Tags on 3AM Engineering</description>
+    <description>Recent content in Tags on 3am engineering</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Tue, 19 May 2020 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://3am.engineering/tags/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Tue, 19 May 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://3am.engineering/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>iOS, Swift, Hacker News</title>
       <link>https://3am.engineering/tags/ios-swift-hacker-news/</link>

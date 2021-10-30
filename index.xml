@@ -1,14 +1,20 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>3AM Engineering</title>
+    <title>3am engineering</title>
     <link>https://3am.engineering/</link>
-    <description>Recent content on 3AM Engineering</description>
+    <description>Recent content on 3am engineering</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Tue, 13 Apr 2021 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://3am.engineering/index.xml" rel="self" type="application/rss+xml" />
-    
+    <lastBuildDate>Sun, 01 Aug 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://3am.engineering/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>&#34;Weather!&#34; and working on toy projects</title>
+      <link>https://3am.engineering/works/weather/</link>
+      <pubDate>Sun, 01 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://3am.engineering/works/weather/</guid>
+      <description>The Why? The more I work on massive software projects with no end in sight,the less I want to work on projects with no end in sight the more I want to work on smaller projects with a specialized purpose.
+You see, there are these thoughts that keep bothering me from time to time. Sofware&amp;rsquo;s lack of physical quality and tangibility, and the general uselessness of most software beyond maximizing shareholder value.</description>
+    </item>
     
     <item>
       <title>Custom force-feedback controller and speculations on next-gen</title>
@@ -17,7 +23,7 @@
       
       <guid>https://3am.engineering/works/controller-feedback/</guid>
       <description>TL;DR I wanted a controller specifically made for racing sim games, with force feedback like on the big expensive sim racing wheels, so I made one.
-  The Inspiration The new PS5 controller with its haptics and adaptive triggers marks the dawn of a new era [citation needed]. At least that&amp;rsquo;s what the reviewers say, I&amp;rsquo;ll give them the benefit of the doubt since I can&amp;rsquo;t get my hands on one.</description>
+ The Inspiration The new PS5 controller with its haptics and adaptive triggers marks the dawn of a new era [citation needed]. At least that&amp;rsquo;s what the reviewers say, I&amp;rsquo;ll give them the benefit of the doubt since I can&amp;rsquo;t get my hands on one.</description>
     </item>
     
     <item>
@@ -27,7 +33,8 @@
       
       <guid>https://3am.engineering/works/metalens/</guid>
       <description>Download it on the app store TL;DR: If you downloaded the app don&amp;rsquo;t forget to toggle the Safari switch in Settings
-  The &amp;ldquo;Do something with Hacker News&amp;rdquo; idea Searching for HN clients on the app store results in many reasonable looking apps. Some of them abandoned a few years back, others look like a developer needed at least one random published app to apply for the job.</description>
+ The &amp;ldquo;Do something with Hacker News&amp;rdquo; idea Searching for HN clients on the app store results in many reasonable looking apps. Some of them abandoned a few years back, others look like a developer needed at least one random published app to apply for the job.
+If another HN client is to be built, it needs some outstanding features, not necessarily useful, just something to separate it from the crowd.</description>
     </item>
     
     <item>
@@ -49,7 +56,8 @@ In hindsight, I&amp;rsquo;m always amazed by the things that were fun for my pas
       <guid>https://3am.engineering/works/second-opz-plugin/</guid>
       <description>The, previous attempt at an OP-Z plugin thingy was a failure.
 The boot time, the bugs, and overhead that come with running Linux + jack + supercollider stack on such a Raspberry Pi Zero is too much. You don&amp;rsquo;t need Linux if you want to run a medium complexity synth. But it also failed at being fun and easy to use.
-  Teesny 3.6 and teensy audio board</description>
+ Teesny 3.6 and teensy audio board
+  With teensy 3.</description>
     </item>
     
     <item>

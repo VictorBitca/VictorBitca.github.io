@@ -16,7 +16,7 @@ The next best thing was the OTTO inspired by OP-1. I considered joining the proj
 
     <title>
         
-            A hardware plugin for the OP-Z synth :: 3AM Engineering 
+            A hardware plugin for the OP-Z synth :: 3am engineering 
         
     </title>
 
@@ -27,7 +27,7 @@ The next best thing was the OTTO inspired by OP-1. I considered joining the proj
 
 
 
-<link rel="stylesheet" href="/main.min.26f29d9ec14d11344af7e9b5f40722f8c9bf60c380912c18454b2c7bbea7499a.css">
+<link rel="stylesheet" href="/main.min.5bfb908ea0e9e0fa4f7e8016a36896c5e4f71b49cc913f137c1c0f6b4dda0525.css">
 
 
 
@@ -35,17 +35,10 @@ The next best thing was the OTTO inspired by OP-1. I considered joining the proj
 <meta itemprop="name" content="A hardware plugin for the OP-Z synth">
 <meta itemprop="description" content="Update 19.07.01 Update, half of this article is irrelevant now, OP-Z can sample from USB or the mic and support custom synth engines (kinda) after some updates.
 Background Since I got my hands on the PO-20 “Arcade” I wanted to write custom firmware for it. Of course that wasn&rsquo;t possible.
-The next best thing was the OTTO inspired by OP-1. I considered joining the project for a moment but writing most of the components from scratch would take years to reach a v.">
-
-
-<meta itemprop="datePublished" content="2019-04-13T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2019-04-13T00:00:00&#43;00:00" />
+The next best thing was the OTTO inspired by OP-1. I considered joining the project for a moment but writing most of the components from scratch would take years to reach a v."><meta itemprop="datePublished" content="2019-04-13T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2019-04-13T00:00:00+00:00" />
 <meta itemprop="wordCount" content="757">
-
-
-
-<meta itemprop="keywords" content="op-z,synth,sampler,sclang,golang," />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="op-z,synth,sampler,sclang,golang," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="A hardware plugin for the OP-Z synth"/>
 <meta name="twitter:description" content="Update 19.07.01 Update, half of this article is irrelevant now, OP-Z can sample from USB or the mic and support custom synth engines (kinda) after some updates.
 Background Since I got my hands on the PO-20 “Arcade” I wanted to write custom firmware for it. Of course that wasn&rsquo;t possible.
@@ -73,7 +66,7 @@ The next best thing was the OTTO inspired by OP-1. I considered joining the proj
         <a href="/" style="text-decoration: none;">
     <div class="logo">
         
-            <span class="logo__text">home</span>
+            <span class="logo__text">3am engineering</span>
         
     </div>
 </a>
@@ -120,123 +113,83 @@ The next best thing was the OTTO inspired by OP-1. I considered joining the proj
             
 
             <div class="post-content">
-                
-
-<h4 id="update">Update</h4>
-
+                <h4 id="update">Update</h4>
 <p>19.07.01 Update, half of this article is irrelevant now, OP-Z can sample from USB or the mic and support custom synth engines (kinda) after some updates.</p>
-
 <h2 id="background">Background</h2>
-
 <p>Since I got my hands on the <a href="https://www.teenageengineering.com/store#po-20">PO-20 “Arcade”</a> I wanted to write custom firmware for it. Of course that wasn&rsquo;t possible.</p>
-
 <p>The next best thing was the <a href="https://github.com/topisani/OTTO"><code>OTTO</code></a> inspired by <a href="https://teenage.engineering/products/op-1">OP-1</a>. I considered joining the project for a moment but writing most of the components from scratch would take years to reach a v.1.0 prototype.</p>
-
 <h2 id="the-tools-for-the-job">The tools for the job</h2>
-
 <p>I considered using  <a href="https://puredata.info/">Pure Data</a> in a similar way the  <a href="https://www.critterandguitari.com/organelle">Critter and Guitari Organelle</a> is using it.
 But after a few frustrating days it was clear that visual programming will not cut it.</p>
-
 <p>Comparing communities, language features and GitHub stars of <a href="https://en.wikipedia.org/wiki/Comparison_of_audio_synthesis_environments">audio synthesis environments&hellip;</a></p>
-
 <p><a href="https://supercollider.github.io/">SuperCollider</a> was looking like a winner.
 With an active open source community, it was like a silver bullet for all my problems,
 SuperCollider can easily be set up to run on a <a href="https://github.com/supercollider/supercollider/blob/develop/README_RASPBERRY_PI.md">Raspberry Pi</a>.</p>
-
 <h2 id="first-prototypes">First prototypes</h2>
-
 <p>The choice of hardware at that moment was clear, a Raspberry Pi Zero and a dedicated audio board (<a href="https://fe-pi.com/">Fe-Pi</a> or <a href="https://www.pjrc.com/store/teensy3_audio.html">Teensy audio adaptor</a> both based on the same chip) would do the trick.
 Combined with a ~2000 mAh battery it should run for ~4 hours, still not as much as I would like but it will do for the moment.</p>
-
-<figure>
-    <img src="/images/3d&#43;proto.jpg"
-         alt="Looks like a wannabe pocket operator, doesn&amp;rsquo;t it?"/> <figcaption>
+<figure><img src="/images/3d&#43;proto.jpg"
+         alt="Looks like a wannabe pocket operator, doesn&amp;rsquo;t it?"/><figcaption>
             <p>Looks like a wannabe pocket operator, doesn&rsquo;t it?</p>
         </figcaption>
 </figure>
 
-
 <p>The first prototype made with Fusion 360 and the plastic parts printed, It, of course, had a few drawbacks:</p>
-
 <ol>
 <li>The buttons, I did not like the feel of the tall silicone buttons.</li>
 <li>Not enough buttons.</li>
 </ol>
-
-<figure>
-    <img src="/images/sequencer_render.jpg"/> 
+<figure><img src="/images/sequencer_render.jpg"/>
 </figure>
-
 
 <p>The second prototype used mechanical keyboard buttons and a lot more of them.
 Initially, I cloned Volca Sample functional plus some extra stuff.</p>
-
-<figure>
-    <img src="/images/sequencer_demo.gif"
-         alt="OP-1 anyone?"/> <figcaption>
+<figure><img src="/images/sequencer_demo.gif"
+         alt="OP-1 anyone?"/><figcaption>
             <p>OP-1 anyone?</p>
         </figcaption>
 </figure>
 
-
 <p>Then I looked into how OP-Z handles the sequencing and started to recreate it in SuperCollider. The timing didn&rsquo;t feel that good, it could be the underpowered hardware plus that SuperCollider is actually two components: scsynth + sclang communicating through the network stack.
 Sooner rather than later I took the plunge and got an OP-Z.</p>
-
 <h2 id="op-z-era">OP-Z Era</h2>
-
-<figure>
-    <img src="/images/opz_raspberry.jpg"
-         alt="A tight fit"/> <figcaption>
+<figure><img src="/images/opz_raspberry.jpg"
+         alt="A tight fit"/><figcaption>
             <p>A tight fit</p>
         </figcaption>
 </figure>
 
-
 <p>After spending some time with OP-Z I thought there is no point to try to recreate the sequencer, it would take too much time. I decided to reuse the Raspberry Pi and audio IO board and slapped them on the back of my OP-Z, it seemed the most reasonable way to get the most out of it in the shortest time possible, OP-Z already had the sequencer that I wanted but it didn&rsquo;t have any sampling capabilities(at the time of writing) so it should be a beautiful fusion.</p>
-
 <h4 id="the-end-result">The end result</h4>
-
 
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
   <iframe src="https://www.youtube.com/embed/lR7rbnsKkYU" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
 </div>
 
-
-<h4 id="how-to-build-something-similar-please-dont-t">How to build something similar (please dont&rsquo;t)</h4>
-
+<h4 id="how-to-build-something-similar-please-dontt">How to build something similar (please dont&rsquo;t)</h4>
 <p>Part list:</p>
-
 <ol>
 <li>Dedicated <a href="https://fe-pi.com/">audio board</a> with Line-In and Line-Out, Raspbian <a href="https://github.com/raspberrypi/linux/pull/1867">suports</a> it out of the box.</li>
 <li>Raspberry Pi of your choice.</li>
 <li>A 5V power supply.</li>
 </ol>
-
 <p>Steps to reproduce:</p>
-
 <ol>
 <li>Build SuperCollider from source on <a href="https://supercollider.github.io/development/building-raspberrypi">Raspberry Pi</a></li>
 <li>Go to sleep, compilation is an overnight process on R-Pi Zero.</li>
 <li><a href="https://github.com/VictorBitca/opz-sc-extensions">Clone/download</a> my repo.</li>
 </ol>
-
 <p>It has two folders, <code>opz-sc-extensions</code> contains SuperCollider extension, for more details on how to use <a href="http://doc.sccode.org/Guides/UsingExtensions.html">extensions</a> with SuperCollider, the <code>opz-plugin</code> folder contains some files that launches the extensions and a <code>golang-opz</code> folder.
 Next you could open <code>opz-sampler.scd</code> either <code>opz-synth.scd</code> in SuperCollider or run headless:</p>
-
 <p><code>export DISPLAY=:0.0 &amp;&amp; sclang opz-synth.scd</code></p>
-
 <p>There are quite a few pros and cons to this approach to an op-z plugin.</p>
-
 <h4 id="the-pros">The pros:</h4>
-
 <ol>
 <li>SuperCollider.</li>
 <li>An enormous library of UGens (units that process or generate sound) for SuperCollider.</li>
 <li>A community behind SuperCollider, usually you can find the answer to common questions but still, documentation is king.</li>
 </ol>
-
 <h4 id="the-cons">The cons:</h4>
-
 <ol>
 <li>Long boot times, around 1 min caused by a massive software stack.</li>
 <li>Latency, around 10 ms with just <a href="http://jackaudio.org/">jackd process</a> using 20% of the CPU.</li>
@@ -244,23 +197,17 @@ Next you could open <code>opz-sampler.scd</code> either <code>opz-synth.scd</cod
 <li>Unstable on Raspberry Pi, more software more bugs.</li>
 <li><a href="http://jackaudio.org/">jackd process</a> would crash after one minute of inactivity if using a reverb effect for some reason.</li>
 </ol>
-
 <p>In conclusion, the end product is not as practical as I wished it was, it boots slowly, massive software overhead, buggy and still power-hungry device, SuperCollider on Raspberry Pi Zero isn&rsquo;t a good enough for this task.</p>
-
 <h3 id="the-shape-of-things-to-come">The shape of things to come</h3>
-
 <p>I need a device with no boot time and almost real-time performance so I&rsquo;ll go with a microcontroller, the Zero board is replaced with a
 <a href="https://www.pjrc.com/store/teensy36.html">Teensy 3.6</a>, a small beast of a microcontroller with an additional chip of <a href="https://www.electrodragon.com/product/2pcs-ipus-ips6404-iot-ram/">8MB of RAM</a>, and 32 GB of flash storage.</p>
-
-<figure>
-    <img src="/images/thigs_to_come.jpg"
-         alt="A propper plugin thingy"/> <figcaption>
+<figure><img src="/images/thigs_to_come.jpg"
+         alt="A propper plugin thingy"/><figcaption>
             <p>A propper plugin thingy</p>
         </figcaption>
 </figure>
 
-
-<h4 id="the-follow-up-https-www-3am-engineering-works-second-opz-plugin"><a href="https://www.3am.engineering/works/second-opz-plugin/">The follow-up&hellip;</a></h4>
+<h4 id="the-follow-uphttpswww3amengineeringworkssecond-opz-plugin"><a href="https://www.3am.engineering/works/second-opz-plugin/">The follow-up&hellip;</a></h4>
 
             </div>
         </article>
@@ -284,7 +231,7 @@ Next you could open <code>opz-sampler.scd</code> either <code>opz-synth.scd</cod
         <div class="footer__content">
             <span>&copy; 2021</span>
             
-                <span><a href="https://3am.engineering/">3AM Engineering</a></span>
+                <span><a href="https://3am.engineering/">3am engineering</a></span>
             
         </div>
     </div>
@@ -298,7 +245,7 @@ Next you could open <code>opz-sampler.scd</code> either <code>opz-synth.scd</cod
 
 
 
-<script type="text/javascript" src="/bundle.min.2d5469329143160ae2456a69c3c76dc2d0a3b212b46afe291a51bd68650ed6f8697e001dab54f1c272c77ce08092a8c55e5bb4314e0ee334aab4b927ec896638.js" integrity="sha512-LVRpMpFDFgriRWppw8dtwtCjshK0av4pGlG9aGUO1vhpfgAdq1TxwnLHfOCAkqjFXlu0MU4O4zSqtLkn7IlmOA=="></script>
+<script type="text/javascript" src="/bundle.min.08ccaf9cef8b4e0ebd0b0158e66a7bfc0ddbb2194cdb0099e8814ddb89cc7628b27b1158846564e6e03d9ffc5f4d1bc7dfc274d359f9408d1c63d73a3f7332e9.js" integrity="sha512-CMyvnO&#43;LTg69CwFY5mp7/A3bshlM2wCZ6IFN24nMdiiyexFYhGVk5uA9n/xfTRvH38J001n5QI0cY9c6P3My6Q=="></script>
 
 
 

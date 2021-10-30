@@ -1,15 +1,11 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>sampler on 3AM Engineering</title>
+    <title>sampler on 3am engineering</title>
     <link>https://3am.engineering/tags/sampler/</link>
-    <description>Recent content in sampler on 3AM Engineering</description>
+    <description>Recent content in sampler on 3am engineering</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 08 Jun 2019 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://3am.engineering/tags/sampler/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sat, 08 Jun 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://3am.engineering/tags/sampler/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>A proper hardware plugin for the OP-Z synth</title>
       <link>https://3am.engineering/works/second-opz-plugin/</link>
@@ -18,7 +14,8 @@
       <guid>https://3am.engineering/works/second-opz-plugin/</guid>
       <description>The, previous attempt at an OP-Z plugin thingy was a failure.
 The boot time, the bugs, and overhead that come with running Linux + jack + supercollider stack on such a Raspberry Pi Zero is too much. You don&amp;rsquo;t need Linux if you want to run a medium complexity synth. But it also failed at being fun and easy to use.
-  Teesny 3.6 and teensy audio board</description>
+ Teesny 3.6 and teensy audio board
+  With teensy 3.</description>
     </item>
     
     <item>
