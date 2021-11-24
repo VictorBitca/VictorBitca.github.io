@@ -5,13 +5,130 @@
     <link>https://3am.engineering/tags/</link>
     <description>Recent content in Tags on 3am engineering</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Tue, 19 May 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://3am.engineering/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 01 Aug 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://3am.engineering/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>iOS, Swift, Hacker News</title>
-      <link>https://3am.engineering/tags/ios-swift-hacker-news/</link>
+      <title>matrix display</title>
+      <link>https://3am.engineering/tags/matrix-display/</link>
+      <pubDate>Sun, 01 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://3am.engineering/tags/matrix-display/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>neopixels</title>
+      <link>https://3am.engineering/tags/neopixels/</link>
+      <pubDate>Sun, 01 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://3am.engineering/tags/neopixels/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>python</title>
+      <link>https://3am.engineering/tags/python/</link>
+      <pubDate>Sun, 01 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://3am.engineering/tags/python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>raspberry pi</title>
+      <link>https://3am.engineering/tags/raspberry-pi/</link>
+      <pubDate>Sun, 01 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://3am.engineering/tags/raspberry-pi/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>weather</title>
+      <link>https://3am.engineering/tags/weather/</link>
+      <pubDate>Sun, 01 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://3am.engineering/tags/weather/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>arduino</title>
+      <link>https://3am.engineering/tags/arduino/</link>
+      <pubDate>Tue, 13 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://3am.engineering/tags/arduino/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>custom wheel</title>
+      <link>https://3am.engineering/tags/custom-wheel/</link>
+      <pubDate>Tue, 13 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://3am.engineering/tags/custom-wheel/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ffb</title>
+      <link>https://3am.engineering/tags/ffb/</link>
+      <pubDate>Tue, 13 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://3am.engineering/tags/ffb/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>force feedback</title>
+      <link>https://3am.engineering/tags/force-feedback/</link>
+      <pubDate>Tue, 13 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://3am.engineering/tags/force-feedback/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>joystick</title>
+      <link>https://3am.engineering/tags/joystick/</link>
+      <pubDate>Tue, 13 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://3am.engineering/tags/joystick/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>sim racing</title>
+      <link>https://3am.engineering/tags/sim-racing/</link>
+      <pubDate>Tue, 13 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://3am.engineering/tags/sim-racing/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Hacker News</title>
+      <link>https://3am.engineering/tags/hacker-news/</link>
       <pubDate>Tue, 19 May 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://3am.engineering/tags/ios-swift-hacker-news/</guid>
+      <guid>https://3am.engineering/tags/hacker-news/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>iOS</title>
+      <link>https://3am.engineering/tags/ios/</link>
+      <pubDate>Tue, 19 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://3am.engineering/tags/ios/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Swift</title>
+      <link>https://3am.engineering/tags/swift/</link>
+      <pubDate>Tue, 19 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://3am.engineering/tags/swift/</guid>
       <description></description>
     </item>
     

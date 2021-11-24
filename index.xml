@@ -23,7 +23,10 @@ You see, there are these thoughts that keep bothering me from time to time. Sofw
       
       <guid>https://3am.engineering/works/controller-feedback/</guid>
       <description>TL;DR I wanted a controller specifically made for racing sim games, with force feedback like on the big expensive sim racing wheels, so I made one.
- The Inspiration The new PS5 controller with its haptics and adaptive triggers marks the dawn of a new era [citation needed]. At least that&amp;rsquo;s what the reviewers say, I&amp;rsquo;ll give them the benefit of the doubt since I can&amp;rsquo;t get my hands on one.</description>
+ One is a bit different than the others
+  The Inspiration The new PS5 controller with its haptics and adaptive triggers marks the dawn of a new era.
+ Adaptive triggers internals, isn&amp;rsquo;t that cool?
+  What even is FFB? and why it makes things better?</description>
     </item>
     
     <item>
@@ -43,9 +46,8 @@ If another HN client is to be built, it needs some outstanding features, not nec
       <pubDate>Mon, 20 Jan 2020 00:00:00 +0000</pubDate>
       
       <guid>https://3am.engineering/about/</guid>
-      <description>Victor Bitca Software Engineer, currently employed at Crunchyroll, contributed to various projects starting with Electron/iOS/tvOS apps to core backend microservices.
-This blog focuses on prototypes and other fun things.
-In hindsight, I&amp;rsquo;m always amazed by the things that were fun for my past self.</description>
+      <description>Hello! I&amp;rsquo;m Victor. I&amp;rsquo;m a software engineer, currently working with Crunchyroll/Funimation. Most of my professional work orbits around iOS and backend services. This blog focuses on other engineering challenges and projects that I found engaging.
+Feel free to contact me at victor.bitca.development at gmail.com</description>
     </item>
     
     <item>

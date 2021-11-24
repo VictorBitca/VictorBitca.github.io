@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ffb on 3am engineering</title>
+    <link>https://3am.engineering/tags/ffb/</link>
+    <description>Recent content in ffb on 3am engineering</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Tue, 13 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://3am.engineering/tags/ffb/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Custom force-feedback controller and speculations on next-gen</title>
+      <link>https://3am.engineering/works/controller-feedback/</link>
+      <pubDate>Tue, 13 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://3am.engineering/works/controller-feedback/</guid>
+      <description>TL;DR I wanted a controller specifically made for racing sim games, with force feedback like on the big expensive sim racing wheels, so I made one.
+ One is a bit different than the others
+  The Inspiration The new PS5 controller with its haptics and adaptive triggers marks the dawn of a new era.
+ Adaptive triggers internals, isn&amp;rsquo;t that cool?
+  What even is FFB? and why it makes things better?</description>
+    </item>
+    
+  </channel>
+</rss>
