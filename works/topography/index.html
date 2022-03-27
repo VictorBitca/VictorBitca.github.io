@@ -8,7 +8,7 @@
 <meta name="description" content="Mount St. Helens hillshade
   This article might get too technical in places with all the CNC, CAM, CAD, GIS terminology. To spare your time here&amp;rsquo;s the TLDR:
 TLDR  More than 6 month ago something clicked and I got all enthusiastic about maps and topography. 2D renders were all nice and cool but real 3D topographic sculpts would really elevate the data to a higher level.
-Turns out it&amp;rsquo;s hard to make detailed models and there are quite a few reasons why nobody (at least documented online) seems to have a solid working process." />
+Turns out it&amp;rsquo;s hard to make detailed models and there are quite a few reasons why nobody (at least documented online) seems to have a solid working process or a comercial product that isn&amp;rsquo;t just a 2D print." />
 <meta name="keywords" content=", CNC, CAD, topography, python" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="" />
@@ -37,15 +37,15 @@ Turns out it&amp;rsquo;s hard to make detailed models and there are quite a few 
 <meta itemprop="description" content="Mount St. Helens hillshade
   This article might get too technical in places with all the CNC, CAM, CAD, GIS terminology. To spare your time here&rsquo;s the TLDR:
 TLDR  More than 6 month ago something clicked and I got all enthusiastic about maps and topography. 2D renders were all nice and cool but real 3D topographic sculpts would really elevate the data to a higher level.
-Turns out it&rsquo;s hard to make detailed models and there are quite a few reasons why nobody (at least documented online) seems to have a solid working process."><meta itemprop="datePublished" content="2022-03-27T00:00:00+00:00" />
+Turns out it&rsquo;s hard to make detailed models and there are quite a few reasons why nobody (at least documented online) seems to have a solid working process or a comercial product that isn&rsquo;t just a 2D print."><meta itemprop="datePublished" content="2022-03-27T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2022-03-27T00:00:00+00:00" />
-<meta itemprop="wordCount" content="1265">
+<meta itemprop="wordCount" content="1285">
 <meta itemprop="keywords" content="CNC,CAD,topography,python," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Ultra Detailed Topographic CNC Carvings"/>
 <meta name="twitter:description" content="Mount St. Helens hillshade
   This article might get too technical in places with all the CNC, CAM, CAD, GIS terminology. To spare your time here&rsquo;s the TLDR:
 TLDR  More than 6 month ago something clicked and I got all enthusiastic about maps and topography. 2D renders were all nice and cool but real 3D topographic sculpts would really elevate the data to a higher level.
-Turns out it&rsquo;s hard to make detailed models and there are quite a few reasons why nobody (at least documented online) seems to have a solid working process."/>
+Turns out it&rsquo;s hard to make detailed models and there are quite a few reasons why nobody (at least documented online) seems to have a solid working process or a comercial product that isn&rsquo;t just a 2D print."/>
 
 
 
@@ -126,7 +126,7 @@ This article might get too technical in places with all the CNC, CAM, CAD, GIS t
 <h2 id="tldr">TLDR</h2>
 <hr>
 <p>More than 6 month ago something clicked and I got all enthusiastic about maps and topography. 2D renders were all nice and cool but real 3D topographic sculpts would really <strong>elevate</strong> the data to a higher level.</p>
-<p>Turns out it&rsquo;s hard to make detailed models and there are quite a few reasons why nobody (at least documented online) seems to have a solid working process.</p>
+<p>Turns out it&rsquo;s hard to make detailed models and there are quite a few reasons why nobody (at least documented online) seems to have a solid working process or a comercial product that isn&rsquo;t just a 2D print.</p>
 <p>Months of trial and error, custom hardware and software, dozens of iterations, I finally got some results that can surpass comercial resin 3D printers.</p>
 <h2 id="intro">Intro</h2>
 <hr>
@@ -182,14 +182,6 @@ The source DTM has a resolution of 1m per pixel, respectively a 10x10km area is 
 <figure><img src="/images/cnc/helens_hd.jpg"/>
 </figure>
 
-<h2 id="the-software">The Software</h2>
-<hr>
-<p>Considering the issues described above it&rsquo;s clear that a custom solution is needed to convert the DEM straight to G-code.
-Software is the easy part of this project, but wont go into too much details, I guess that&rsquo;s where the so called trade secrets start.</p>
-<figure><img src="/images/cnc/helens_crater.jpg"/>
-</figure>
-
-<p>The resulting unoptimized single-threaded code is fast enough to turn a 100 megapixels DEM file straight into ~1GB G-code file in under 1 minute skipping any intermediate lossy steps.</p>
 <h2 id="the-hardware">The Hardware</h2>
 <hr>
 <p>Hardware is hard.</p>
@@ -203,7 +195,16 @@ Software is the easy part of this project, but wont go into too much details, I 
 
 <p>Started building/designing my CNC based on the open-source <a href="https://indystry.cc/indymill/">Indymill</a> but by using other types of aluminium extrusions, motors, lead screws, and 3D printed parts that should be replaced with metal ones if I ever plan to cut something hard.</p>
 <p>As for electronics and control board, I used an ESP32 microcontroller and <a href="https://www.tindie.com/products/33366583/6-pack-universal-cnc-controller/">Barts 6 Pack universal CNC Controller</a> with TMC2209 drivers and Nema 17 motors, very smooth operation and plenty of torque, not that I need much to cut wax.</p>
-<p>The trade secrets end at the the spindle and the cutting bits, all I can say at the moment is that the components and cutting bits are based on comercially available parts that were further improved/customized.</p>
+<p>All I can write about the spindle and the cutting bits at the moment is that they&rsquo;re based on commercially available parts that were further improved/ground/customized.
+Since I couldn&rsquo;t find public writings that mention any of the modifications that I&rsquo;ve done I guess I&rsquo;m into <strong>trade secrets</strong> territory, how exciting!</p>
+<h2 id="the-software">The Software</h2>
+<hr>
+<p>Considering the issues described above it&rsquo;s clear that a custom solution is needed to convert the DEM straight to G-code.
+Software is the easy part of this project, but won&rsquo;t go into too many details it feels very <strong>trade secretly</strong> like.</p>
+<figure><img src="/images/cnc/helens_crater.jpg"/>
+</figure>
+
+<p>The resulting unoptimized single-threaded code is fast enough to turn a 100 megapixels DEM file straight into ~1GB G-code file in under 1 minute skipping any intermediate lossy steps.</p>
 <h2 id="master-model-material">Master model material</h2>
 <hr>
 <p>The perfect material for master models should be easily machinable, capable of holding micrometer sized details and easy to obtain.
