@@ -2,32 +2,29 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://3am.engineering/works/weather/</loc>
-    <lastmod>2021-08-01T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://3am.engineering/</loc>
-    <lastmod>2021-08-01T00:00:00+00:00</lastmod>
+    <lastmod>2022-03-27T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://3am.engineering/tags/matrix-display/</loc>
-    <lastmod>2021-08-01T00:00:00+00:00</lastmod>
+    <loc>https://3am.engineering/tags/cad/</loc>
+    <lastmod>2022-03-27T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://3am.engineering/tags/neopixels/</loc>
-    <lastmod>2021-08-01T00:00:00+00:00</lastmod>
+    <loc>https://3am.engineering/tags/cnc/</loc>
+    <lastmod>2022-03-27T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://3am.engineering/tags/python/</loc>
-    <lastmod>2021-08-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://3am.engineering/tags/raspberry-pi/</loc>
-    <lastmod>2021-08-01T00:00:00+00:00</lastmod>
+    <lastmod>2022-03-27T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://3am.engineering/tags/</loc>
-    <lastmod>2021-08-01T00:00:00+00:00</lastmod>
+    <lastmod>2022-03-27T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://3am.engineering/tags/weather/</loc>
-    <lastmod>2021-08-01T00:00:00+00:00</lastmod>
+    <loc>https://3am.engineering/tags/topography/</loc>
+    <lastmod>2022-03-27T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://3am.engineering/works/topography/</loc>
+    <lastmod>2022-03-27T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://3am.engineering/works/</loc>
-    <lastmod>2021-08-01T00:00:00+00:00</lastmod>
+    <lastmod>2022-03-27T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://3am.engineering/tags/arduino/</loc>
     <lastmod>2021-04-13T00:00:00+00:00</lastmod>
