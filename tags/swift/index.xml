@@ -8,13 +8,12 @@
     <lastBuildDate>Tue, 19 May 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://3am.engineering/tags/swift/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Metalens for Hacker News</title>
-      <link>https://3am.engineering/works/metalens/</link>
+      <link>https://3am.engineering/works/metalens-hacker-news-ios-client/</link>
       <pubDate>Tue, 19 May 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://3am.engineering/works/metalens/</guid>
-      <description>Download it on the app store TL;DR: If you downloaded the app don&amp;rsquo;t forget to toggle the Safari switch in Settings
- The &amp;ldquo;Do something with Hacker News&amp;rdquo; idea Searching for HN clients on the app store results in many reasonable looking apps. Some of them abandoned a few years back, others look like a developer needed at least one random published app to apply for the job.
-If another HN client is to be built, it needs some outstanding features, not necessarily useful, just something to separate it from the crowd.</description>
+      <guid>https://3am.engineering/works/metalens-hacker-news-ios-client/</guid>
+      <description>2022 Update The app is no longer available, planning to release an updated open source version, soon&amp;hellip; Download it on the app store TL;DR: If you downloaded the app don&amp;rsquo;t forget to toggle the Safari switch in Settings
+The &amp;ldquo;Do something with Hacker News&amp;rdquo; idea Searching for HN clients on the app store results in many reasonable looking apps. Some of them abandoned a few years back, others look like a developer needed at least one random published app to apply for the job.</description>
     </item>
     
   </channel>

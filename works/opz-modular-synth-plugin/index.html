@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="Victor Bitca">
+<meta name="description" content="The, previous attempt at an OP-Z plugin thingy was a failure.
+The boot time, the bugs, and overhead that come with running Linux &#43; jack &#43; supercollider stack on such a Raspberry Pi Zero is too much. You don&amp;rsquo;t need Linux if you want to run a medium complexity synth. But it also failed at being fun and easy to use.
+Teesny 3.6 and teensy audio board
+With teensy 3.6 &amp;amp; teensy audio board, the boot times are around a second or less, it&amp;rsquo;s faster than the OP-Z!" />
+<meta name="keywords" content=", op-z, synth, sampler, sclang, golang" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="" />
+<link rel="canonical" href="https://3am.engineering/works/opz-modular-synth-plugin/" />
+
+
+    <title>
+        
+            A proper hardware plugin for the OP-Z synth :: 3am engineering 
+        
+    </title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.2.1/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="/main.min.5bfb908ea0e9e0fa4f7e8016a36896c5e4f71b49cc913f137c1c0f6b4dda0525.css">
+
+
+
+
+<meta itemprop="name" content="A proper hardware plugin for the OP-Z synth">
+<meta itemprop="description" content="The, previous attempt at an OP-Z plugin thingy was a failure.
+The boot time, the bugs, and overhead that come with running Linux &#43; jack &#43; supercollider stack on such a Raspberry Pi Zero is too much. You don&rsquo;t need Linux if you want to run a medium complexity synth. But it also failed at being fun and easy to use.
+Teesny 3.6 and teensy audio board
+With teensy 3.6 &amp; teensy audio board, the boot times are around a second or less, it&rsquo;s faster than the OP-Z!"><meta itemprop="datePublished" content="2019-06-08T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2019-06-08T00:00:00+00:00" />
+<meta itemprop="wordCount" content="625">
+<meta itemprop="keywords" content="op-z,synth,sampler,sclang,golang," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="A proper hardware plugin for the OP-Z synth"/>
+<meta name="twitter:description" content="The, previous attempt at an OP-Z plugin thingy was a failure.
+The boot time, the bugs, and overhead that come with running Linux &#43; jack &#43; supercollider stack on such a Raspberry Pi Zero is too much. You don&rsquo;t need Linux if you want to run a medium complexity synth. But it also failed at being fun and easy to use.
+Teesny 3.6 and teensy audio board
+With teensy 3.6 &amp; teensy audio board, the boot times are around a second or less, it&rsquo;s faster than the OP-Z!"/>
+
+
+
+
+
+    <meta property="article:published_time" content="2019-06-08 00:00:00 &#43;0000 UTC" />
+
+
+
+
+
+
+
+
+    </head>
+
+    <body class="dark-theme">
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__text">3am engineering</span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="https://3am.engineering/about/">About</a></li><li><a href="https://3am.engineering/works/">Works</a></li>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+
+            <span class="theme-toggle unselectable"><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+</svg>
+</span>
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            
+            </p>
+        </div>
+
+        <article>
+            <h2 class="post-title"><a href="https://3am.engineering/works/opz-modular-synth-plugin/">A proper hardware plugin for the OP-Z synth</a></h2>
+
+            
+
+            <div class="post-content">
+                <p>The, <a href="https://victorbitca.github.io/posts/2019/04/creating-an-op-z-plugin/">previous attempt</a> at an OP-Z plugin thingy was a failure.</p>
+<p>The boot time, the bugs, and overhead that come with running <code>Linux</code> + <code>jack</code> + <code>supercollider</code> stack on such a Raspberry Pi Zero is too much.
+You don&rsquo;t need Linux if you want to run a medium complexity synth.
+But it also failed at being fun and easy to use.</p>
+<figure><img src="/images/thigs_to_come.jpg"
+         alt="Teesny 3.6 and teensy audio board"/><figcaption>
+            <p>Teesny 3.6 and teensy audio board</p>
+        </figcaption>
+</figure>
+
+<p>With <a href="https://www.pjrc.com/store/teensy36.html">teensy 3.6</a> &amp; <a href="https://www.pjrc.com/store/teensy3_audio.html">teensy audio board</a>, the boot times are around a second or less, it&rsquo;s faster than the OP-Z!
+The CPU usage is less with Teensy than on Raspberry Pi Zero for the same building blocks (oscillators and other effects).
+<a href="https://www.pjrc.com/teensy/gui/">Teensy audio library</a> is a great tool, synths that can rival the OP-Z&rsquo;s built-in ones can be built using the basic building blocks.</p>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/MKe8P8wL87o" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+<p>The first iteration it&rsquo;s a simple hackable synth, maybe also a sampler in the future.
+A small semi-modular portable plugin <a href="http://www.makenoisemusic.com/synthesizers/ohcoast">like this one</a> could be a bit more fun but that&rsquo;s for the next time.</p>
+<p><a href="https://github.com/VictorBitca/opz-teensy">Full code here</a>.</p>
+<h2 id="june-update">June update</h2>
+<p>The natural evolution of the previous design:</p>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/5gF2k2Sb0Bk" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+<p>The micro-modular was inspired by the <a href="http://www.makenoisemusic.com/synthesizers/ohcoast">o-coast</a> and the <a href="https://bastl-instruments.com/instruments/kastle">kastl</a> and of course the full size <a href="https://en.wikipedia.org/wiki/Modular_synthesizer">modular systems</a>.
+While some of those run mostly analog circuitry in their signal paths, teensy can&rsquo;t do that, it&rsquo;s just an emulation of one.</p>
+<figure><img src="/images/minimodular.jpg"
+         alt="The minimodular"/><figcaption>
+            <p>The minimodular</p>
+        </figcaption>
+</figure>
+
+<p>Initially, things had to be simple, connections could not be stackable, one output in only in one input, 
+The micro-modular is based on <a href="https://www.pjrc.com/store/teensy36.html">teensy 3.6</a> as its mainboard and an Arduino Nano as a slave expansion board,
+In hindsight, I should have ditched the Arduino and some &ldquo;modules&rdquo; on the board, for example, the FX section should not be on board.</p>
+<p>Beware, Arduino Nano is not compatible with the Teensy board out of the box. 
+Arduino runs on 5v, it could damage the Teensy board, it had to be converted to 3.3V, there are tutorials for this so I&rsquo;m not gonna cover this here.</p>
+<p>Next step is the teensy firmware, teensy audio tool is good for medium complexity synth, but I needed:</p>
+<ul>
+<li>4 oscillators with FM, PM and PW modulation</li>
+<li>2 LFOs with PW modulation</li>
+<li>A VCF</li>
+<li>A pair of VCAs</li>
+<li>Two envelopes generators and a few utilities like mixers and splitters</li>
+</ul>
+<p>all of those only for one voice, the synth would have 4 at least.</p>
+<p>One major drawback of the teensy audio framework is that <code>AudioConnection</code> objects can&rsquo;t be created at the runtime so every possible connection has to be made beforehand and it looks like a total mess.</p>
+<figure><img src="/images/one_voice.jpg"
+         alt="No"/><figcaption>
+            <p>No</p>
+        </figcaption>
+</figure>
+
+<p>Once I was done with the firmware CPU and memory usage was above 80% with a power consumption of 140 mA from the OP-Z (when driving the headset at full power) that&rsquo;s above the advertised 100 mA max that OP-Z could output, so I had to underclock it a bit and remove extra FX and LEDs, even then I could not get it below 120 mA without removing a synth voice so I left it at 120 mA.</p>
+<p>The end result is a close enough modular emulation that certainly provides a lot more sound variety than any built-in op-z synth engine.</p>
+<h2 id="drawbacks">Drawbacks</h2>
+<ul>
+<li>OP-Z current limit at ~140 mA</li>
+<li>Decreased battery life</li>
+<li>Not as flexible as a modular</li>
+<li>Internal audio clipping</li>
+<li>Not tightly integrated with the OP-Z</li>
+<li>Massive code base</li>
+</ul>
+<h2 id="conclusion">Conclusion</h2>
+<p>Your phone has more processing power and always in your pocket, a specialized device like this one has limited appeal, just like all the other pocket synths that came before.</p>
+<p>The takeaway was that even if I wouldn’t have a use for the final product, the creation process is the most enjoyable part for me. 
+Merging software and hardware into something results in greater satisfaction than just writing a standalone piece of software.</p>
+
+            </div>
+        </article>
+
+        <hr />
+
+        <div class="post-info">
+  				<p>
+  					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg><span class="tag"><a href="https://3am.engineering/tags/op-z">op-z</a></span><span class="tag"><a href="https://3am.engineering/tags/synth">synth</a></span><span class="tag"><a href="https://3am.engineering/tags/sampler">sampler</a></span><span class="tag"><a href="https://3am.engineering/tags/sclang">sclang</a></span><span class="tag"><a href="https://3am.engineering/tags/golang">golang</a></span>
+  				</p>
+  			</div>
+
+        
+    </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>&copy; 2022</span>
+            
+                <span><a href="https://3am.engineering/">3am engineering</a></span>
+            
+        </div>
+    </div>
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+
+<script type="text/javascript" src="/bundle.min.5ed8b4b234943cf116331e2c3e3460d56d663254bba637644db193292850534f3967f008195d79b08feaac4caa42f3a765d5e5f9af529e9c246c1e8e99393e83.js" integrity="sha512-Xti0sjSUPPEWMx4sPjRg1W1mMlS7pjdkTbGTKShQU085Z/AIGV15sI/qrEyqQvOnZdXl&#43;a9SnpwkbB6OmTk&#43;gw=="></script>
+
+
+
+    </body>
+</html>
