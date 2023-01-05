@@ -135,7 +135,7 @@ First, I need to strip the audio from the video files, using <code>ffmpeg</code>
         </figcaption>
 </figure>
 
-<p>Comparing two perfectly aligned audio files results in this image. 
+<p>Comparing two perfectly aligned audio files results in this image.
 The black area at the beginning is where the spectrograms <code>XOR</code>-ed perfectly resulting mostly in a black area.</p>
 <figure><img src="/images/2min-diff.jpg"
          alt="Comparing first 2min of two episodes"/><figcaption>
@@ -143,7 +143,7 @@ The black area at the beginning is where the spectrograms <code>XOR</code>-ed pe
         </figcaption>
 </figure>
 
-<p>But in some cases, most of the cases actually intros aren&rsquo;t aligned perfectly, before the intro song begins there could be some scenes from previous episodes or some pre-intro scenes from the current episode. 
+<p>But in some cases, most of the cases actually intros aren&rsquo;t aligned perfectly, before the intro song begins there could be some scenes from previous episodes or some pre-intro scenes from the current episode.
 Those scenes always vary in length and if I were to compare the spectrograms it would look like a bunch of noise.</p>
 <p>One way to find the common areas on two different spectrograms is to slide them past each other like a puzzle each iteration resulting in a match score.
 I start with an 50% offset between the slices (<a href="https://blog.golang.org/go-slices-usage-and-internals">golang view of an array</a>) and end on -50% offset, good enough for the intro I&rsquo;m searching, each time the offset decreases the slices get actually a bit bigger then again smaller (highlighted in blue).
@@ -192,7 +192,7 @@ Disclaimer: The solution is in no way perfect, probably not written in an idioma
                 <footer class="footer">
     <div class="footer__inner">
         <div class="footer__content">
-            <span>&copy; 2022</span>
+            <span>&copy; 2023</span>
             
                 <span><a href="https://3am.engineering/">3am engineering</a></span>
             
@@ -208,7 +208,7 @@ Disclaimer: The solution is in no way perfect, probably not written in an idioma
 
 
 
-<script type="text/javascript" src="/bundle.min.5ed8b4b234943cf116331e2c3e3460d56d663254bba637644db193292850534f3967f008195d79b08feaac4caa42f3a765d5e5f9af529e9c246c1e8e99393e83.js" integrity="sha512-Xti0sjSUPPEWMx4sPjRg1W1mMlS7pjdkTbGTKShQU085Z/AIGV15sI/qrEyqQvOnZdXl&#43;a9SnpwkbB6OmTk&#43;gw=="></script>
+<script type="text/javascript" src="/bundle.min.fbf016a5f89be88f4916a0898302f777692ee6600991c3b6108fc423ed982dc83b470742cc92dd796861136f5ca96988b35e049b5f4cb4b1343686784a58c8ce.js" integrity="sha512-&#43;/AWpfib6I9JFqCJgwL3d2ku5mAJkcO2EI/EI&#43;2YLcg7RwdCzJLdeWhhE29cqWmIs14Em19MtLE0NoZ4SljIzg=="></script>
 
 
 
