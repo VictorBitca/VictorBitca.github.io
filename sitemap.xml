@@ -3,7 +3,28 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://3am.engineering/</loc>
-    <lastmod>2022-03-27T00:00:00+00:00</lastmod>
+    <lastmod>2023-03-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://3am.engineering/tags/asyncsequence/</loc>
+    <lastmod>2023-03-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://3am.engineering/tags/combine/</loc>
+    <lastmod>2023-03-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://3am.engineering/tags/concurrency/</loc>
+    <lastmod>2023-03-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://3am.engineering/tags/swift-async-await/</loc>
+    <lastmod>2023-03-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://3am.engineering/works/values-over-time/</loc>
+    <lastmod>2023-03-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://3am.engineering/tags/</loc>
+    <lastmod>2023-03-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://3am.engineering/works/</loc>
+    <lastmod>2023-03-22T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://3am.engineering/tags/cad/</loc>
     <lastmod>2022-03-27T00:00:00+00:00</lastmod>
@@ -14,16 +35,10 @@
     <loc>https://3am.engineering/tags/python/</loc>
     <lastmod>2022-03-27T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://3am.engineering/tags/</loc>
-    <lastmod>2022-03-27T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://3am.engineering/tags/topography/</loc>
     <lastmod>2022-03-27T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://3am.engineering/works/detailed-topographic-cnc-sculptures/</loc>
-    <lastmod>2022-03-27T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://3am.engineering/works/</loc>
     <lastmod>2022-03-27T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://3am.engineering/tags/arduino/</loc>

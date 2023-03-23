@@ -5,7 +5,18 @@
     <link>https://3am.engineering/works/</link>
     <description>Recent content in Works on 3am engineering</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 27 Mar 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://3am.engineering/works/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 22 Mar 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://3am.engineering/works/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Swift async await vs Combine: values over time</title>
+      <link>https://3am.engineering/works/values-over-time/</link>
+      <pubDate>Wed, 22 Mar 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://3am.engineering/works/values-over-time/</guid>
+      <description>I&amp;rsquo;ll focus on Combine and Swift concurrency for one specific use case: a potentially infinite sequence of events that could overwhelm the consumer, or at best, merely waste resources by generating excessive values that the consumer might not even require.
+The values from these sequences cannot be dropped using debounce or throttle operators, as is typically done with certain UI events, thus, the need for proper backpressure support.
+Subscription and Task cancellation An important aspect from an ergonomic standpoint is the lifecycle management of an entity that could potentially emit an infinite number of values.</description>
+    </item>
+    
     <item>
       <title>Ultra Detailed Topographic CNC Carvings</title>
       <link>https://3am.engineering/works/detailed-topographic-cnc-sculptures/</link>
